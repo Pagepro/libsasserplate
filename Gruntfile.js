@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+    require('time-grunt')(grunt);
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -103,6 +104,13 @@ module.exports = function (grunt) {
                     src: ['**/*.{png,jpg,jpeg,gif}'],
                     dest: 'static/img/'
                 }]
+            }
+        },
+        autoprefixer: {
+            dist: {
+                files: {
+                    'static/css/main.css': 'static/css/main.css'
+                }
             }
         }
     });
