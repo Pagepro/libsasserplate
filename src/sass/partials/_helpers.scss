@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+/* Layout oriented helpers
+   ========================================================================== */
+.inner {
+    position: relative;
+    width: $size_inner;
+    margin: 0 auto;
+}
+
+/* Clearfixes
+   ========================================================================== */ 
+.clear {
+    overflow: hidden;
+    content: "."; 
+    display: block;
+    height: 0;
+    margin: 0!important;
+    clear:both; 
+    visibility: hidden; 
+    line-height: 0; 
+}
+.clear:after { 
+    content: ".";
+    display: block;
+    clear: both;
+    margin: 0!important;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0; 
+    visibility: hidden;
+}
+.clearfix:after {
+    clear: both;
+}
+
+/* Buttons
+   ========================================================================== */
+
+
