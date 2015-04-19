@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
+    require('jit-grunt')(grunt);
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -115,7 +116,7 @@ module.exports = function (grunt) {
         }
     });
     // Load the plugin
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    //require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
     // Default task(s).
     grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'watch']);
     // SASSS/Compass compilation only
