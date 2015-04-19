@@ -115,11 +115,10 @@ module.exports = function (grunt) {
             }
         }
     });
-    // Load the plugin
-    //require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
     // Default task(s).
     grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'watch']);
     // SASSS/Compass compilation only
     grunt.registerTask('compile', ['sass']);
+    // Images optimalization
     grunt.registerTask('krak', ['kraken']);
 };

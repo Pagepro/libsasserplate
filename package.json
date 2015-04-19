@@ -1,6 +1,6 @@
 {
   "name": "libsasserplate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Libsass starter",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "devDependencies": {
@@ -15,7 +15,6 @@
     "grunt-spritesmith": "latest",
     "jit-grunt": "^0.9.1",
     "jquery": "1.11.2",
-    "matchdep": "^0.3.0",
     "time-grunt": "latest"
   }
 }
