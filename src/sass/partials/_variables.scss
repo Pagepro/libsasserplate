@@ -11,6 +11,13 @@ $color_green:       #008000;
 ========================================================================== */
 $size_inner:        875px;
 
+/* Breakpoints
+========================================================================== */
+$breakpoint_tablet:             max-width 1225px;
+$breakpoint_tablet-mini:        max-width 950px;
+$breakpoint_smartphone:         max-width 767px;
+$breakpoint_smartphone-mini:    max-width 375px;
+
 /* Fonts
 ========================================================================== */
 //@import url($fontURL);

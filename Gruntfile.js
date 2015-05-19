@@ -107,6 +107,14 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        sprite:{
+            all: {
+                src: 'src/img/sprite/*.png',
+                dest: 'static/img/sprite.png',
+                imgPath: '../img/sprite.png',
+                destCss: 'src/sass/sprites.scss'
+            }
+        },
         autoprefixer: {
             dist: {
                 files: {
@@ -119,6 +127,8 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'watch']);
     // SASSS/Compass compilation only
     grunt.registerTask('compile', ['sass']);
+    // CSS Sprites
+    grunt.registerTask('sprites', ['sprite']);
     // Images optimalization
     grunt.registerTask('krak', ['kraken']);
 };

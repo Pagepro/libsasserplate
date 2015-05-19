@@ -1,0 +1,19 @@
+{
+  "name": "libsasserplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Pagepro/libsasserplate",
+  "authors": [
+    "Krzysztof Lojniewski <kontakt@pagepro.pl>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "breakpoint-sass": "~2.5.0"
+  }
+}
