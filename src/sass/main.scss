@@ -6,7 +6,11 @@
    ========================================================================== */
 @import "partials/normalize";
 
-@import "bower_components/breakpoint-sass/stylesheets/breakpoint";
+// @import "bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+/* Sprites
+   ========================================================================== */
+@import "sprites";
 
 /* Variables (colors, sizes, fonts)
    ========================================================================== */

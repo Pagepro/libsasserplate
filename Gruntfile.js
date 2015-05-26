@@ -1,6 +1,10 @@
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
-    require('jit-grunt')(grunt);
+
+    require('jit-grunt')(grunt, {
+      sprite: 'grunt-spritesmith'
+    });
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -40,7 +44,7 @@ module.exports = function (grunt) {
             // sass compilation
             sass: {
                 files: ['src/sass/*.scss', 'src/sass/partials/*.scss', 'src/sass/vendor/*.scss'],
-                tasks: ['sass', 'autoprefixer']
+                tasks: ['sass', 'autoprefixer', 'cssmin']
             },
             // enable LiveReload for css files
             css: {
@@ -81,6 +85,21 @@ module.exports = function (grunt) {
                         'src/js/main.js'
                     ]
                 }
+            }
+        },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'static/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'static/css',
+                    ext: '.min.css'
+                }]
             }
         },
         connect: {
@@ -124,11 +143,11 @@ module.exports = function (grunt) {
         }
     });
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'watch']);
+    grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'cssmin', 'watch']);
     // SASSS/Compass compilation only
     grunt.registerTask('compile', ['sass']);
     // CSS Sprites
-    grunt.registerTask('sprites', ['sprite']);
+    grunt.registerTask('sprites', ['sprite:all']);
     // Images optimalization
     grunt.registerTask('krak', ['kraken']);
 };
