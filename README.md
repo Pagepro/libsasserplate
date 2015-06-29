@@ -1,4 +1,4 @@
-# libsasserplate
+# LibSasserPlate
 
 **LibSass** (http://libsass.org) starter for projects by Pagepro.
 
