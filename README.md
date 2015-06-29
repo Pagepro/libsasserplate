@@ -17,10 +17,12 @@ npm install
 
 ## Grunt Tasks
 
-### Default Task 
+### Default Task
 
-This task is used for development. 
+This task is used for development.
+
 What it does?
+
 1. Compiles SASS (src/sass) files into CSS (static/css).
 2. Copies src/js files into JS (static/js).
 3. Running LiveReload that allows refreshing CSS files without browser refresh [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch#optionslivereload).
@@ -34,7 +36,7 @@ grunt
 
 ##### Port
 
-Type: `Integer`  
+Type: `Integer`
 Default: `8080`
 
 The port on which the webserver will respond. The task will fail if the specified port is already in use. You can use the special values `0` or `'?'` to use a system-assigned port.
@@ -43,20 +45,24 @@ The port on which the webserver will respond. The task will fail if the specifie
 grunt --port 8011
 ```
 
-### Compile Task 
+### Compile Task
 
-This task is used only for SCSS -> CSS compilation. 
+This task is used only for SCSS -> CSS compilation.
+
 What it does?
+
 1. Compiles SASS (src/sass) files into CSS (static/css).
 
 ```shell
 grunt compile
 ```
 
-### Sprite Task 
+### Sprite Task
 
-This task is used for Sprites generation using **grunt-spritesmith** (https://github.com/Ensighten/grunt-spritesmith). 
+This task is used for Sprites generation using **grunt-spritesmith** (https://github.com/Ensighten/grunt-spritesmith).
+
 What it does?
+
 1. Gets images (src/img/sprite/*.png) and generates sprite (static/img/sprite.png).
 2. Creates Sprites SCSS file (src/sass/sprites.scss).
 
@@ -64,10 +70,12 @@ What it does?
 grunt sprites
 ```
 
-### Publish Task 
+### Publish Task
 
-This task is used runing just before publishing project to Q&A or client.  
+This task is used runing just before publishing project to Q&A or client.
+
 What it does?
+
 1. Adds random parameters at CSS&JS declarations to reset clients browser cache using **grunt-cache-breaker** (https://github.com/shakyshane/grunt-cache-breaker).
 2. Optimizes images (static/img/) using **Kraken.io** (http://kraken.io).
 3. Adds browser specific prefixes using **autoprefixer** (https://github.com/postcss/autoprefixer)
