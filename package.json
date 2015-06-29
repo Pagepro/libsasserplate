@@ -1,11 +1,12 @@
 {
   "name": "libsasserplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Libsass starter",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "devDependencies": {
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
+    "grunt-cache-breaker": "^1.0.1",
     "grunt-contrib-connect": "^0.8.0",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-kraken": "^0.1.3",

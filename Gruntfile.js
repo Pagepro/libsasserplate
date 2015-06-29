@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
-    require('jit-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+        cachebreaker: 'grunt-cache-breaker'
+    });
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -40,7 +42,7 @@ module.exports = function (grunt) {
             // sass compilation
             sass: {
                 files: ['src/sass/*.scss', 'src/sass/partials/*.scss', 'src/sass/vendor/*.scss'],
-                tasks: ['sass', 'autoprefixer']
+                tasks: ['sass']
             },
             // enable LiveReload for css files
             css: {
@@ -94,9 +96,9 @@ module.exports = function (grunt) {
         },
         kraken: {
             options: {
-                key: '392a6ec2e40984badb17c88f11d20c25',
-                secret: '00167e53c8d24068e73149c941afa866cb6eb48d',
-                lossy: true
+                key: '467edac82c8bc9191c21ef240f1162cd',
+                secret: 'ac9c593eab4db75f97c99aa63a1a9c38ed15f76c',
+                lossy: false
             },
             dynamic: {
                 files: [{
@@ -121,14 +123,26 @@ module.exports = function (grunt) {
                     'static/css/main.css': 'static/css/main.css'
                 }
             }
+        },
+        cachebreaker: {
+            dev: {
+                options: {
+                    match: ['main.js', 'main.css', 'plugins.js']
+                },
+                files: {
+                    src: ['*.html']
+                }
+            }
         }
     });
     // Default task(s).
     grunt.registerTask('default', ['sass', 'connect:server', 'copy:dev', 'watch']);
-    // SASSS/Compass compilation only
+    // SASS compilation only
     grunt.registerTask('compile', ['sass']);
     // CSS Sprites
     grunt.registerTask('sprites', ['sprite']);
+    // Publishing tasks: cacheBurst, image optimalization
+    grunt.registerTask('publish', ['cachebreaker', 'kraken', 'autoprefixer']);
     // Images optimalization
     grunt.registerTask('krak', ['kraken']);
 };
