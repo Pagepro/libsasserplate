@@ -1,7 +1,8 @@
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
     require('jit-grunt')(grunt, {
-        cachebreaker: 'grunt-cache-breaker'
+        cachebreaker: 'grunt-cache-breaker',
+        htmllint: 'grunt-html'
     });
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -133,6 +134,13 @@ module.exports = function (grunt) {
                     src: ['*.html']
                 }
             }
+        },
+        htmllint: {
+            all: ["*.html"]
+        },
+        jshint: {
+            jshintrc: '.jshintrc',
+            all: ['Gruntfile.js', 'static/js/main.js']
         }
     });
     // Default task(s).
@@ -142,7 +150,7 @@ module.exports = function (grunt) {
     // CSS Sprites
     grunt.registerTask('sprites', ['sprite']);
     // Publishing tasks: cacheBurst, image optimalization
-    grunt.registerTask('publish', ['cachebreaker', 'kraken', 'autoprefixer']);
+    grunt.registerTask('publish', ['cachebreaker', 'kraken', 'autoprefixer', 'htmllint', 'jshint']);
     // Images optimalization
     grunt.registerTask('krak', ['kraken']);
 };

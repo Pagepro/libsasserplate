@@ -8,7 +8,7 @@
             this.liveReload();
         },
         liveReload: function () {
-            if (window.location.hostname === 'localhost') {
+            if (window.location.hostname === 'localhost'){
                 this.$body.append('<script src="//localhost:9000/livereload.js"></script>');
             }
         }
