@@ -14,6 +14,10 @@
     "grunt-contrib-watch": "^0.5.3",
     "grunt-sass": "latest",
     "grunt-spritesmith": "latest",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-server-livereload": "^1.4.0",
+    "gulp-sourcemaps": "^1.5.2",
     "jit-grunt": "^0.9.1",
     "jquery": "1.11.2",
     "time-grunt": "latest"
