@@ -4,23 +4,17 @@
   "description": "Libsass starter",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-autoprefixer": "latest",
-    "grunt-cache-breaker": "^1.0.1",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-kraken": "^0.1.3",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-watch": "^0.5.3",
-    "grunt-sass": "latest",
-    "grunt-spritesmith": "latest",
-    "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.3",
-    "gulp-server-livereload": "^1.4.0",
-    "gulp-sourcemaps": "^1.5.2",
     "browser-sync": "^2.7.13",
-    "jit-grunt": "^0.9.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-eslint": "^0.15.0",
+    "gulp-htmllint": "0.0.5",
+    "gulp-rev-mtime": "0.0.4",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uncache": "^0.4.0-beta1",
+    "gulp.spritesmith": "^3.8.2",
     "jquery": "1.11.2",
-    "time-grunt": "latest"
+    "phantomjssmith": "^0.6.0"
   }
 }

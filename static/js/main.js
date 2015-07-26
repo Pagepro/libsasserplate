@@ -1,4 +1,3 @@
-/*globals jQuery, window, document */
 (function ($, window, document) {
     "use strict";
     window.CHANGE_ME = window.CHANGE_ME || {

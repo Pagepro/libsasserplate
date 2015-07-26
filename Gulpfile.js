@@ -1,9 +1,20 @@
 var gulp = require('gulp');
-var server = require('gulp-server-livereload');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var browser = require('browser-sync');
 var reload = browser.reload;
+var spritesmith = require('gulp.spritesmith');
+var phantomjssmith = require('phantomjssmith');
+var rev = require('gulp-rev-mtime');
+var autoprefixer = require('gulp-autoprefixer');
+var htmllint = require('gulp-htmllint');
+var eslint = require('gulp-eslint');
+
+gulp.task('rev', function () {
+    gulp.src('*.html')
+        .pipe(rev())
+        .pipe(gulp.dest('.'));
+});
 
 gulp.task('serve', ['sass'], function() {
     browser({
@@ -41,4 +52,33 @@ gulp.task('sass', function () {
             stream: true
         }));
 });
+gulp.task('sprites', function () {
+    var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
+        imgName: 'static/img/sprite.png',
+        cssName: 'src/sass/sprites.scss',
+        imgPath: '../static/img/sprite.png',
+        engine: phantomjssmith
+    }));
+    return spriteData.pipe(gulp.dest('.'));
+});
+gulp.task('autoprefixer', function () {
+    return gulp.src('static/css/*.css')
+        .pipe(autoprefixer({
+            browsers: ['> 1%'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('static/css/'));
+});
+gulp.task('htmllint', function() {
+    return gulp.src('index.html')
+        .pipe(htmllint());
+});
+gulp.task('lint', function () {
+    return gulp.src(['static/js/main.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
+});
 gulp.task('default', ['sass', 'copy', 'watch', 'serve']);
+gulp.task('compile', ['sass']);
+gulp.task('publish', ['rev', 'autoprefixer', 'htmllint', 'lint']);
