@@ -4,12 +4,9 @@
         $body: null,
         init: function () {
             this.$body = $('body');
-            this.liveReload();
         },
-        liveReload: function () {
-            if (window.location.hostname === 'localhost') {
-                this.$body.append('<script src="//localhost:9000/livereload.js"></script>');
-            }
+        breakpoint: function () {
+            return window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
         }
     };
     $(document).on('ready', function () {

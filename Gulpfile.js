@@ -27,7 +27,7 @@ gulp.task('serve', ['sass'], function() {
     });
 });
 gulp.task('watch', function() {
-    gulp.watch("src/sass/*.scss", ['sass']);
+    gulp.watch("src/sass/**", ['sass']);
     gulp.watch("src/img/**", ['copy']);
     gulp.watch("src/js/**", ['copy']);
     gulp.watch(['*.html', 'src/**/*.js'], reload);
