@@ -3,12 +3,11 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var browser = require('browser-sync');
 var reload = browser.reload;
-var spritesmith = require('gulp.spritesmith');
-var phantomjssmith = require('phantomjssmith');
-var rev = require('gulp-rev-mtime');
+var rev = require('gulp-rev');
 var autoprefixer = require('gulp-autoprefixer');
 var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
+var plumber = require('gulp-plumber');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
