@@ -4,15 +4,21 @@
 
 /* Layout oriented helpers
    ========================================================================== */
-.inner {
-    position: relative;
-    width: $size_inner;
-    margin: 0 auto;
+%helper--sec {
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    @extend %helper--flex--center--top;
 }
 
-/* Clearfixes
-   ========================================================================== */ 
-.clear {
+%helper--inner {
+    width: $size_inner;
+}
+
+/* Content helpers
+   ========================================================================== */
+%helper--clear {
     overflow: hidden;
     content: "."; 
     display: block;
@@ -22,24 +28,199 @@
     visibility: hidden; 
     line-height: 0; 
 }
-.clear:after { 
+%helper--clear:after { 
     content: ".";
     display: block;
     clear: both;
     margin: 0!important;
 }
-.clearfix:before,
-.clearfix:after {
+%helper--clearfix:before,
+%helper--clearfix:after {
     content: "\0020";
     display: block;
     height: 0; 
     visibility: hidden;
 }
-.clearfix:after {
+%helper--clearfix:after {
     clear: both;
 }
+%helper--reset--btn {
+    border: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+%helper--indent {
+    display: block;
 
-/* Buttons
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    text-indent: -99998em;
+}
+%helper--absolute--center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+%helper--after {
+    display: block;
+
+    content: '';
+}
+%helper--after--absolute {
+    position: absolute;
+
+    @extend %helper--after;
+}
+%helper--after--absolute--center {
+    @extend %helper--after;
+    @extend %helper--absolute--center;
+}
+%helper--link--hover {
+    text-decoration: none;
+}
+%helper--hover--rgba {
+    position: relative;
+    &:after {
+        transition: 170ms;
+
+        background: rgba(0,0,0,0);
+
+        @extend %helper--after--absolute--center;
+    }
+    &:hover {
+        &:after {
+            background: rgba(0,0,0,.4);
+        }
+    }
+}
+%helper--flex {
+    display: flex;
+}
+%helper--fl--v-top {
+    align-items: flex-start;
+    align-content: flex-start;
+}
+%helper--fl--v-center {
+    align-items: center;
+    align-content: center;
+}
+%helper--fl--v-bottom {
+    align-items: flex-end;
+    align-content: flex-end;
+}
+%helper--fl--v-space-between {
+    align-items: flex-start;
+    align-content: space-between;
+}
+%helper--fl--h-left {
+    justify-content: flex-start;
+}
+%helper--fl--h-center {
+    justify-content: center;
+}
+%helper--fl--h-right {
+    justify-content: flex-end;
+}
+%helper--fl--h-space-between {
+    justify-content: space-between;
+}
+%helper--flex--center--top {
+    @extend %helper--flex;
+    @extend %helper--fl--h-center;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--center--center {
+    @extend %helper--flex;
+    @extend %helper--fl--h-center;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--center--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--h-center;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--center--space-between {
+    @extend %helper--flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-between;
+    @extend %helper--fl--h-center;
+}
+%helper--flex--space-between--top {
+    @extend %helper--flex;
+    @extend %helper--fl--h-space-between;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--space-between--center {
+    @extend %helper--flex;
+    @extend %helper--fl--h-space-between;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--space-between--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--h-space-between;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--left--top {
+    @extend %helper--flex;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--left--center {
+    @extend %helper--flex;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--left--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--right--top {
+    @extend %helper--flex;
+    @extend %helper--fl--h-right;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--right--center {
+    @extend %helper--flex;
+    @extend %helper--fl--h-right;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--right--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--h-right;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--stretch {
+    @extend %helper--flex;
+    align-content: stretch;
+    align-items: stretch;
+}
+%helper--flex--vertical-space-between {
+    @extend %helper--flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-between;
+}
+%helper--list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+%helper--list--flex {
+    display: flex;
+
+    @extend %helper--list;
+}
+
+
+/* Apparence helpers
    ========================================================================== */
-
 

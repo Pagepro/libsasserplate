@@ -1,9 +1,11 @@
 /* ==========================================================================
    Layouts
    ========================================================================== */
-.sec {
-    display: block;
-}
-.sec--head {
-    @extend .sec;
+.sec--head,
+.sec--main,
+.sec--foot {
+    @extend %helper--sec;
+    &__inner {
+        @extend %helper--inner;
+    }
 }
