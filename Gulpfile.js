@@ -14,7 +14,6 @@ gulp.task('rev', function () {
         .pipe(rev())
         .pipe(gulp.dest('.'));
 });
-
 gulp.task('serve', ['sass'], function() {
     browser({
         port: process.env.PORT || 4500,

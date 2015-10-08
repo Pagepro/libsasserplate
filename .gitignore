@@ -1,5 +1,6 @@
 .sass-cache/
 node_modules/
+bower_components/
 dist/
 validation-report.json
 validation-status.json

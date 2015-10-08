@@ -4,13 +4,14 @@
 
 /* Base
    ========================================================================== */
+html {
+    @include font-smoothing(on);
+}
 body {
     font-family: $font_normal;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.4;
     color: $color_default;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Global Typography
@@ -19,8 +20,11 @@ body {
 a {
     text-decoration: none;
     color: $color_default;
-    
+
     &:hover {
         text-decoration: underline;
+    }
+    &:focus {
+        outline: none;
     }
 }

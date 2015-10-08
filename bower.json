@@ -14,6 +14,7 @@
     "tests"
   ],
   "devDependencies": {
-    "breakpoint-sass": "~2.5.0"
+    "breakpoint-sass": "~2.5.0",
+    "normalize-css": "normalize.css#~3.0.3"
   }
 }

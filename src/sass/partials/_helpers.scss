@@ -11,18 +11,18 @@
 }
 
 /* Clearfixes
-   ========================================================================== */ 
+   ========================================================================== */
 .clear {
-    overflow: hidden;
-    content: "."; 
+    content: ".";
     display: block;
     height: 0;
     margin: 0!important;
-    clear:both; 
-    visibility: hidden; 
-    line-height: 0; 
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+    line-height: 0;
 }
-.clear:after { 
+.clear:after {
     content: ".";
     display: block;
     clear: both;
@@ -32,14 +32,9 @@
 .clearfix:after {
     content: "\0020";
     display: block;
-    height: 0; 
+    height: 0;
     visibility: hidden;
 }
 .clearfix:after {
     clear: both;
 }
-
-/* Buttons
-   ========================================================================== */
-
-
