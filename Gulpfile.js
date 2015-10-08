@@ -42,6 +42,7 @@ gulp.task('copy', function() {
 });
 gulp.task('sass', function () {
     gulp.src('./src/sass/**/*.scss')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write())

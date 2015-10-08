@@ -5,7 +5,13 @@
 /* Normalize
    ========================================================================== */
 @import "bower_components/normalize-css/normalize";
+
+/* Sprites
+   ========================================================================== */
 @import "sprites";
+
+/* Breakpoint
+   ========================================================================== */
 // @import "bower_components/breakpoint-sass/stylesheets/breakpoint";
 
 /* Variables (colors, sizes, fonts)
@@ -23,6 +29,10 @@
 /* Helpers (common used classes: buttons, clearfix...)
    ========================================================================== */
 @import "partials/helpers";
+
+/* Fonts
+   ========================================================================== */
+@import "partials/fonts";
 
 /* Typograpy
    ========================================================================== */

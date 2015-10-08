@@ -4,7 +4,7 @@
 
 /* Layout oriented helpers
    ========================================================================== */
-.inner {
+%helper--inner {
     position: relative;
     width: $size_inner;
     margin: 0 auto;
@@ -12,7 +12,7 @@
 
 /* Clearfixes
    ========================================================================== */
-.clear {
+%helper--clear {
     content: ".";
     display: block;
     height: 0;
@@ -22,19 +22,21 @@
     clear: both;
     line-height: 0;
 }
-.clear:after {
+%helper--clear:after {
     content: ".";
     display: block;
     clear: both;
     margin: 0!important;
 }
-.clearfix:before,
-.clearfix:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-.clearfix:after {
-    clear: both;
+%helper--clearfix {
+    &:before,
+    &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+    &:after {
+        clear: both;
+    }
 }
