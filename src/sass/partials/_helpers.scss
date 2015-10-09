@@ -40,3 +40,43 @@
         clear: both;
     }
 }
+%helper--reset--btn {
+    border: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+%helper--indent {
+    display: block;
+
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    text-indent: -99998em;
+}
+%helper--absolute--center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+%helper--after {
+    display: block;
+
+    content: '';
+}
+%helper--after--absolute {
+    position: absolute;
+
+    @extend %helper--after;
+}
+%helper--after--absolute--center {
+    @extend %helper--after;
+    @extend %helper--absolute--center;
+}
