@@ -80,3 +80,9 @@
     @extend %helper--after;
     @extend %helper--absolute--center;
 }
+%helper--list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
