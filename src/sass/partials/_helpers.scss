@@ -9,6 +9,11 @@
     width: $size_inner;
     margin: 0 auto;
 }
+// %helper--inner {
+//     @include breakpoint($breakpoint_tablet) {
+//         width: 100%;
+//     }
+// }
 
 /* Clearfixes
    ========================================================================== */
