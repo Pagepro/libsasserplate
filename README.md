@@ -1,6 +1,16 @@
 # LibSasserPlate
 
-**LibSass** (http://libsass.org) starter for projects by Pagepro.
+**LibSass** starter for front-end projects by Pagepro.
+
+## Built with:
+
+1. [LibSass](http://libsass.org)
+2. [Gulp](https://github.com/wearefractal/gulp)
+3. [BrowserSync](http://www.browsersync.io/)
+4. [Autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer)
+5. [Plumber](https://github.com/floatdrop/gulp-plumber)
+6. [normalize.css](https://necolas.github.io/normalize.css/)
+7. [Breakpoint](http://breakpoint-sass.com/)
 
 ## Requirements
 1. node & npm
