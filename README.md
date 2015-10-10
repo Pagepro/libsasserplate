@@ -70,7 +70,7 @@ This task is used runing just before publishing project to Q&A or client.
 **What it does?**
 
 1. Adds random parameters at CSS&JS declarations to reset clients browser cache.
-2. Adds browser specific prefixes using **autoprefixer** (https://github.com/postcss/autoprefixer)
+2. Adds browser specific prefixes using [autoprefixer](https://github.com/postcss/autoprefixer).
 3. Lints html using [htmllint](https://github.com/htmllint/htmllint/).
 4. Lints JS using [ESlint](https://github.com/adametry/gulp-eslint).
 5. Optimize PNG, JPEG, GIF, SVG images using [gulp-image](https://github.com/1000ch/gulp-image).
