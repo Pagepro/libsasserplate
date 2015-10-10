@@ -38,7 +38,7 @@ bower install
 
 This task is used for development.
 
-What it does?
+**What it does?**
 
 1. Compiles SASS (src/sass) files into CSS (static/css).
 2. Copies source files (js, images, fonts) to static catalog.
@@ -52,7 +52,7 @@ gulp
 
 This task is used only for SCSS -> CSS compilation.
 
-What it does?
+**What it does?**
 
 1. Compiles SASS (src/sass) files into CSS (static/css).
 
@@ -64,12 +64,13 @@ gulp compile
 
 This task is used runing just before publishing project to Q&A or client.
 
-What it does?
+**What it does?**
 
 1. Adds random parameters at CSS&JS declarations to reset clients browser cache.
 2. Adds browser specific prefixes using **autoprefixer** (https://github.com/postcss/autoprefixer)
-3. Lints html.
+3. Lints html using [htmllint](https://github.com/htmllint/htmllint/).
 4. Lints JS using [ESlint](https://github.com/adametry/gulp-eslint).
+5. Optimize PNG, JPEG, GIF, SVG images using [gulp-image](https://github.com/1000ch/gulp-image).
 
 ```shell
 gulp publish
