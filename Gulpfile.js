@@ -8,11 +8,17 @@ var autoprefixer = require('gulp-autoprefixer');
 var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
+var image = require('gulp-image');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
         .pipe(rev())
         .pipe(gulp.dest('.'));
+});
+gulp.task('image', function () {
+  gulp.src('./src/img/**')
+    .pipe(image())
+    .pipe(gulp.dest('./static/img'));
 });
 gulp.task('serve', ['sass'], function() {
     browser({
@@ -80,4 +86,4 @@ gulp.task('lint', function () {
 });
 gulp.task('default', ['sass', 'copy', 'watch', 'serve']);
 gulp.task('compile', ['sass']);
-gulp.task('publish', ['rev', 'autoprefixer', 'htmllint', 'lint']);
+gulp.task('publish', ['rev', 'autoprefixer', 'image', 'htmllint', 'lint']);
