@@ -11,6 +11,9 @@
 5. [Plumber](https://github.com/floatdrop/gulp-plumber)
 6. [normalize.css](https://necolas.github.io/normalize.css/)
 7. [Breakpoint](http://breakpoint-sass.com/)
+8. [gulp-image](https://github.com/1000ch/gulp-image)
+9. [ESlint](https://github.com/adametry/gulp-eslint)
+10. [htmllint](https://github.com/htmllint/htmllint/)
 
 ## Requirements
 1. [node](https://nodejs.org/en/) & [npm](https://docs.npmjs.com/cli/install).
