@@ -61,7 +61,7 @@ gulp.task('sprites', function () {
     var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
         imgName: 'static/img/sprite.png',
         cssName: 'src/sass/sprites.scss',
-        imgPath: '../static/img/sprite.png',
+        imgPath: '../img/sprite.png',
         engine: phantomjssmith
     }));
     return spriteData.pipe(gulp.dest('.'));

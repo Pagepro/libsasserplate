@@ -17,7 +17,7 @@
     "gulp-image": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rev": "latest",
-    "gulp-sass": "^2.0.3",
+    "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uncache": "^0.4.0-beta1",
     "gulp.spritesmith": "^3.8.2",
