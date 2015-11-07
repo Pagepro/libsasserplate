@@ -9,6 +9,8 @@ var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 var image = require('gulp-image');
+var spritesmith = require('gulp.spritesmith');
+var phantomjssmith = require('phantomjssmith');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
