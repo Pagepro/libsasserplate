@@ -20,6 +20,7 @@
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp.spritesmith": "^4.2.4",
-    "jquery": "1.11.3"
+    "jquery": "1.11.3",
+    "phantomjssmith": "^0.7.3"
   }
 }

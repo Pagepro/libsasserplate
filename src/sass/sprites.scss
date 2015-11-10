@@ -20,13 +20,13 @@ $pagepro-width: 220px;
 $pagepro-height: 220px;
 $pagepro-total-width: 220px;
 $pagepro-total-height: 220px;
-$pagepro-image: '../static/sprite.png';
-$pagepro: (0px, 0px, 0px, 0px, 220px, 220px, 220px, 220px, '../static/sprite.png', 'pagepro', );
+$pagepro-image: '../img/sprite.png';
+$pagepro: (0px, 0px, 0px, 0px, 220px, 220px, 220px, 220px, '../img/sprite.png', 'pagepro', );
 $spritesheet-width: 220px;
 $spritesheet-height: 220px;
-$spritesheet-image: '../static/sprite.png';
+$spritesheet-image: '../img/sprite.png';
 $spritesheet-sprites: ($pagepro, );
-$spritesheet: (220px, 220px, '../static/sprite.png', $spritesheet-sprites, );
+$spritesheet: (220px, 220px, '../img/sprite.png', $spritesheet-sprites, );
 
 /*
 The provided mixins are intended to be used with the array-like variables
