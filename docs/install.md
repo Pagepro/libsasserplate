@@ -1,7 +1,5 @@
 # Install
 
--
-
 Three simple steps to start:
 
 1. Get a copy of LibSasserPlate.
