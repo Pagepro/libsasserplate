@@ -4,7 +4,7 @@
 
 /* Normalize
    ========================================================================== */
-@import "bower_components/normalize-css/normalize";
+@import "node_modules/normalize.css/normalize";
 
 /* Sprites
    ========================================================================== */
@@ -12,7 +12,7 @@
 
 /* Breakpoint
    ========================================================================== */
-// @import "bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 /* Variables (colors, sizes, fonts)
    ========================================================================== */

@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "breakpoint-sass": "^2.6.1",
     "browser-sync": "^2.9.12",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -21,6 +22,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp.spritesmith": "^4.2.4",
     "jquery": "1.11.3",
+    "normalize.css": "^3.0.3",
     "phantomjssmith": "^0.7.3"
   }
 }
