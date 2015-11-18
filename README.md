@@ -29,7 +29,7 @@ npm install
 ```
 
 Be sure to look over the [installation docs](docs/install.md) to verify your environment is prepared to run LibSasserPlate.
-Once you have verified that your system can run LibSasserPlate, check out the [extra features](docs/commands.md) available.
+Once you have verified that your system can run LibSasserPlate, check out the [extra features](docs/extras.md) available.
 
 ## Directory structure explanation
 
