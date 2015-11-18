@@ -1,6 +1,6 @@
 # Extras
 
-[LibSasserPlate](https://github.com/Pagepro/libsasserplate/releases/latest) can support additional features. Check how to activate them.
+[LibSasserPlate](https://github.com/Pagepro/libsasserplate/) can support additional features. Check how to activate them.
 
 -
 
@@ -47,6 +47,6 @@ $ npm install --save-dev phantomjssmith
 5. Uncomment link to sprites file in src/scss/main.scss
 
 ```css
-// // @import "sprites";
+// @import "sprites";
 ```
 

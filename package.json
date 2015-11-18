@@ -21,9 +21,7 @@
     "gulp-rev": "^6.0.1",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp.spritesmith": "^4.2.4",
     "jquery": "1.11.3",
-    "normalize.css": "^3.0.3",
-    "phantomjssmith": "^0.7.3"
+    "normalize.css": "^3.0.3"
   }
 }

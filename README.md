@@ -21,15 +21,17 @@
 3. **gulp-cli** node package installed globally:
 `npm install -g gulp-cli`
 
-## Installation
+## [Installation](docs/install.md)
 
 ```shell
 cd package_directory
 npm install
-bower install
 ```
 
-## Directory explanation
+Be sure to look over the [installation docs](docs/install.md) to verify your environment is prepared to run LibSasserPlate.
+Once you have verified that your system can run LibSasserPlate, check out the [extra features](docs/commands.md) available.
+
+## Directory structure explanation
 
 * **/** - root directory with html files and configuration files (eslint, editorconfig)
 * **src** - directory with source files
