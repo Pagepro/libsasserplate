@@ -18,6 +18,10 @@
    ========================================================================== */
 @import "partials/variables";
 
+/* Flex Helpers
+   ========================================================================== */
+// @import "node_modules/flex-helpers/flex-helpers";
+
 /* Mixins
    ========================================================================== */
 @import "partials/mixins";
@@ -28,7 +32,6 @@
 
 /* Helpers (common used classes: buttons, clearfix...)
    ========================================================================== */
-// @import "bower_components/domi-flex-helpers/flex-helpers";
 @import "partials/helpers";
 
 /* Fonts
