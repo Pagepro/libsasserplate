@@ -10,7 +10,6 @@ var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 var image = require('gulp-image');
 var spritesmith = require('gulp.spritesmith');
-var phantomjssmith = require('phantomjssmith');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
@@ -63,8 +62,7 @@ gulp.task('sprites', function () {
     var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
         imgName: 'static/img/sprite.png',
         cssName: 'src/sass/sprites.scss',
-        imgPath: '../img/sprite.png',
-        engine: phantomjssmith
+        imgPath: '../img/sprite.png'
     }));
     return spriteData.pipe(gulp.dest('.'));
 });
