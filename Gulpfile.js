@@ -9,7 +9,6 @@ var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 var image = require('gulp-image');
-var spritesmith = require('gulp.spritesmith');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
@@ -57,14 +56,6 @@ gulp.task('sass', function () {
         .pipe(reload({
             stream: true
         }));
-});
-gulp.task('sprites', function () {
-    var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
-        imgName: 'static/img/sprite.png',
-        cssName: 'src/sass/sprites.scss',
-        imgPath: '../img/sprite.png'
-    }));
-    return spriteData.pipe(gulp.dest('.'));
 });
 gulp.task('autoprefixer', function () {
     return gulp.src('static/css/*.css')

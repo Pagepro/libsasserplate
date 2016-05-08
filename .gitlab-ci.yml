@@ -1,0 +1,8 @@
+deploy:
+  script:
+    - REPO_NAME=$(basename $CI_PROJECT_DIR)
+    - DEPLOY_DIR=$GITLAB_DEPLOY_DIR/$REPO_NAME
+    - "[ -d $DEPLOY_DIR ] && rm -rf $DEPLOY_DIR"
+    - ln -s $CI_PROJECT_DIR $DEPLOY_DIR
+  only:
+    - master
