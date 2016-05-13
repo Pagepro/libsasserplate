@@ -1,6 +1,6 @@
 {
   "name": "LibSASSerPlate",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "LibSass starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
@@ -9,10 +9,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "breakpoint-sass": "^2.7.0",
     "browser-sync": "^2.12.5",
     "flex-helpers": "^1.0.0",
-    "gridle": "^2.0.46",
+    // "gridle": "^2.0.46",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-eslint": "^2.0.0",

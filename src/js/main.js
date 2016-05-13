@@ -4,9 +4,6 @@
         $body: null,
         init: function () {
             this.$body = $('body');
-        },
-        breakpoint: function () {
-            return window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
         }
     };
     $(document).on('ready', function () {

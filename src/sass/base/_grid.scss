@@ -1,10 +1,21 @@
+/* ==========================================================================
+   Grid System
+   ========================================================================== */
+
+
+/* Griddle Import
+========================================================================== */
 @import "node_modules/gridle/sass/gridle/gridle-flex";
 
+/* Griddle Setup
+========================================================================== */
 @include gridle_setup( (
     context : 12,
     gutter-width : $size_gutter,
 ));
 
+/* Breakpoints
+========================================================================== */
 @include gridle_register_state ( tablet , (
     min-width : 768px,
     max-width : 1060px
@@ -22,6 +33,9 @@
     max-width : 767px
 ));
 
+
+/* Custom Classes
+========================================================================== */
 @include gridle_generate_classes ( );
 
 @include gridle_generate_custom_class( ('txt','-','align','-','center','@','%state') ) {
@@ -29,7 +43,8 @@
     content : "#{gridle_get_current_state_name()}";
 }
 
-
+/* Layout Setup
+========================================================================== */
 .inner {
     max-width: $size_inner;
     margin: 0 auto;
