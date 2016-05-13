@@ -1,0 +1,49 @@
+@import "node_modules/gridle/sass/gridle/gridle-flex";
+
+@include gridle_setup( (
+    context : 12,
+    gutter-width : $size_gutter,
+));
+
+@include gridle_register_state ( tablet , (
+    min-width : 768px,
+    max-width : 1060px
+));
+
+@include gridle_register_state ( tablet-landscape, (
+    query : "screen and (max-width: 1060px) and (min-width: 768px) and (orientation : landscape)"
+));
+
+@include gridle_register_state ( tablet-portrait, (
+    query : "screen and (max-width: 920px) and (min-width: 641px) and (orientation : portrait)"
+));
+
+@include gridle_register_state ( mobile , (
+    max-width : 767px
+));
+
+@include gridle_generate_classes ( );
+
+@include gridle_generate_custom_class( ('txt','-','align','-','center','@','%state') ) {
+    text-align: center;
+    content : "#{gridle_get_current_state_name()}";
+}
+
+
+.inner {
+    max-width: $size_inner;
+    margin: 0 auto;
+
+    @include gridle_state(tablet) {
+        margin: 0 $size_gutter*0.5;
+    }
+    @include gridle_state(mobile) {
+        margin: 0 $size_gutter*0.5;
+    }
+}
+
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

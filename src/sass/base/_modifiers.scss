@@ -1,0 +1,20 @@
+.-bg-1 {
+
+}
+
+.-paint-1 {
+
+}
+
+
+.-text-n {
+    font-size: 18px;
+
+    @include gridle_state (mobile) {
+        font-size: 16px;
+    }
+}
+
+.-weight-n {
+    font-weight: 400;
+}

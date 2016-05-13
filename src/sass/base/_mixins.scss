@@ -16,3 +16,18 @@
         -moz-osx-font-smoothing: auto;
     }
 }
+@mixin clearfix {
+    &:after {
+        overflow: hidden;
+        content: ".";
+        display: block;
+        height: 0;
+        margin: 0!important;
+        clear:both;
+        visibility: hidden;
+        line-height: 0;
+    }
+}
+@mixin transition($property: all) {
+    transition: $property .1s ease-in-out;
+}

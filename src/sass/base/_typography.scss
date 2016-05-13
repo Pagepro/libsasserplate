@@ -1,0 +1,23 @@
+html {
+    @include font-smoothing(on);
+    font-size: 16px;
+}
+body {
+    font-family: $font_default;
+    line-height: 1.4;
+    color: $color_default;
+}
+figure {
+   margin: 0;
+}
+a {
+    text-decoration: none;
+    color: $color_default;
+
+    &:hover {
+        text-decoration: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}

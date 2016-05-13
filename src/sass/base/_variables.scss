@@ -1,15 +1,13 @@
-/* ==========================================================================
-   Variables: colors, sizes, fonts
-   ========================================================================== */
-
 /* Colors
 ========================================================================== */
-$color_default:     #404040;
-$color_green:       #008000;
+$color_default:     #464646;
+$color_black:       #000000;
+$color_white:       #ffffff;
 
 /* Sizes
 ========================================================================== */
-$size_inner:        1200px;
+$size_inner:        1240px;
+$size_gutter:       20px;
 
 /* Breakpoints
 ========================================================================== */
@@ -20,5 +18,5 @@ $breakpoint_smartphone-mini:    max-width 375px;
 
 /* Fonts
 ========================================================================== */
-//@import url($fontURL);
-$font_normal:       'Roboto', Arial, sans-serif;
+$font_default: Arial, sans-serif;
+$font_ico: 'fontello', Arial, sans-serif;

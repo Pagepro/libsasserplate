@@ -6,58 +6,43 @@
    ========================================================================== */
 @import "node_modules/normalize.css/normalize";
 
-/* Breakpoint
-   ========================================================================== */
-@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
-
-/* Variables (colors, sizes, fonts)
-   ========================================================================== */
-@import "partials/variables";
-
 /* Flex Helpers
    ========================================================================== */
 // @import "node_modules/flex-helpers/flex-helpers";
 
-/* Mixins
+/* Base
    ========================================================================== */
-@import "partials/mixins";
+@import "base/variables";
+@import "base/mixins";
+@import "base/grid";
+@import "base/typography";
+@import "base/icons";
+@import "base/animations";
+@import "base/extends";
 
-/* Extends
+/* Layouts and main layout elements
    ========================================================================== */
-@import "partials/extends";
+@import "layout/header";
+@import "layout/footer";
+// @import "layouts/category-page";
 
-/* Helpers (common used classes: buttons, clearfix...)
-   ========================================================================== */
-@import "partials/helpers";
 
-/* Fonts
+/* Components
    ========================================================================== */
-@import "partials/fonts";
+@import "components/boxes";
+@import "components/logos";
+@import "components/buttons";
+@import "components/forms";
+@import "components/controls";
+@import "components/navigations";
+@import "components/lists";
+@import "components/links";
 
-/* Typograpy
+/* Modifiers
    ========================================================================== */
-@import "partials/typography";
+@import "base/modifiers";
 
-/* Forms
-   ========================================================================== */
-@import "partials/forms";
-
-/* Layout Definition (base)
-   ========================================================================== */
-@import "partials/layouts";
-
-/* Layout Components
-   ========================================================================== */
-@import "partials/components";
 
 /* Vendor CSS
    ========================================================================== */
-@import "partials/vendor";
-
-/* Media Queries
-   ========================================================================== */
-@import "partials/media-queries";
-
-/* Print Styles
-   ========================================================================== */
-@import "partials/print";
+// @import "vendor/";
