@@ -1,0 +1,10 @@
+// ex. .l-with-decor etc
+
+* {
+    box-sizing: border-box;
+}
+
+
+.l-inner {
+    @extend %helper--inner;
+}

@@ -16,9 +16,12 @@
 
 /* Breakpoints
 ========================================================================== */
+@include gridle_register_state ( desktop-small , (
+    max-width : $size_inner + $size_gutter*2
+));
+
 @include gridle_register_state ( tablet , (
-    min-width : 768px,
-    max-width : 1060px
+    max-width : 1024px
 ));
 
 @include gridle_register_state ( tablet-landscape, (
@@ -32,6 +35,7 @@
 @include gridle_register_state ( mobile , (
     max-width : 767px
 ));
+
 
 
 /* Custom Classes

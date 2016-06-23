@@ -4,23 +4,26 @@
 
 /* Colors
 ========================================================================== */
-$color_default:     #464646;
-$color_black:       #000000;
-$color_white:       #ffffff;
+$color_default:	#464646;
+$color_black:  	#000;
+$color_white:  	#fff;
+
+$color_1:     	$color_black;
+$color_2:     	$color_white;
+$color_3:     	#2a2a8e;      // dark ultramarine
+$color_4:     	#354b73;      // dark grey-blue
+
+$colors:
+    $color_1,
+    $color_2,
+    $color_3,
+    $color_4;
 
 
 /* Sizes
 ========================================================================== */
-$size_inner:        1240px;
-$size_gutter:       20px;
-
-
-/* Breakpoints
-========================================================================== */
-$breakpoint_tablet:             max-width 1225px;
-$breakpoint_tablet-mini:        max-width 950px;
-$breakpoint_smartphone:         max-width 767px;
-$breakpoint_smartphone-mini:    max-width 375px;
+$size_inner:        				1240px;
+$size_gutter:       				20px;
 
 
 /* Fonts

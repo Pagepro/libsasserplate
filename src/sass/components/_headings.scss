@@ -1,0 +1,12 @@
+.heading-1 {
+    @extend .-text-xxl;
+    @extend .-line-h-n;
+    @extend .-text-upper;
+    @extend .-weight-bl;
+}
+
+.heading-2 {
+    @extend .-text-xl;
+    @extend .-line-h-n;
+    @extend .-weight-sb;
+}

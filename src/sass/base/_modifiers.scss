@@ -2,31 +2,148 @@
    Modifiers
    ========================================================================== */
 
-
 /* Backgrounds
 ========================================================================== */
-.-bg-1 {
-
+@for $i from 1 through length($colors) {
+    .-bg-#{$i} {
+        background-color: nth($colors, $i);
+    }
 }
 
 /* Paints (colors)
 ========================================================================== */
-.-paint-1 {
-
+@for $i from 1 through length($colors) {
+    .-paint-#{$i} {
+        color: nth($colors, $i);
+    }
 }
 
 /* Text sizes
 ========================================================================== */
-.-text-n {
-    font-size: 18px;
-
-    // @include gridle_state (mobile) {
-    //     font-size: 16px;
-    // } requires: http://gridle.org/
+.-text-xxl {
+    font-size: 70px;
+    line-height: 1;
 }
+.-text-xxl {
+    @include gridle_state (tablet) {
+        font-size: 50px;
+    }
+    @include gridle_state (mobile) {
+        font-size: 40px;
+    }
+}
+.-text-xl {
+    font-size: 30px;
+}
+.-text-l {
+    //
+}
+.-text-m {
+    //
+}
+.-text-s {
+    //
+}
+.-text-xs {
+    //
+}
+
+
+/* Text line-heights
+========================================================================== */
+.-line-h-n {
+    line-height: 1; // neutral
+}
+
+
+// .-line-h-minus-xs {
+//     line-height: 0.5;
+// }
+// .-line-h-minus-s {
+//     line-height: 0.9;
+// }
+
+// .-line-h-xs {
+//     line-height: 1.1;
+// }
+// .-line-h-s {
+//     line-height: 1.5;
+// }
+// .-line-h-m {
+//     line-height: 2;
+// }
+
+
+
+/* Text direction
+========================================================================== */
+.-text-centered {
+    text-align: center;
+}
+
+.-text-left {
+    text-align: left;
+}
+
+.-text-right {
+    text-align: right;
+}
+
+
+/* Text transform
+========================================================================== */
+.-text-upper {
+    text-transform: uppercase;
+}
+
+
+/* Letter-spacing
+========================================================================== */
+.-spacing-normal {
+    letter-spacing: normal;
+}
+.-spacing-wide {
+    letter-spacing: .2em;
+}
+.-spacing-tight {
+    letter-spacing: -.2em;
+}
+
 
 /* Font Weights
 ========================================================================== */
-.-weight-n {
-    font-weight: 400;
+.-weight-bl {
+    font-weight: 900; // black
 }
+.-weight-xb {
+    font-weight: 800; //extra bold
+}
+.-weight-b {
+    font-weight: 700; // bold
+}
+.-weight-sb {
+    font-weight: 600; // semi bold
+}
+.-weight-m {
+    font-weight: 500; // medium
+}
+.-weight-n {
+    font-weight: 400; // normal
+}
+.-weight-l {
+    font-weight: 300; // light
+}
+.-weight-t {
+    font-weight: 100; // thin
+}
+
+
+
+/* Font Families
+========================================================================== */
+// .-font-sans {
+//     font-family: $font_sans;
+// }
+// .-font-serif {
+//     font-family: $font_serif;
+// }

@@ -14,21 +14,25 @@
    ========================================================================== */
 @import "base/variables";
 @import "base/mixins";
-// @import "base/grid"; http://gridle.org/
+@import "base/grid"; // http://gridle.org/
 @import "base/typography";
+@import "base/helpers";
 @import "base/icons";
 @import "base/animations";
 @import "base/extends";
 
 /* Layouts and main layout elements
    ========================================================================== */
+@import "layout/common";
 @import "layout/header";
+@import "layout/main";
 @import "layout/footer";
 // @import "layouts/category-page";
 
 
 /* Components
    ========================================================================== */
+@import "components/headings";
 @import "components/boxes";
 @import "components/logos";
 @import "components/buttons";
