@@ -9,6 +9,7 @@ var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 var image = require('gulp-image');
+var combineMq = require('gulp-combine-mq');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
@@ -34,6 +35,7 @@ gulp.task('watch', function() {
     gulp.watch("src/sass/**", ['sass']);
     gulp.watch("src/img/**", ['copy']);
     gulp.watch("src/js/**", ['copy']);
+    gulp.watch("static/css/**", ['combineMq', 'autoprefixer']);
     gulp.watch(['*.html', 'src/**/*.js'], reload);
 });
 gulp.task('copy', function() {
@@ -74,6 +76,13 @@ gulp.task('lint', function () {
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failOnError());
+});
+gulp.task('combineMq', function () {
+    return gulp.src(['static/css/main.css'])
+    .pipe(combineMq({
+        beautify: false
+    }))
+    .pipe(gulp.dest('static/css/'));
 });
 gulp.task('default', ['sass', 'copy', 'watch', 'serve']);
 gulp.task('compile', ['sass']);
