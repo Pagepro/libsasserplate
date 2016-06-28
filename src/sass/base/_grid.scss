@@ -11,7 +11,7 @@
 ========================================================================== */
 @include gridle_setup( (
     context : 12,
-    gutter-width : $size_gutter,
+    gutter-width : $size_gutter*2,
 ));
 
 /* Breakpoints
@@ -42,26 +42,64 @@
 ========================================================================== */
 @include gridle_generate_classes ( );
 
-@include gridle_generate_custom_class( ('txt','-','align','-','center','@','%state') ) {
-    text-align: center;
-    content : "#{gridle_get_current_state_name()}";
+
+/* padding top
+=========================== */
+@for $i from $gutterTopNumber through 0 {
+    @include gridle_generate_custom_class( ('gutter','-','top','-', '#{$i}' ,'@','%state') ) {
+        padding-top: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
 }
+
+/* padding bottom
+=========================== */
+@for $i from $gutterBottomNumber through 0 {
+    @include gridle_generate_custom_class( ('gutter','-','bottom','-', '#{$i}' ,'@','%state') ) {
+        padding-bottom: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* margin top
+=========================== */
+@for $i from $spacingTopNumber through 0 {
+    @include gridle_generate_custom_class( ('spacing','-','top','-', '#{$i}' ,'@','%state') ) {
+        margin-top: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* negative margin top
+=========================== */
+@for $i from $spacingTopNumber through 0 {
+    @include gridle_generate_custom_class( ('spacing','-','top','-', 'minus','-', '#{$i}' ,'@','%state') ) {
+        margin-top: -$i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* margin bottom
+=========================== */
+@for $i from $spacingBottomNumber through 0 {
+    @include gridle_generate_custom_class( ('spacing','-','bottom','-', '#{$i}' ,'@','%state') ) {
+        margin-bottom: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* negative margin bottom
+=========================== */
+@for $i from $spacingBottomNumber through 0 {
+    @include gridle_generate_custom_class( ('spacing','-','bottom','-', 'minus','-', '#{$i}' ,'@','%state') ) {
+        margin-bottom: -$i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
 
 /* Layout Setup
 ========================================================================== */
-.inner {
-    max-width: $size_inner;
-    margin: 0 auto;
-
-    @include gridle_state(tablet) {
-        margin: 0 $size_gutter*0.5;
-    }
-    @include gridle_state(mobile) {
-        margin: 0 $size_gutter*0.5;
-    }
-}
-
-
 .row {
     margin-left: 0 !important;
     margin-right: 0 !important;

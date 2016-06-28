@@ -31,3 +31,86 @@
 @mixin transition($property: all) {
     transition: $property .1s ease-in-out;
 }
+
+/* 2. Modifiers mixins
+========================================================================== */
+/* Text XXL
+=========================== */
+@mixin helper--text-xxl () {
+    font-size: 50px;
+    line-height: 1;
+    @include gridle_state (tablet) {
+        font-size: 40px;
+    }
+    @include gridle_state (mobile) {
+        font-size: 30px;
+    }
+}
+
+/* Text XL
+=========================== */
+// @mixin helper--text-xl () {
+//     font-size: 50px;
+//     line-height: 1;
+//     @include gridle_state (tablet) {
+//         font-size: 40px;
+//     }
+//     @include gridle_state (mobile) {
+//         font-size: 30px;
+//     }
+// }
+
+/* Text L
+=========================== */
+// @mixin helper--text-l () {
+//     font-size: 50px;
+//     line-height: 1;
+//     @include gridle_state (tablet) {
+//         font-size: 40px;
+//     }
+//     @include gridle_state (mobile) {
+//         font-size: 30px;
+//     }
+// }
+
+/* Text M
+=========================== */
+// @mixin helper--text-m () {
+//     font-size: 50px;
+//     line-height: 1;
+//     @include gridle_state (tablet) {
+//         font-size: 40px;
+//     }
+//     @include gridle_state (mobile) {
+//         font-size: 30px;
+//     }
+// }
+
+/* Text S
+=========================== */
+// @mixin helper--text-s () {
+//     font-size: 50px;
+//     line-height: 1;
+//     @include gridle_state (tablet) {
+//         font-size: 50px;
+//     }
+//     @include gridle_state (mobile) {
+//         font-size: 40px;
+//     }
+// }
+
+/* Text XS
+=========================== */
+// @mixin helper--text-xs () {
+//     font-size: 50px;
+//     line-height: 1;
+//     @include gridle_state (tablet) {
+//         font-size: 50px;
+//     }
+//     @include gridle_state (mobile) {
+//         font-size: 40px;
+//     }
+// }
+
+/* 3.
+========================================================================== */

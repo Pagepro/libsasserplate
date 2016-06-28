@@ -12,12 +12,22 @@ $color_1:     	$color_black;
 $color_2:     	$color_white;
 $color_3:     	#2a2a8e;      // dark ultramarine
 $color_4:     	#354b73;      // dark grey-blue
+$color_5:     	#d78046;      // dirty orange-gold
 
 $colors:
     $color_1,
     $color_2,
     $color_3,
-    $color_4;
+    $color_4,
+    $color_5;
+
+
+/* Gridle custom classes
+========================================================================== */
+$gutterTopNumber: 					10;
+$gutterBottomNumber: 				10;
+$spacingTopNumber: 					10;
+$spacingBottomNumber: 				10;
 
 
 /* Sizes

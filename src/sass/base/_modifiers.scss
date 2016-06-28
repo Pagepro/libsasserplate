@@ -20,33 +20,60 @@
 
 /* Text sizes
 ========================================================================== */
-.-text-xxl {
-    font-size: 70px;
-    line-height: 1;
+/* Text XXL
+=========================== */
+@include gridle_generate_custom_class( ('-', 'text','-','xxl','@','%state') ) {
+    @include helper--text-xxl;
+
+    content: '#{gridle_get_current_state_name()}';
 }
-.-text-xxl {
-    @include gridle_state (tablet) {
-        font-size: 50px;
-    }
-    @include gridle_state (mobile) {
-        font-size: 40px;
-    }
-}
-.-text-xl {
-    font-size: 30px;
-}
-.-text-l {
-    //
-}
-.-text-m {
-    //
-}
-.-text-s {
-    //
-}
-.-text-xs {
-    //
-}
+
+
+/* Text XL
+=========================== */
+// @include gridle_generate_custom_class( ('-', 'text','-','xl','@','%state') ) {
+//     @include helper--text-xl;
+
+//     content: '#{gridle_get_current_state_name()}';
+// }
+
+
+/* Text L
+=========================== */
+// @include gridle_generate_custom_class( ('-', 'text','-','l','@','%state') ) {
+//     @include helper--text-l;
+
+//     content: '#{gridle_get_current_state_name()}';
+// }
+
+
+/* Text M
+=========================== */
+// @include gridle_generate_custom_class( ('-', 'text','-','m','@','%state') ) {
+//     @include helper--text-m;
+
+//     content: '#{gridle_get_current_state_name()}';
+// }
+
+
+/* Text S
+=========================== */
+// @include gridle_generate_custom_class( ('-', 'text','-','s','@','%state') ) {
+//     @include helper--text-s;
+
+//     content: '#{gridle_get_current_state_name()}';
+// }
+
+
+/* Text XS
+=========================== */
+// @include gridle_generate_custom_class( ('-', 'text','-','xs','@','%state') ) {
+//     @include helper--text-xs;
+
+//     content: '#{gridle_get_current_state_name()}';
+// }
+
+
 
 
 /* Text line-heights
@@ -77,18 +104,18 @@
 
 /* Text direction
 ========================================================================== */
-.-text-centered {
+@include gridle_generate_custom_class( ('-', 'text','-','centered','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     text-align: center;
 }
-
-.-text-left {
+@include gridle_generate_custom_class( ('-', 'text','-','left','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     text-align: left;
 }
-
-.-text-right {
+@include gridle_generate_custom_class( ('-', 'text','-','right','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     text-align: right;
 }
-
 
 /* Text transform
 ========================================================================== */
