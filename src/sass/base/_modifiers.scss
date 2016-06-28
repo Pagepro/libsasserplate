@@ -22,16 +22,16 @@
 ========================================================================== */
 /* Text XXL
 =========================== */
-@include gridle_generate_custom_class( ('-', 'text','-','xxl','@','%state') ) {
-    @include helper--text-xxl;
-
+@include gridle_generate_custom_class( ('-','text','-','xxl','@','%state') ) {
     content: '#{gridle_get_current_state_name()}';
+
+    @include helper--text-xxl;
 }
 
 
 /* Text XL
 =========================== */
-// @include gridle_generate_custom_class( ('-', 'text','-','xl','@','%state') ) {
+// @include gridle_generate_custom_class( ('-','text','-','xl','@','%state') ) {
 //     @include helper--text-xl;
 
 //     content: '#{gridle_get_current_state_name()}';
@@ -40,7 +40,7 @@
 
 /* Text L
 =========================== */
-// @include gridle_generate_custom_class( ('-', 'text','-','l','@','%state') ) {
+// @include gridle_generate_custom_class( ('-','text','-','l','@','%state') ) {
 //     @include helper--text-l;
 
 //     content: '#{gridle_get_current_state_name()}';
@@ -49,7 +49,7 @@
 
 /* Text M
 =========================== */
-// @include gridle_generate_custom_class( ('-', 'text','-','m','@','%state') ) {
+// @include gridle_generate_custom_class( ('-','text','-','m','@','%state') ) {
 //     @include helper--text-m;
 
 //     content: '#{gridle_get_current_state_name()}';
@@ -58,7 +58,7 @@
 
 /* Text S
 =========================== */
-// @include gridle_generate_custom_class( ('-', 'text','-','s','@','%state') ) {
+// @include gridle_generate_custom_class( ('-','text','-','s','@','%state') ) {
 //     @include helper--text-s;
 
 //     content: '#{gridle_get_current_state_name()}';
@@ -67,7 +67,7 @@
 
 /* Text XS
 =========================== */
-// @include gridle_generate_custom_class( ('-', 'text','-','xs','@','%state') ) {
+// @include gridle_generate_custom_class( ('-','text','-','xs','@','%state') ) {
 //     @include helper--text-xs;
 
 //     content: '#{gridle_get_current_state_name()}';
@@ -78,25 +78,30 @@
 
 /* Text line-heights
 ========================================================================== */
-.-line-h-n {
+@include gridle_generate_custom_class( ('-','line','-','h','-','n','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     line-height: 1; // neutral
 }
 
-
-// .-line-h-minus-xs {
+// @include gridle_generate_custom_class( ('-','line','-','h','-','minus','-','xs','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     line-height: 0.5;
 // }
-// .-line-h-minus-s {
+// @include gridle_generate_custom_class( ('-','line','-','h','-','minus','-','s','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     line-height: 0.9;
 // }
 
-// .-line-h-xs {
+// @include gridle_generate_custom_class( ('-','line','-','h','-','xs','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     line-height: 1.1;
 // }
-// .-line-h-s {
+// @include gridle_generate_custom_class( ('-','line','-','h','-','s','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     line-height: 1.5;
 // }
-// .-line-h-m {
+// @include gridle_generate_custom_class( ('-','line','-','h','-','m','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     line-height: 2;
 // }
 
@@ -104,73 +109,92 @@
 
 /* Text direction
 ========================================================================== */
-@include gridle_generate_custom_class( ('-', 'text','-','centered','@','%state') ) {
+@include gridle_generate_custom_class( ('-','text','-','centered','@','%state') ) {
     content: '#{gridle_get_current_state_name()}';
     text-align: center;
 }
-@include gridle_generate_custom_class( ('-', 'text','-','left','@','%state') ) {
+@include gridle_generate_custom_class( ('-','text','-','left','@','%state') ) {
     content: '#{gridle_get_current_state_name()}';
     text-align: left;
 }
-@include gridle_generate_custom_class( ('-', 'text','-','right','@','%state') ) {
+@include gridle_generate_custom_class( ('-','text','-','right','@','%state') ) {
     content: '#{gridle_get_current_state_name()}';
     text-align: right;
 }
 
 /* Text transform
 ========================================================================== */
-.-text-upper {
+@include gridle_generate_custom_class( ('-','text','-','upper','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     text-transform: uppercase;
 }
-
+@include gridle_generate_custom_class( ('-','text','-','lower','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    text-transform: lowercase;
+}
+@include gridle_generate_custom_class( ('-','text','-','initial','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    text-transform: initial;
+}
 
 /* Letter-spacing
 ========================================================================== */
-.-spacing-normal {
+@include gridle_generate_custom_class( ('-','spacing','-','normal','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     letter-spacing: normal;
 }
-.-spacing-wide {
-    letter-spacing: .2em;
-}
-.-spacing-tight {
-    letter-spacing: -.2em;
-}
-
+// @include gridle_generate_custom_class( ('-','spacing','-','wide','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
+//     letter-spacing: .2em;
+// }
+// @include gridle_generate_custom_class( ('-','spacing','-','tight','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
+//     letter-spacing: -.2em;
+// }
 
 /* Font Weights
 ========================================================================== */
-.-weight-bl {
+@include gridle_generate_custom_class( ('-','weight','-','bl','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 900; // black
 }
-.-weight-xb {
+@include gridle_generate_custom_class( ('-','weight','-','xb','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 800; //extra bold
 }
-.-weight-b {
+@include gridle_generate_custom_class( ('-','weight','-','b','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 700; // bold
 }
-.-weight-sb {
+@include gridle_generate_custom_class( ('-','weight','-','sb','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 600; // semi bold
 }
-.-weight-m {
+@include gridle_generate_custom_class( ('-','weight','-','m','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 500; // medium
 }
-.-weight-n {
+@include gridle_generate_custom_class( ('-','weight','-','n','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 400; // normal
 }
-.-weight-l {
+@include gridle_generate_custom_class( ('-','weight','-','l','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 300; // light
 }
-.-weight-t {
+@include gridle_generate_custom_class( ('-','weight','-','t','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
     font-weight: 100; // thin
 }
 
 
-
 /* Font Families
 ========================================================================== */
-// .-font-sans {
+// @include gridle_generate_custom_class( ('-','font','-','sans','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     font-family: $font_sans;
 // }
-// .-font-serif {
+// @include gridle_generate_custom_class( ('-','font','-','serif','@','%state') ) {
+//     content: '#{gridle_get_current_state_name()}';
 //     font-family: $font_serif;
 // }

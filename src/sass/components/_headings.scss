@@ -1,8 +1,8 @@
 .heading-1 {
     @include helper--text-xxl;
-    @extend .-line-h-n;
-    @extend .-text-upper;
-    @extend .-weight-bl;
+    // @extend .-line-h-n;
+    // @extend .-text-upper;  -------> poprawić
+    // @extend .-weight-bl;
 }
 
 .heading-2 {
