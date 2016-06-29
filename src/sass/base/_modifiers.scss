@@ -43,11 +43,11 @@
 
 /* Text L
 =========================== */
-// @include gridle_generate_custom_class( ('u','-','text','-','l','@','%state') ) {
-//     @include helper--text-l;
+@include gridle_generate_custom_class( ('u','-','text','-','l','@','%state') ) {
+    @include helper--text-l;
 
-//     content: '#{gridle_get_current_state_name()}';
-// }
+    content: '#{gridle_get_current_state_name()}';
+}
 
 
 /* Text M

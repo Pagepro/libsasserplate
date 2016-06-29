@@ -18,14 +18,17 @@
 }
 @mixin clearfix {
     &:after {
-        overflow: hidden;
-        content: ".";
         display: block;
+        visibility: hidden;
+        clear: both;
+        overflow: hidden;
+
         height: 0;
         margin: 0!important;
-        clear:both;
-        visibility: hidden;
+
         line-height: 0;
+
+        content: '.';
     }
 }
 @mixin transition($property: all) {
@@ -39,6 +42,7 @@
 @mixin helper--text-xxl () {
     font-size: 50px;
     line-height: 1;
+
     @include gridle_state (tablet) {
         font-size: 40px;
     }
@@ -52,6 +56,7 @@
 @mixin helper--text-xl () {
     font-size: 30px;
     line-height: 1;
+
     @include gridle_state (tablet) {
         font-size: 25px;
     }
@@ -62,16 +67,17 @@
 
 /* Text L
 =========================== */
-// @mixin helper--text-l () {
-//     font-size: 50px;
-//     line-height: 1;
-//     @include gridle_state (tablet) {
-//         font-size: 40px;
-//     }
-//     @include gridle_state (mobile) {
-//         font-size: 30px;
-//     }
-// }
+@mixin helper--text-l () {
+    font-size: 25px;
+    line-height: 1;
+
+    @include gridle_state (tablet) {
+        font-size: 20px;
+    }
+    @include gridle_state (mobile) {
+        font-size: 18px;
+    }
+}
 
 /* Text M
 =========================== */
