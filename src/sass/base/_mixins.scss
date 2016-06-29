@@ -32,7 +32,7 @@
     transition: $property .1s ease-in-out;
 }
 
-/* 2. Modifiers mixins
+/* 2. Modifiers text size mixins
 ========================================================================== */
 /* Text XXL
 =========================== */
@@ -49,16 +49,16 @@
 
 /* Text XL
 =========================== */
-// @mixin helper--text-xl () {
-//     font-size: 50px;
-//     line-height: 1;
-//     @include gridle_state (tablet) {
-//         font-size: 40px;
-//     }
-//     @include gridle_state (mobile) {
-//         font-size: 30px;
-//     }
-// }
+@mixin helper--text-xl () {
+    font-size: 30px;
+    line-height: 1;
+    @include gridle_state (tablet) {
+        font-size: 25px;
+    }
+    @include gridle_state (mobile) {
+        font-size: 20px;
+    }
+}
 
 /* Text L
 =========================== */

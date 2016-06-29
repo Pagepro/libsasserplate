@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en" class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <title>Styleguide</title>
+        <meta name="description" content="LibSasserPlate by Pagepro styleguide">
+        <meta name="robots" content="nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="static/css/main.css?v=1437929479000">
+    </head>
+    <body class="p-styleguide">
+        <main class="l-main g-spacing-top-3">
+            <div class="l-main__head">
+                <div class="l-inner">
+                    <div class="l-main__head__title">
+                        <h1 class="t-styleguide-heading-1">Styleguide</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="l-main__content g-spacing-top-2">
+                <section class="l-sec">
+                    <div class="l-inner">
+                        <div class="l-sec__head">
+                            <div class="l-sec__head__title">
+                                <h2 class="t-styleguide-heading-2">Prefixes legend:</h2>
+                            </div>
+                        </div>
+                        <div class="l-sec__content g-spacing-top-2">
+                            <ul class="c-syleguide-prefixes-list">
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="p-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for pages (ex. p-index, p-register)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="l-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for page layout components (ex. l-header, l-main, l-footer, l-inner, l-sec etc)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="c-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for all atomic components (ex. c-products-list, c-mini-cart-box, c-article-teaser etc)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="g-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for grid utilities like margins, paddings etc (ex. g-spacing-top-2, g-gutter-bottom-4)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="u-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for single utilities like: font styles (font-sizes, font-weights, text-transforms etc), backgrounds, colors, underlines etc (ex. u-text-upper, u-font-xxl, u-bg-1)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="t-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for set of utilities making part of typography, like headings having common styles (ex. t-heading-1, t-heading-2)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="f-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for form elements (ex. f-form, f-field)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="o-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for objects like iframe, img, object (ex. o-object-wrapper, o-img-wrapper)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="h-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for helpers (ex. h-show, h-hide, h-grid-flex-fix)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="js-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for elements having JavaScript interactions ($('.js-example').on('click', function () {...}))
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-syleguide-prefixes-list__item">
+                                    <div class="c-styleguide-box">
+                                        <div class="c-styleguide-box__inner">
+                                            <div class="c-styleguide-box__pre">
+                                                <pre><code>class="is-/has-"</code></pre>
+                                            </div>
+                                            <div class="c-styleguide-box__desc">
+                                                <p>
+                                                    Prefix used for component's state changed by JavaScript (ex: is-opened, is-active)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="l-sec">
+                    <div class="l-inner">
+                        <div class="l-sec__head">
+                            <div class="l-sec__head__title">
+                                <h2 class="t-styleguide-heading-2">Typography modifiers examples:</h2>
+                            </div>
+                        </div>
+                        <div class="l-sec__content row-align-center g-spacing-top-2">
+                            <ul class="c-styleguide-modifiers-boxes-list">
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Backgrounds</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-1"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-1"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-2"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg styleguide-bg--rev u-bg-2"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-3"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-3"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-4"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-4"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-5"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-5"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Colors</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-1"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-1">Look ma! I have paint-1 color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-2"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint c-styleguide-paint--rev u-paint-2">Look ma! I have paint-2 color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-3"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-3">Look ma! I have paint-3 color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-4"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-4">Look ma! I have paint-4 color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-5"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-5">Look ma! I have paint-5 color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Text sizes</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Complexe modifiers with /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Line heights</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Text alignment</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Text transform</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Letter spacing</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Font weights</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Font families</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Other typography modifiers</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="l-sec">
+                    <div class="l-inner">
+                        <div class="l-sec__head">
+                            <div class="l-sec__head__title">
+                                <h2 class="t-styleguide-heading-2">Grid modifiers examples:</h2>
+                            </div>
+                        </div>
+                        <div class="l-sec__content row-align-center g-spacing-top-2">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="l-sec">
+                    <div class="l-inner">
+                        <div class="l-sec__head">
+                            <div class="l-sec__head__title">
+                                <h2 class="t-styleguide-heading-2">WYSIWYG modifier:</h2>
+                            </div>
+                        </div>
+                        <div class="l-sec__content row-align-center g-spacing-top-2">
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="static/js/vendor/jquery.js?v=1437929479000"></script>
+        <script src="static/js/plugins.js?v=1437929479000"></script>
+        <script src="static/js/main.js?v=1437929479000"></script>
+    </body>
+</html>

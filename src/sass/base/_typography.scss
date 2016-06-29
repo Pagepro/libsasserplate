@@ -6,25 +6,42 @@
 /* Global texts
 ========================================================================== */
 html {
-    @include font-smoothing(on);
     font-size: 16px;
+
+    @include font-smoothing(on);
 }
 body {
     font-family: $font_default;
     line-height: 1.4;
+
     color: $color_default;
 }
 figure {
-   margin: 0;
+    margin: 0;
 }
 a {
     text-decoration: none;
-    color: $color_default;
 
+    color: $color_default;
     &:hover {
         text-decoration: none;
     }
     &:focus {
         outline: none;
     }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    @extend %helper--list;
 }

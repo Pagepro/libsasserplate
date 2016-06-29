@@ -1,12 +1,12 @@
-.heading-1 {
+.t-heading-1 {
     @include helper--text-xxl;
-    // @extend .-line-h-n;
-    // @extend .-text-upper;  -------> poprawić
-    // @extend .-weight-bl;
+    // @extend .u-line-h-n;
+    // @extend .u-text-upper;  -------> poprawić
+    // @extend .u-weight-bl;
 }
 
-.heading-2 {
+.t-heading-2 {
     // @include helper--text-xl;
-    // @extend .-line-h-n;
-    // @extend .-weight-sb;
+    // @extend .u-line-h-n;
+    // @extend .u-weight-sb;
 }

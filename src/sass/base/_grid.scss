@@ -46,7 +46,7 @@
 /* padding top
 =========================== */
 @for $i from $gutterTopNumber through 0 {
-    @include gridle_generate_custom_class( ('gutter','-','top','-', '#{$i}' ,'@','%state') ) {
+    @include gridle_generate_custom_class( ('g','-','gutter','-','top','-', '#{$i}' ,'@','%state') ) {
         padding-top: $i*$size_gutter;
         content : "#{gridle_get_current_state_name()}";
     }
@@ -55,7 +55,7 @@
 /* padding bottom
 =========================== */
 @for $i from $gutterBottomNumber through 0 {
-    @include gridle_generate_custom_class( ('gutter','-','bottom','-', '#{$i}' ,'@','%state') ) {
+    @include gridle_generate_custom_class( ('g','-','gutter','-','bottom','-', '#{$i}' ,'@','%state') ) {
         padding-bottom: $i*$size_gutter;
         content : "#{gridle_get_current_state_name()}";
     }
@@ -64,7 +64,7 @@
 /* margin top
 =========================== */
 @for $i from $spacingTopNumber through 0 {
-    @include gridle_generate_custom_class( ('spacing','-','top','-', '#{$i}' ,'@','%state') ) {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','top','-', '#{$i}' ,'@','%state') ) {
         margin-top: $i*$size_gutter;
         content : "#{gridle_get_current_state_name()}";
     }
@@ -73,7 +73,7 @@
 /* negative margin top
 =========================== */
 @for $i from $spacingTopNumber through 0 {
-    @include gridle_generate_custom_class( ('spacing','-','top','-', 'minus','-', '#{$i}' ,'@','%state') ) {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','top','-', 'minus','-', '#{$i}' ,'@','%state') ) {
         margin-top: -$i*$size_gutter;
         content : "#{gridle_get_current_state_name()}";
     }
@@ -82,7 +82,7 @@
 /* margin bottom
 =========================== */
 @for $i from $spacingBottomNumber through 0 {
-    @include gridle_generate_custom_class( ('spacing','-','bottom','-', '#{$i}' ,'@','%state') ) {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','bottom','-', '#{$i}' ,'@','%state') ) {
         margin-bottom: $i*$size_gutter;
         content : "#{gridle_get_current_state_name()}";
     }
@@ -91,7 +91,7 @@
 /* negative margin bottom
 =========================== */
 @for $i from $spacingBottomNumber through 0 {
-    @include gridle_generate_custom_class( ('spacing','-','bottom','-', 'minus','-', '#{$i}' ,'@','%state') ) {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','bottom','-', 'minus','-', '#{$i}' ,'@','%state') ) {
         margin-bottom: -$i*$size_gutter;
         content : "#{gridle_get_current_state_name()}";
     }
