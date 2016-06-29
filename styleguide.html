@@ -189,7 +189,59 @@
                     <div class="l-inner">
                         <div class="l-sec__head">
                             <div class="l-sec__head__title">
-                                <h2 class="t-styleguide-heading-2">Typography modifiers examples:</h2>
+                                <h2 class="t-styleguide-heading-2">Useful Info</h2>
+                            </div>
+                            <div class="l-sec__head__info">
+                                <p>
+                                    Some classes can be generated using 'gridle_generate_custom_class' method.
+                                </p>
+                                <div class="c-styleguide-box c-styleguide-box--alt">
+                                    <div class="c-styleguide-box__inner">
+                                        <div class="c-styleguide-box__pre">
+                                            <pre><code>
+@include gridle_generate_custom_class( ('u','-','text','-','centered','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    text-align: center;
+}
+                                            </code></pre>
+                                        </div>
+                                        <div class="c-styleguide-box__example">
+                                            <div class="c-styleguide-bg u-bg-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <p>
+                                    Gridle classes can be replaced one class with another with the same css properties, ex:
+                                </p>
+
+
+
+                                <p>
+                                    <!-- media queries states.
+
+                                    g-, u-, t-, h-
+                                    
+                                    @ - changing class during rwd - pobiera własciwości z innej klasy
+                                    own rwd
+
+                                    dzięki użyciu @ nadpisujemy podczas rwd (na danej szerokości określonej po @) style danej klasy
+
+                                    Jeżeli nowa klasa posiada swoje rwd to zastępując starą klasę tą nową dostajemy w spadku jej style z rwd -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="l-sec">
+                    <div class="l-inner">
+                        <div class="l-sec__head">
+                            <div class="l-sec__head__title">
+                                <h2 class="t-styleguide-heading-2">Utility classes examples:</h2>
                             </div>
                         </div>
                         <div class="l-sec__content row-align-center g-spacing-top-2">

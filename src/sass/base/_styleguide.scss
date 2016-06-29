@@ -58,6 +58,17 @@ $color_styleguide_grey_light: #e2e2e2;
 
         border-top: 1px solid $color_styleguide_grey;
     }
+    &--alt {
+        .c-styleguide-box {
+            &__pre {
+                pre {
+                    code {
+                        color: $color_1;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .c-syleguide-boxes-list {
