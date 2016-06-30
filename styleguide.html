@@ -192,47 +192,197 @@
                                 <h2 class="t-styleguide-heading-2">Useful Info</h2>
                             </div>
                             <div class="l-sec__head__info">
-                                <p>
-                                    Some classes can be generated using 'gridle_generate_custom_class' method.
-                                </p>
-                                <div class="c-styleguide-box c-styleguide-box--alt">
-                                    <div class="c-styleguide-box__inner">
-                                        <div class="c-styleguide-box__pre">
-                                            <pre><code>
-@include gridle_generate_custom_class( ('u','-','text','-','centered','@','%state') ) {
+                                <div class="l-sec__head__info__desc g-spacing-top-2">
+                                    <p>
+                                        LibSasserPlate by Pagepro use gridle.org system which allows to generate media queries states using 'gridle_register_state' method:
+                                    </p>
+                                </div>
+                                <div class="l-sec__head__info__content  g-spacing-top-1">
+                                    <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>desktop-small:</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_register_state ( desktop-small , (
+    max-width : $size_inner + $size_gutter*2
+));</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>tablet:</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_register_state ( tablet , (
+    max-width : 1024px
+));</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>mobile:</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_register_state ( mobile , (
+    max-width : 767px
+));</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="l-sec__head__info__desc g-spacing-top-2">
+                                    <p>
+                                        RWD with gridle register states is pretty simple:
+                                    </p>
+                                </div>
+                                <div class="l-sec__head__info__content  g-spacing-top-1">
+                                    <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>RWD for exemplary 'some-class':</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>.some-class () {
+    color: red;
+
+    @include gridle_state (desktop-small) {
+        color: green;
+    }
+    @include gridle_state (mobile) {
+        color: blue;
+    }
+}</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>RWD for 'helper--text-xxl' mixin:</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@mixin helper--text-xxl () {
+    font-size: 50px;
+    line-height: 1;
+
+    @include gridle_state (tablet) {
+        font-size: 40px;
+    }
+    @include gridle_state (mobile) {
+        font-size: 30px;
+    }
+}</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="l-sec__head__info__desc g-spacing-top-2">
+                                    <p>
+                                        Some classes can be generated using 'gridle_generate_custom_class' method:
+                                    </p>
+                                </div>
+                                <div class="l-sec__head__info__content  g-spacing-top-1">                                    
+                                    <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="u-text-centered"</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_generate_custom_class( ('u','-','text','-','centered','@','%state') ) {
     content: '#{gridle_get_current_state_name()}';
     text-align: center;
-}
-                                            </code></pre>
-                                        </div>
-                                        <div class="c-styleguide-box__example">
-                                            <div class="c-styleguide-bg u-bg-1"></div>
-                                        </div>
-                                    </div>
+}</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="u-text-left"</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_generate_custom_class( ('u','-','text','-','left','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    text-align: left;
+}</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-
-
-
-
-
-                                <p>
-                                    Gridle classes can be replaced one class with another with the same css properties, ex:
-                                </p>
-
-
-
-                                <p>
-                                    <!-- media queries states.
-
-                                    g-, u-, t-, h-
-                                    
-                                    @ - changing class during rwd - pobiera własciwości z innej klasy
-                                    own rwd
-
-                                    dzięki użyciu @ nadpisujemy podczas rwd (na danej szerokości określonej po @) style danej klasy
-
-                                    Jeżeli nowa klasa posiada swoje rwd to zastępując starą klasę tą nową dostajemy w spadku jej style z rwd -->
-                                </p>
+                                <div class="l-sec__head__info__desc g-spacing-top-2">
+                                    <p>
+                                        Gridle generated classes can be replaced one class with another with the same css properties. To replace class 'a' with class 'b', class 'b' must be followed by @ and by proper gridle register state from which the new class should replace the previous one, ex:
+                                    </p>
+                                </div>
+                                <div class="l-sec__head__info__content  g-spacing-top-1">
+                                    <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="u-text-centered u-text-right@tablet u-text-left@mobile"</code></pre>
+                                                    </div>
+                                                    <div class="c-styleguide-box__example">
+                                                        <p class="u-text-centered u-text-right@tablet u-text-left@mobile">Look ma! I'm centered on desktop, aligned to right on tablet and aligned to left on mobile!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -422,7 +572,7 @@
                                                                     <pre><code>class="u-text-xxl"</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-text-size u-text-xxl">Look ma! I have 'xxl' size. I have my own rwd. It means I have 50px on desktop, 40px on tablet and 30px on mobile</p>
+                                                                    <p class="u-text-xxl">Look ma! I have 'xxl' size. I have my own rwd. It means I have 50px on desktop, 40px on tablet and 30px on mobile</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -434,7 +584,7 @@
                                                                     <pre><code>class="u-text-xl"</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-text-size u-text-xl">Look ma! I have 'xl' size. I have my own rwd. It means I have 30px on desktop, 25px on tablet and 20px on mobile</p>
+                                                                    <p class="u-text-xl">Look ma! I have 'xl' size. I have my own rwd. It means I have 30px on desktop, 25px on tablet and 20px on mobile</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -446,7 +596,7 @@
                                                                     <pre><code>class="u-text-l"</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-text-size u-text-l">Look ma! I have 'l' size. I have my own rwd. It means I have 25px on desktop, 20px on tablet and 18px on mobile</p>
+                                                                    <p class="u-text-l">Look ma! I have 'l' size. I have my own rwd. It means I have 25px on desktop, 20px on tablet and 18px on mobile</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -458,7 +608,7 @@
                                                                     <pre><code>class="u-text-xl u-text-l@mobile"</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-text-size u-text-xl u-text-l@mobile">Look ma! I have 'xl' size but i change my class to 'l' size on mobile by using '@mobile' state. It means on desktop and on tablet I have 'xl' size styles and on 'mobile' I have 'l' size styles. In this case I have 30px on desktop ('xl' styles for desktop), 25px on tablet ('xl' styles for tablet) and 18px on mobile ('l' styles for mobile)</p>
+                                                                    <p class="u-text-xl u-text-l@mobile">Look ma! I have 'xl' size but i change my class to 'l' size on mobile by using '@mobile' state. It means on desktop and on tablet I have 'xl' size styles and on 'mobile' I have 'l' size styles. In this case I have 30px on desktop ('xl' styles for desktop), 25px on tablet ('xl' styles for tablet) and 18px on mobile ('l' styles for mobile)</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -470,7 +620,7 @@
                                                                     <pre><code>class="u-text-xl u-text-l@tablet u-text-xl@mobile"</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-text-size u-text-xl u-text-l@tablet u-text-xl@mobile">Look ma! I have 'xl' size but i change my state to 'l' size on tablet by using '@tablet' state, and once again to 'xl' on mobile by using '@mobile' state. It means on desktop and on mobile I have 'xl' size styles and on tablet I have 'l' size styles. In this case I have 30px on desktop ('xl' styles for desktop), 20px on tablet ('l' styles for tablet) and 20px on mobile ('xl' styles for mobile). If I don't change state to 'xl' on mobile I would follow 'l' styles for mobile and have 18px</p>
+                                                                    <p class="u-text-xl u-text-l@tablet u-text-xl@mobile">Look ma! I have 'xl' size but i change my state to 'l' size on tablet by using '@tablet' state, and once again to 'xl' on mobile by using '@mobile' state. It means on desktop and on mobile I have 'xl' size styles and on tablet I have 'l' size styles. In this case I have 30px on desktop ('xl' styles for desktop), 20px on tablet ('l' styles for tablet) and 20px on mobile ('xl' styles for mobile). If I don't change state to 'xl' on mobile I would follow 'l' styles for mobile and have 18px</p>
                                                                 </div>
                                                             </div>
                                                         </div>

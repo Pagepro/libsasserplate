@@ -13,7 +13,7 @@ $color_styleguide_grey_light: #e2e2e2;
         &__head {
             &__info {
                 > p {
-                    font-size: 12px;
+                    font-size: 14px;
                 }
             }
         }
@@ -77,7 +77,19 @@ $color_styleguide_grey_light: #e2e2e2;
     @extend %helper--flex--center--top;
     flex-wrap: wrap;
     &__item {
-        margin: -1px #{$size_gutter} #{$size_gutter} -1px;
+        margin: -1px $size_gutter #{$size_gutter} -1px;
+        .c-styleguide-box + .c-styleguide-box {
+            margin-top: -1px;
+        }
+    }
+    &--alt {
+        margin: 0 0 -#{$size_gutter} 0;
+        .c-syleguide-boxes-list {
+            &__item {
+                width: 100%;
+                margin: 0 0 $size_gutter 0;
+            }
+        }
     }
 }
 

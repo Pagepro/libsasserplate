@@ -35,18 +35,18 @@
 /* Text XL
 =========================== */
 @include gridle_generate_custom_class( ('u','-','text','-','xl','@','%state') ) {
-    @include helper--text-xl;
-
     content: '#{gridle_get_current_state_name()}';
+
+    @include helper--text-xl;
 }
 
 
 /* Text L
 =========================== */
 @include gridle_generate_custom_class( ('u','-','text','-','l','@','%state') ) {
-    @include helper--text-l;
-
     content: '#{gridle_get_current_state_name()}';
+
+    @include helper--text-l;
 }
 
 
@@ -82,8 +82,9 @@
 /* Text line-heights
 ========================================================================== */
 @include gridle_generate_custom_class( ('u','-','line','-','h','-','n','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     line-height: 1; // neutral
+
+    content: '#{gridle_get_current_state_name()}';
 }
 
 // @include gridle_generate_custom_class( ('u','-','line','-','h','-','minus','-','xs','@','%state') ) {
@@ -158,36 +159,44 @@
 /* Font Weights
 ========================================================================== */
 @include gridle_generate_custom_class( ('u','-','weight','-','bl','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 900; // black
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','xb','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 800; //extra bold
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','b','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 700; // bold
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','sb','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 600; // semi bold
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','m','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 500; // medium
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','n','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 400; // normal
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','l','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 300; // light
+
+    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('u','-','weight','-','t','@','%state') ) {
-    content: '#{gridle_get_current_state_name()}';
     font-weight: 100; // thin
+
+    content: '#{gridle_get_current_state_name()}';
 }
 
 
@@ -209,4 +218,11 @@
     &:hover {
         text-decoration: underline;
     }
+}
+
+/* Grid flex fix
+========================================================================== */
+.h-grid-flex-fix {
+    display: flex;
+    flex-direction: row;
 }
