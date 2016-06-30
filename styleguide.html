@@ -197,7 +197,7 @@
                                         LibSasserPlate by Pagepro use gridle.org system which allows to generate media queries states using 'gridle_register_state' method:
                                     </p>
                                 </div>
-                                <div class="l-sec__head__info__content  g-spacing-top-1">
+                                <div class="l-sec__head__info__example g-spacing-top-1">
                                     <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
                                         <li class="c-syleguide-boxes-list__item">
                                             <div class="c-styleguide-box">
@@ -260,7 +260,7 @@
                                         RWD with gridle register states is pretty simple:
                                     </p>
                                 </div>
-                                <div class="l-sec__head__info__content  g-spacing-top-1">
+                                <div class="l-sec__head__info__example g-spacing-top-1">
                                     <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
                                         <li class="c-syleguide-boxes-list__item">
                                             <div class="c-styleguide-box">
@@ -273,7 +273,7 @@
                                             <div class="c-styleguide-box c-styleguide-box--alt">
                                                 <div class="c-styleguide-box__inner">
                                                     <div class="c-styleguide-box__pre">
-<pre><code>.some-class () {
+<pre><code>.some-class {
     color: red;
 
     @include gridle_state (desktop-small) {
@@ -320,7 +320,7 @@
                                         Some classes can be generated using 'gridle_generate_custom_class' method:
                                     </p>
                                 </div>
-                                <div class="l-sec__head__info__content  g-spacing-top-1">                                    
+                                <div class="l-sec__head__info__example g-spacing-top-1">                                    
                                     <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
                                         <li class="c-syleguide-boxes-list__item">
                                             <div class="c-styleguide-box">
@@ -364,11 +364,23 @@
                                 </div>
                                 <div class="l-sec__head__info__desc g-spacing-top-2">
                                     <p>
-                                        Gridle generated classes can be replaced one class with another with the same css properties. To replace class 'a' with class 'b', class 'b' must be followed by @ and by proper gridle register state from which the new class should replace the previous one, ex:
+                                        Simple gridle generated classes can be replaced one class with another with the same css properties. To replace class 'a' with class 'b', class 'b' must be followed by @ and by proper gridle register state from which the new class should replace the previous one, ex:
                                     </p>
                                 </div>
-                                <div class="l-sec__head__info__content  g-spacing-top-1">
+                                <div class="l-sec__head__info__example g-spacing-top-1">
                                     <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="u-text-centered u-text-right@tablet"</code></pre>
+                                                    </div>
+                                                    <div class="c-styleguide-box__example">
+                                                        <p class="u-text-centered u-text-right@tablet">Look ma! I'm centered on desktop and aligned to right on tablet and on mobile!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
                                         <li class="c-syleguide-boxes-list__item">
                                             <div class="c-styleguide-box">
                                                 <div class="c-styleguide-box__inner">
@@ -377,6 +389,132 @@
                                                     </div>
                                                     <div class="c-styleguide-box__example">
                                                         <p class="u-text-centered u-text-right@tablet u-text-left@mobile">Look ma! I'm centered on desktop, aligned to right on tablet and aligned to left on mobile!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="l-sec__head__info__desc g-spacing-top-2">
+                                    <p>
+                                        Gridle generated classes can have also their own RWD styles, ex:
+                                    </p>
+                                </div>
+                                <div class="l-sec__head__info__example g-spacing-top-1">
+                                    <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>RWD for griddle generated 'a' class:</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_generate_custom_class( ('a','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+
+    color: red;
+
+    @include gridle_state (desktop-small) {
+        color: green;
+    }
+    @include gridle_state (tablet) {
+        color: orange;
+    }
+    @include gridle_state (mobile) {
+        color: blue;
+    }
+}</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>RWD for griddle generated 'b' class:</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-box c-styleguide-box--alt">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+<pre><code>@include gridle_generate_custom_class( ('b','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+
+    color: pink;
+
+    @include gridle_state (desktop-small) {
+        color: purple;
+    }
+    @include gridle_state (tablet) {
+        color: yellow;
+    }
+    @include gridle_state (mobile) {
+        color: aquamarine;
+    }
+}</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="l-sec__head__info__desc g-spacing-top-2">
+                                    <p>
+                                        Complexe gridle generated classes with their own RWD styles can be also replaced one class with another with the same css properties. To replace class 'a' with its own RWD with class 'b' with its own RWD, class 'b' must be followed by @ and by proper gridle register state for which the new class should replace the previous one, but in opposite to simple classes without their own RWD the new styles will replace the old ones only for listed gridle register states. It means if we have 4 griddle register states (desktop, desktop-small, tablet and mobile) and we want our element has desktop and desktop-small styles from 'a' class but 'b' styles applied for tablet and mobile states we need to list all new @ states (class="a b@tablet b@mobile"). If we list only the proper gridle register state from which the new class should replace the previous one (in this case '@tablet') - our component will have 'a' styles for desktop, desktop-small and mobile and 'b' styles only for tablet, ex:
+                                    </p>
+                                </div>
+                                <div class="l-sec__head__info__example g-spacing-top-1">
+                                    <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="a"</code></pre>
+                                                    </div>
+                                                    <div class="c-styleguide-box__example">
+                                                        <p class="a">Look ma! I have 'a' class styles with its own RWD. It means I'm red on desktop, green on desktop-small, orange on tablet and blue on mobile.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="b"</code></pre>
+                                                    </div>
+                                                    <div class="c-styleguide-box__example">
+                                                        <p class="b">Look ma! I have 'b' class styles with its own RWD. It means I'm pink on dekstop, purple on desktop-small, yellow on tablet and aquamarine on mobile.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="a b@tablet"</code></pre>
+                                                    </div>
+                                                    <div class="c-styleguide-box__example">
+                                                        <p class="a b@tablet">Look ma! On desktop, desktop-small and mobile I have 'a' class styles with its own RWD but on tablet I change my styles for 'b' class with its own RWD. It means I'm red on desktop, green on desktop-small and blue on mobile (like 'a' class elements) but on tablet I'm yellow (like 'b' class elements)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="c-syleguide-boxes-list__item">
+                                            <div class="c-styleguide-box">
+                                                <div class="c-styleguide-box__inner">
+                                                    <div class="c-styleguide-box__pre">
+                                                        <pre><code>class="a b@tablet b@mobile"</code></pre>
+                                                    </div>
+                                                    <div class="c-styleguide-box__example">
+                                                        <p class="a b@tablet b@mobile">Look ma! On desktop and desktop-small I have 'a' class styles with its own RWD but on tablet and on mobile I change my styles for 'b' class with its own RWD. It means I'm red on desktop and green on desktop-small (like 'a' class elements) and I'm yellow on tablet and aquamarine on mobile (like 'b' class elements)</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -404,7 +542,7 @@
                                                     <strong>Backgrounds</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                    <p>Regular classes without /@ gridle register states and without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -482,7 +620,7 @@
                                                     <strong>Colors</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                    <p>Regular classes without /@ gridle register states and without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -560,7 +698,7 @@
                                                     <strong>Text sizes</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Complexe modifiers with /@ rwd states</p>
+                                                    <p>Complexe gridle generated classes with their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -638,7 +776,7 @@
                                                     <strong>Line heights</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                    <p>Simple gridle generated classes without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -655,7 +793,7 @@
                                                     <strong>Text alignment</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                    <p>Simple gridle generated classes without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -672,7 +810,7 @@
                                                     <strong>Text transform</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                    <p>Simple gridle generated classes without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -689,7 +827,7 @@
                                                     <strong>Letter spacing</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                    <p>Simple gridle generated classes without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -706,7 +844,7 @@
                                                     <strong>Font weights</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers with /@ rwd states</p>
+                                                    <p>Simple gridle generated classes without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -723,7 +861,7 @@
                                                     <strong>Font families</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                    <p>Regular classes without /@ gridle register states and without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
@@ -740,7 +878,7 @@
                                                     <strong>Other typography modifiers</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Simple modifiers without /@ rwd states</p>
+                                                    <p>Regular classes without /@ gridle register states and without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">

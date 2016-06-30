@@ -197,3 +197,36 @@ $color_styleguide_grey_light: #e2e2e2;
         }
     }
 }
+
+/* example class
+========================================================================== */
+@include gridle_generate_custom_class( ('a','@','%state') ) {
+    color: red;
+
+    @include gridle_state (desktop-small) {
+        color: green;
+    }
+    @include gridle_state (tablet) {
+        color: orange;
+    }
+    @include gridle_state (mobile) {
+        color: blue;
+    }
+
+    content: '#{gridle_get_current_state_name()}';
+}
+@include gridle_generate_custom_class( ('b','@','%state') ) {
+    color: pink;
+
+    @include gridle_state (desktop-small) {
+        color: purple;
+    }
+    @include gridle_state (tablet) {
+        color: yellow;
+    }
+    @include gridle_state (mobile) {
+        color: aquamarine;
+    }
+
+    content: '#{gridle_get_current_state_name()}';
+}
