@@ -87,27 +87,27 @@
     content: '#{gridle_get_current_state_name()}';
 }
 
-// @include gridle_generate_custom_class( ('u','-','line','-','h','-','minus','-','xs','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     line-height: 0.5;
-// }
-// @include gridle_generate_custom_class( ('u','-','line','-','h','-','minus','-','s','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     line-height: 0.9;
-// }
+@include gridle_generate_custom_class( ('u','-','line','-','h','-','minus','-','xs','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    line-height: 0.5;
+}
+@include gridle_generate_custom_class( ('u','-','line','-','h','-','minus','-','s','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    line-height: 0.9;
+}
 
-// @include gridle_generate_custom_class( ('u','-','line','-','h','-','xs','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     line-height: 1.1;
-// }
-// @include gridle_generate_custom_class( ('u','-','line','-','h','-','s','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     line-height: 1.5;
-// }
-// @include gridle_generate_custom_class( ('u','-','line','-','h','-','m','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     line-height: 2;
-// }
+@include gridle_generate_custom_class( ('u','-','line','-','h','-','xs','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    line-height: 1.1;
+}
+@include gridle_generate_custom_class( ('u','-','line','-','h','-','s','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    line-height: 1.5;
+}
+@include gridle_generate_custom_class( ('u','-','line','-','h','-','m','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    line-height: 2;
+}
 
 
 
@@ -147,14 +147,14 @@
     content: '#{gridle_get_current_state_name()}';
     letter-spacing: normal;
 }
-// @include gridle_generate_custom_class( ('u','-','spacing','-','wide','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     letter-spacing: .2em;
-// }
-// @include gridle_generate_custom_class( ('u','-','spacing','-','tight','@','%state') ) {
-//     content: '#{gridle_get_current_state_name()}';
-//     letter-spacing: -.2em;
-// }
+@include gridle_generate_custom_class( ('u','-','spacing','-','wide','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    letter-spacing: .2em;
+}
+@include gridle_generate_custom_class( ('u','-','spacing','-','tight','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+    letter-spacing: -.05em;
+}
 
 /* Font Weights
 ========================================================================== */

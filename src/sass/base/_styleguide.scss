@@ -159,6 +159,9 @@ $color_styleguide_grey_light: #e2e2e2;
             background: $color_styleguide_grey;
         }
     }
+    &-line {
+        border: 1px solid $color_styleguide_grey;
+    }
 }
 
 /* Modifiers section boxes
@@ -201,6 +204,8 @@ $color_styleguide_grey_light: #e2e2e2;
 /* example class
 ========================================================================== */
 @include gridle_generate_custom_class( ('a','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+
     color: red;
 
     @include gridle_state (desktop-small) {
@@ -212,10 +217,10 @@ $color_styleguide_grey_light: #e2e2e2;
     @include gridle_state (mobile) {
         color: blue;
     }
-
-    content: '#{gridle_get_current_state_name()}';
 }
 @include gridle_generate_custom_class( ('b','@','%state') ) {
+    content: '#{gridle_get_current_state_name()}';
+
     color: pink;
 
     @include gridle_state (desktop-small) {
@@ -227,6 +232,4 @@ $color_styleguide_grey_light: #e2e2e2;
     @include gridle_state (mobile) {
         color: aquamarine;
     }
-
-    content: '#{gridle_get_current_state_name()}';
 }

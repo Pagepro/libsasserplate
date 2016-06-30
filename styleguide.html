@@ -466,7 +466,7 @@
                                 </div>
                                 <div class="l-sec__head__info__desc g-spacing-top-2">
                                     <p>
-                                        Complexe gridle generated classes with their own RWD styles can be also replaced one class with another with the same css properties. To replace class 'a' with its own RWD with class 'b' with its own RWD, class 'b' must be followed by @ and by proper gridle register state for which the new class should replace the previous one, but in opposite to simple classes without their own RWD the new styles will replace the old ones only for listed gridle register states. It means if we have 4 griddle register states (desktop, desktop-small, tablet and mobile) and we want our element has desktop and desktop-small styles from 'a' class but 'b' styles applied for tablet and mobile states we need to list all new @ states (class="a b@tablet b@mobile"). If we list only the proper gridle register state from which the new class should replace the previous one (in this case '@tablet') - our component will have 'a' styles for desktop, desktop-small and mobile and 'b' styles only for tablet, ex:
+                                        Complexe gridle generated classes with their own RWD styles can be also replaced one class with another with the same css properties. To replace class 'a' with its own RWD with class 'b' with its own RWD, class 'b' must be followed by @ and by proper gridle register state for which the new class should replace the previous one, but in opposite to simple classes without their own RWD the new styles will replace the old ones only for listed gridle register states. It means if we have 4 griddle register states (desktop, desktop-small, tablet and mobile) and we want our element to have desktop and desktop-small styles from 'a' class but 'b' styles applied for tablet and mobile states we need to list all new @ states (class="a b@tablet b@mobile"). If we list only the proper gridle register state from which the new class should replace the previous one (in this case '@tablet') - our component will have 'a' styles for desktop, desktop-small and mobile and 'b' styles only for tablet, ex:
                                     </p>
                                 </div>
                                 <div class="l-sec__head__info__example g-spacing-top-1">
@@ -773,14 +773,99 @@
                                         <div class="c-styleguide-modifiers-box__inner">
                                             <div class="c-styleguide-modifiers-box__head">
                                                 <div class="c-styleguide-modifiers-box__head__title">
-                                                    <strong>Line heights</strong>
+                                                    <strong>Line-heights</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
                                                     <p>Simple gridle generated classes without their own RWD styles</p>
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-minus-xs"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-minus-xs">Look ma! I have 'minus-xs' line-height. It means my line-height is lower than 1. In this case it's equal 0.5.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-minus-s"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-minus-s">Look ma! I have 'minus-xs' line-height. It means my line-height is lower than 1. In this case it's equal 0.9.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-n"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-n">Look ma! I have 'neutral' line-height. It means my line-height is equal 1.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-xs"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-xs">Look ma! I have 'xs' line-height. It means my line-height is equal 1.1.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-s"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-s">Look ma! I have 's' line-height. It means my line-height is equal 1.5.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-m"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-m">Look ma! I have 'm' line-height. It means my line-height is equal 2.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-line-h-m u-line-h-minus-s@tablet u-line-h-n@mobile"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-line u-line-h-m u-line-h-minus-s@tablet u-line-h-n@mobile">Look ma! I have 'm' line-height on desktop, 'minus-s' line-height on tablet and 'neutral' line-height on mobile. It means my line-height is equal 2 on desktop, 0.9 on tablet and 1 on mobile.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -797,7 +882,56 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-centered"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-centered">Look ma! I'm centered</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-right"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-right">Look ma! I'm aligned to right</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-left"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-left">Look ma! I'm aligned to left</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-right u-text-left@tablet u-text-centered@mobile"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-right u-text-left@tablet u-text-centered@mobile">Look ma! I'm aligned to right on desktop, aligned to left on tablet and centered on mobile!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -814,7 +948,56 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-upper"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-upper">Look ma! My letters are uppercase!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-lower"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-lower">Look ma! My letters are lowercase!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-initial"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-initial">Look ma! My letters are not transformed!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-text-upper u-text-lower@tablet u-text-initial@mobile"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-text-upper u-text-lower@tablet u-text-initial@mobile">Look ma! my letters are uppercase on desktop, lowercase on tablet and not transformed on mobile!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -831,7 +1014,56 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-spacing-normal"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-spacing-normal">Look ma! I have normal letter-spacing!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-spacing-wide"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-spacing-wide">Look ma! I have wide letter-spacing. It means my letter-spacing is equal .2em!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-spacing-tight"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-spacing-tight">Look ma! I have tight letter-spacing. It means my letter-spacing is equal -.05em!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-spacing-wide u-spacing-normal@tablet u-spacing-tight@mobile"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="u-spacing-wide u-spacing-normal@tablet u-spacing-tight@mobile">Look ma! I have wide letter-spacing on desktop, normal letter-spacing on tablet and tight letter-spacing on mobile. It means my letter-spacing on desktop is equal .2em, on tablet its normal and on mobile it's equal -.05em!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -848,7 +1080,20 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-1"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-1"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -865,7 +1110,20 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-1"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-1"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -882,7 +1140,20 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
-                                                
+                                                <ul class="c-syleguide-boxes-list">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-1"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="c-styleguide-bg u-bg-1"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
