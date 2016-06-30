@@ -161,8 +161,20 @@ $color_styleguide_grey_light: #e2e2e2;
             background: $color_styleguide_grey;
         }
     }
-    &-line {
+    &-bordered {
         border: 1px solid $color_styleguide_grey;
+    }
+    &-highlighted {
+        position: relative;
+        z-index: 2;
+
+        background-color: rgba(234,153,223,.43);
+    }
+    &-to-compare {
+        position: relative;
+        z-index: 1;
+
+        background-color: $color_styleguide_grey;
     }
 }
 
