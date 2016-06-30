@@ -9,4 +9,7 @@
     ol {
         list-style-type: decimal;
     }
+    a {
+        @extend .u-simple-link-anim;
+    }
 }
