@@ -1142,7 +1142,7 @@
                                                                     <pre><code>&lt;a href="#"&gt;link&lt;/a&gt;</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p><a href="#">I'm link without 'u-simple-link' class</a></p>
+                                                                    <p><a href="#">I'm link without 'u-default-link' class</a></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1151,10 +1151,10 @@
                                                         <div class="c-styleguide-box">
                                                             <div class="c-styleguide-box__inner">
                                                                 <div class="c-styleguide-box__pre">
-                                                                    <pre><code>&lt;a class="u-simple-link" href="#"&gt;link&lt;/a&gt;</code></pre>
+                                                                    <pre><code>&lt;a class="u-default-link" href="#"&gt;link&lt;/a&gt;</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p><a class="u-simple-link" href="#">I'm link with 'u-simple-link' class</a></p>
+                                                                    <p><a class="u-default-link" href="#">I'm link with 'u-default-link' class</a></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1163,10 +1163,10 @@
                                                         <div class="c-styleguide-box">
                                                             <div class="c-styleguide-box__inner">
                                                                 <div class="c-styleguide-box__pre">
-                                                                    <pre><code>&lt;a class="u-simple-link-anim" href="#"&gt;link&lt;/a&gt;</code></pre>
+                                                                    <pre><code>&lt;a class="u-default-link-anim" href="#"&gt;link&lt;/a&gt;</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p><a class="u-simple-link-anim" href="#">I'm link with 'u-simple-link-anim' class</a></p>
+                                                                    <p><a class="u-default-link-anim" href="#">I'm link with 'u-default-link-anim' class</a></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1186,9 +1186,173 @@
                             <div class="l-sec__head__title">
                                 <h2 class="t-styleguide-heading-2"><strong class="u-paint-5 u-text-xxl">'t-'</strong> Typography classes examples:</h2>
                             </div>
+                            <div class="l-sec__head__info__desc g-spacing-top-2">
+                                <p>
+                                    LibSasserPlate by Pagepro clears default typography tags styles. It means that headings, paragraphs, list etc don't have margins, list-styles, paddings etc. If You want to apply them back, You should add 't-wysiwyg' class for one of their parent container.
+                                </p>
+                            </div>
                         </div>
                         <div class="l-sec__content row-align-center g-spacing-top-2">
-                            
+                            <ul class="c-styleguide-modifiers-boxes-list">
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Headings</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p> Set of diffrent utility classes (some of them have their own RWD)</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="t-styleguide-heading-1"</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box c-styleguide-box--alt">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+<pre><code>.t-styleguide-heading {
+    &-1 {
+        @extend .u-text-xxl;
+        @extend .u-paint-5;
+        @extend .u-text-upper;
+        @extend .u-line-h-n;
+        @extend .u-text-centered;
+        @extend .u-weight-sb;
+    }
+}</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="t-styleguide-heading-1">Look ma! I'm only paragraph, but have 't-styleguide-heading-1' styles!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="t-styleguide-heading-2"</code></pre>
+                                                                </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box c-styleguide-box--alt">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+<pre><code>.t-styleguide-heading {
+    &-2 {
+        @extend .u-text-xl;
+        @extend .u-text-upper;
+        @extend .u-line-h-n;
+        @extend .u-paint-4;
+        @extend .u-weight-sb;
+    }
+}</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="t-styleguide-heading-2">Look ma! I'm only paragraph, but have 't-styleguide-heading-2' styles!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>WYSIWYG</strong>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="t-wysiwyg"</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box c-styleguide-box--alt">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+<pre><code>&lt;div class="t-wysiwyg"&gt;
+    &lt;h1&gt;Header 1&lt;/h1&gt;
+    &lt;h2&gt;Header 2&lt;/h2&gt;
+    &lt;h3&gt;Header 3&lt;/h3&gt;
+    &lt;h4&gt;Header 4&lt;/h4&gt;
+    &lt;h5&gt;Header 5&lt;/h5&gt;
+    &lt;h6&gt;Header 6&lt;/h6&gt;
+    &lt;p&gt;Some paragraph: lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p&gt;
+    &lt;p&gt;Some paragraph 2: Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.&lt;/p&gt;
+    &lt;p&gt;Here is some &lt;a href="#"&gt;link&lt;/a&gt;&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;unordered list item&lt;/li&gt;
+        &lt;li&gt;unordered list item 2&lt;/li&gt;
+        &lt;li&gt;unordered list item 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;
+        &lt;li&gt;ordered list item &lt;/li&gt;
+        &lt;li&gt;ordered list item 2&lt;/li&gt;
+        &lt;li&gt;ordered list item 3&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__example">
+                                                                    <div class="t-wysiwyg">
+                                                                        <h1>Header 1</h1>
+                                                                        <h2>Header 2</h2>
+                                                                        <h3>Header 3</h3>
+                                                                        <h4>Header 4</h4>
+                                                                        <h5>Header 5</h5>
+                                                                        <h6>Header 6</h6>
+                                                                        <p>Some paragraph: lorem ipsum dolor sit amet, consectetuer adipiscing elit.Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula</p>
+                                                                        <p>Some paragraph 2: Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.Quisque lorem tortor fringilla sed, vestibulum id.</p>
+                                                                        <p>Here is some <a href="#">exemplary link</a>.</p>
+                                                                        <ul>
+                                                                            <li>unordered list item</li>
+                                                                            <li>unordered list item 2</li>
+                                                                            <li>unordered list item 3</li>
+                                                                        </ul>
+                                                                        <ol>
+                                                                            <li>ordered list item </li>
+                                                                            <li>ordered list item 2</li>
+                                                                            <li>ordered list item 3</li>
+                                                                        </ol>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>

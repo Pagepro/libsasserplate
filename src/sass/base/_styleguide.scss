@@ -130,12 +130,14 @@ $color_styleguide_grey_light: #e2e2e2;
         @extend .u-text-upper;
         @extend .u-line-h-n;
         @extend .u-text-centered;
+        @extend .u-weight-sb;
     }
     &-2 {
         @extend .u-text-xl;
         @extend .u-text-upper;
         @extend .u-line-h-n;
         @extend .u-paint-4;
+        @extend .u-weight-sb;
     }
 }
 

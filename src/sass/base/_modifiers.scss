@@ -219,12 +219,12 @@
 
 /* Simple link
 ========================================================================== */
-.u-simple-link {
+.u-default-link {
     &:hover {
         text-decoration: underline;
     }
 }
-.u-simple-link-anim {
+.u-default-link-anim {
     position: relative;
     &:before {
         bottom: 0;

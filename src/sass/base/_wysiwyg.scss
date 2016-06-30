@@ -10,6 +10,14 @@
         list-style-type: decimal;
     }
     a {
-        @extend .u-simple-link-anim;
+        color: $color_default_link;
+
+        @extend .u-default-link-anim;
+    }
+    * + * {
+        margin-top: $size_gutter;
+    }
+    li + li {
+        margin-top: $size_gutter/2;
     }
 }
