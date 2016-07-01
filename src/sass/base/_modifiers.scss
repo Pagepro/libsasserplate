@@ -9,6 +9,9 @@
         background-color: nth($colors, $i);
     }
 }
+.u-bg-current {
+    background-color: currentColor;
+}
 
 /* Paints (colors)
 ========================================================================== */
@@ -16,9 +19,6 @@
     .u-paint-#{$i} {
         color: nth($colors, $i);
     }
-}
-.u-paint-current {
-    color: currentColor;
 }
 
 /* Text sizes

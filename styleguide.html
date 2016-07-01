@@ -539,6 +539,119 @@
                                         <div class="c-styleguide-modifiers-box__inner">
                                             <div class="c-styleguide-modifiers-box__head">
                                                 <div class="c-styleguide-modifiers-box__head__title">
+                                                    <strong>Colors</strong>
+                                                </div>
+                                                <div class="c-styleguide-modifiers-box__head__info">
+                                                    <p>Regular classes without /@ gridle register states and without their own RWD styles</p>
+                                                </div>
+                                            </div>
+                                            <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-#{number}"</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box c-styleguide-box--alt">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+<pre><code>$color_1:        $color_black;
+$color_2:       $color_white;
+$color_3:       #2a2a8e;      // dark ultramarine
+$color_4:       #354b73;      // dark grey-blue
+$color_5:       #d78046;      // dirty orange-gold
+
+$colors:
+    $color_1,
+    $color_2,
+    $color_3,
+    $color_4,
+    $color_5;
+
+@for $i from 1 through length($colors) {
+    .u-paint-#{$i} {
+        color: nth($colors, $i);
+    }
+}</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="c-syleguide-boxes-list">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-1"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-1">Look ma! I have "paint-1" color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-2"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint c-styleguide-paint--rev u-paint-2">Look ma! I have "paint-2" color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-3"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-3">Look ma! I have "paint-3" color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-4"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-4">Look ma! I have "paint-4" color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-5"</code></pre>
+                                                                </div>
+                                                                <div class="c-styleguide-box__example">
+                                                                    <p class="c-styleguide-paint u-paint-5">Look ma! I have "paint-5" color.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-styleguide-modifiers-boxes-list__item">
+                                    <div class="c-styleguide-modifiers-box">
+                                        <div class="c-styleguide-modifiers-box__inner">
+                                            <div class="c-styleguide-modifiers-box__head">
+                                                <div class="c-styleguide-modifiers-box__head__title">
                                                     <strong>Backgrounds</strong>
                                                 </div>
                                                 <div class="c-styleguide-modifiers-box__head__info">
@@ -575,6 +688,10 @@ $colors:
     .u-bg-#{$i} {
         background-color: nth($colors, $i);
     }
+}
+
+.u-bg-current {
+    background-color: currentColor;
 }</code></pre>
                                                                 </div>
                                                             </div>
@@ -643,117 +760,20 @@ $colors:
                                                         </div>
                                                     </li>
                                                 </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="c-styleguide-modifiers-boxes-list__item">
-                                    <div class="c-styleguide-modifiers-box">
-                                        <div class="c-styleguide-modifiers-box__inner">
-                                            <div class="c-styleguide-modifiers-box__head">
-                                                <div class="c-styleguide-modifiers-box__head__title">
-                                                    <strong>Colors</strong>
-                                                </div>
-                                                <div class="c-styleguide-modifiers-box__head__info">
-                                                    <p>Regular classes without /@ gridle register states and without their own RWD styles</p>
-                                                </div>
-                                            </div>
-                                            <div class="c-styleguide-modifiers-box__content">
-                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
-                                                    <li class="c-syleguide-boxes-list__item">
-                                                        <div class="c-styleguide-box">
-                                                            <div class="c-styleguide-box__inner">
-                                                                <div class="c-styleguide-box__pre">
-                                                                    <pre><code>class="u-paint-#{number}"</code></pre>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="c-styleguide-box c-styleguide-box--alt">
-                                                            <div class="c-styleguide-box__inner">
-                                                                <div class="c-styleguide-box__pre">
-<pre><code>$color_1:        $color_black;
-$color_2:       $color_white;
-$color_3:       #2a2a8e;      // dark ultramarine
-$color_4:       #354b73;      // dark grey-blue
-$color_5:       #d78046;      // dirty orange-gold
-
-$colors:
-    $color_1,
-    $color_2,
-    $color_3,
-    $color_4,
-    $color_5;
-
-@for $i from 1 through length($colors) {
-    .u-paint-#{$i} {
-        color: nth($colors, $i);
-    }
-}
-.u-paint-current {
-    color: currentColor;
-}</code></pre>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
                                                 <ul class="c-syleguide-boxes-list">
                                                     <li class="c-syleguide-boxes-list__item">
                                                         <div class="c-styleguide-box">
                                                             <div class="c-styleguide-box__inner">
                                                                 <div class="c-styleguide-box__pre">
-                                                                    <pre><code>class="u-paint-1"</code></pre>
+<pre><code>&lt;div class="c-styleguide-bg-wrapper u-paint-1"&gt;
+    &lt;div class="c-styleguide-bg u-bg-current"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                                                                 </div>
                                                                 <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-paint u-paint-1">Look ma! I have "paint-1" color.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="c-syleguide-boxes-list__item">
-                                                        <div class="c-styleguide-box">
-                                                            <div class="c-styleguide-box__inner">
-                                                                <div class="c-styleguide-box__pre">
-                                                                    <pre><code>class="u-paint-2"</code></pre>
-                                                                </div>
-                                                                <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-paint c-styleguide-paint--rev u-paint-2">Look ma! I have "paint-2" color.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="c-syleguide-boxes-list__item">
-                                                        <div class="c-styleguide-box">
-                                                            <div class="c-styleguide-box__inner">
-                                                                <div class="c-styleguide-box__pre">
-                                                                    <pre><code>class="u-paint-3"</code></pre>
-                                                                </div>
-                                                                <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-paint u-paint-3">Look ma! I have "paint-3" color.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="c-syleguide-boxes-list__item">
-                                                        <div class="c-styleguide-box">
-                                                            <div class="c-styleguide-box__inner">
-                                                                <div class="c-styleguide-box__pre">
-                                                                    <pre><code>class="u-paint-4"</code></pre>
-                                                                </div>
-                                                                <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-paint u-paint-4">Look ma! I have "paint-4" color.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="c-syleguide-boxes-list__item">
-                                                        <div class="c-styleguide-box">
-                                                            <div class="c-styleguide-box__inner">
-                                                                <div class="c-styleguide-box__pre">
-                                                                    <pre><code>class="u-paint-5"</code></pre>
-                                                                </div>
-                                                                <div class="c-styleguide-box__example">
-                                                                    <p class="c-styleguide-paint u-paint-5">Look ma! I have "paint-5" color.</p>
+                                                                    <p class="g-spacing-bottom-1">Look ma! My background color is the same like my parent (class="c-styleguide-bg-wrapper") text color. It means I have 'u-paint-1' background color. Check out how it works by changing my parent 'u-paint-#{number}' class or changing its color on dev tools.</p>
+                                                                    <div class="c-styleguide-bg-wrapper u-paint-1">
+                                                                        <div class="c-styleguide-bg u-bg-current"></div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

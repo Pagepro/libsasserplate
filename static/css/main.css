@@ -197,8 +197,8 @@
    ========================================================================== *//* ==========================================================================
    Modifiers
    ========================================================================== *//* Backgrounds
-========================================================================== */.u-bg-1 {background-color: #000;}.u-bg-2 {background-color: #fff;}.u-bg-3 {background-color: #2a2a8e;}.u-bg-4 {background-color: #354b73;}.u-bg-5 {background-color: #d78046;}/* Paints (colors)
-========================================================================== */.u-paint-1 {color: #000;}.u-paint-2 {color: #fff;}.u-paint-3 {color: #2a2a8e;}.u-paint-4,.t-styleguide-heading-2 {color: #354b73;}.u-paint-5,.t-styleguide-heading-1 {color: #d78046;}.u-paint-current {color: currentColor;}/* Text sizes
+========================================================================== */.u-bg-1 {background-color: #000;}.u-bg-2 {background-color: #fff;}.u-bg-3 {background-color: #2a2a8e;}.u-bg-4 {background-color: #354b73;}.u-bg-5 {background-color: #d78046;}.u-bg-current {background-color: currentColor;}/* Paints (colors)
+========================================================================== */.u-paint-1 {color: #000;}.u-paint-2 {color: #fff;}.u-paint-3 {color: #2a2a8e;}.u-paint-4,.t-styleguide-heading-2 {color: #354b73;}.u-paint-5,.t-styleguide-heading-1 {color: #d78046;}/* Text sizes
 ========================================================================== *//* Text XXL
 =========================== */.u-text-xxl,.t-styleguide-heading-1 {content: "gridle_get_current_state_name()";font-size: 50px;line-height: 1;}/* Text XL
 =========================== */.u-text-xl,.t-styleguide-heading-2 {content: "gridle_get_current_state_name()";font-size: 30px;line-height: 1;}/* Text L
