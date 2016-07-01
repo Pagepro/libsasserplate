@@ -93,6 +93,10 @@ $color_styleguide_grey_light: #e2e2e2;
     }
 }
 
+.c-syleguide-boxes-list + .c-syleguide-boxes-list {
+	margin-top: $size_gutter;
+}
+
 /* Prefixes
 ========================================================================== */
 .c-syleguide-prefixes-list {

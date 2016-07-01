@@ -546,6 +546,41 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-bg-#{number}"</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box c-styleguide-box--alt">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+<pre><code>$color_1:        $color_black;
+$color_2:       $color_white;
+$color_3:       #2a2a8e;      // dark ultramarine
+$color_4:       #354b73;      // dark grey-blue
+$color_5:       #d78046;      // dirty orange-gold
+
+$colors:
+    $color_1,
+    $color_2,
+    $color_3,
+    $color_4,
+    $color_5;
+
+@for $i from 1 through length($colors) {
+    .u-bg-#{$i} {
+        background-color: nth($colors, $i);
+    }
+}</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                                 <ul class="c-syleguide-boxes-list">
                                                     <li class="c-syleguide-boxes-list__item">
                                                         <div class="c-styleguide-box">
@@ -624,6 +659,44 @@
                                                 </div>
                                             </div>
                                             <div class="c-styleguide-modifiers-box__content">
+                                                <ul class="c-syleguide-boxes-list c-syleguide-boxes-list--alt">
+                                                    <li class="c-syleguide-boxes-list__item">
+                                                        <div class="c-styleguide-box">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+                                                                    <pre><code>class="u-paint-#{number}"</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-styleguide-box c-styleguide-box--alt">
+                                                            <div class="c-styleguide-box__inner">
+                                                                <div class="c-styleguide-box__pre">
+<pre><code>$color_1:        $color_black;
+$color_2:       $color_white;
+$color_3:       #2a2a8e;      // dark ultramarine
+$color_4:       #354b73;      // dark grey-blue
+$color_5:       #d78046;      // dirty orange-gold
+
+$colors:
+    $color_1,
+    $color_2,
+    $color_3,
+    $color_4,
+    $color_5;
+
+@for $i from 1 through length($colors) {
+    .u-paint-#{$i} {
+        color: nth($colors, $i);
+    }
+}
+.u-paint-current {
+    color: currentColor;
+}</code></pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                                 <ul class="c-syleguide-boxes-list">
                                                     <li class="c-syleguide-boxes-list__item">
                                                         <div class="c-styleguide-box">
@@ -1240,6 +1313,7 @@
                                                                 <div class="c-styleguide-box__pre">
                                                                     <pre><code>&lt;p class="t-styleguide-heading-2"&gt;(...)&lt;/p&gt;</code></pre>
                                                                 </div>
+                                                            </div>
                                                         </div>
                                                         <div class="c-styleguide-box c-styleguide-box--alt">
                                                             <div class="c-styleguide-box__inner">
