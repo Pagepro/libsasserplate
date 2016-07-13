@@ -8,8 +8,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
-var image = require('gulp-image');
-var combineMq = require('gulp-combine-mq');
+var cmq = require('gulp-combine-media-queries');
 
 gulp.task('rev', function () {
     gulp.src('*.html')
@@ -18,7 +17,6 @@ gulp.task('rev', function () {
 });
 gulp.task('image', function () {
   gulp.src('./src/img/**')
-    .pipe(image())
     .pipe(gulp.dest('./static/img'));
 });
 gulp.task('serve', ['sass'], function() {
@@ -35,7 +33,7 @@ gulp.task('watch', function() {
     gulp.watch("src/sass/**", ['sass']);
     gulp.watch("src/img/**", ['copy']);
     gulp.watch("src/js/**", ['copy']);
-    gulp.watch("static/css/**", ['combineMq', 'autoprefixer']);
+    gulp.watch("static/css/**", ['autoprefixer', 'combine-mq']);
     gulp.watch(['*.html', 'src/**/*.js'], reload);
 });
 gulp.task('copy', function() {
@@ -77,13 +75,13 @@ gulp.task('lint', function () {
         .pipe(eslint.format())
         .pipe(eslint.failOnError());
 });
-gulp.task('combineMq', function () {
-    return gulp.src(['static/css/main.css'])
-    .pipe(combineMq({
-        beautify: false
+gulp.task('combine-mq', function () {
+  gulp.src('static/css/main.css')
+    .pipe(cmq({
+      log: true
     }))
     .pipe(gulp.dest('static/css/'));
 });
 gulp.task('default', ['sass', 'copy', 'watch', 'serve']);
 gulp.task('compile', ['sass']);
-gulp.task('publish', ['rev', 'autoprefixer', 'image', 'htmllint', 'lint']);
+gulp.task('publish', ['rev', 'autoprefixer', 'htmllint', 'lint']);
