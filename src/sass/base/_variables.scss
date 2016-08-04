@@ -10,18 +10,14 @@ $color_white:  				#fff;
 
 $color_1:     	$color_black;
 $color_2:     	$color_white;
-$color_3:     	#2a2a8e;      // dark blue
-$color_4:     	#354b73;      // dark jeans
-$color_5:     	#d78046;      // dirty orange-gold
+$color_3:     	#d4213d;
 
 $colors:
     $color_1,
     $color_2,
-    $color_3,
-    $color_4,
-    $color_5;
+    $color_3;
 
-$color_default_link:		$color_5;
+$color_default_link:		$color_3;
 
 
 /* Gridle custom classes

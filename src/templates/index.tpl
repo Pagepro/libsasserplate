@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Project Title</title>
+        <title>{% block title %}{{ title }}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="./static/css/main.css">
@@ -23,31 +23,17 @@
                     </div>
                 </div>
                 <div class="l-main__content g-spacing-top-2">
-                <pre class="html"><code>&lt;nav&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 01&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 02&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 03&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 045&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-                    
+                <pre class="html"><code>{% filter escape %}{% include "partials/main-nav.tpl" %}
+                    {% endfilter %}
                     </code></pre>
-                    <nav>
-    <ul>
-        <li><a href="#">Link 01</a></li>
-        <li><a href="#">Link 02</a></li>
-        <li><a href="#">Link 03</a></li>
-        <li><a href="#">Link 045</a></li>
-    </ul>
-</nav>
+                    {% include "partials/main-nav.tpl" %}
                 </div>
             </div>
         </main>
         <footer class="l-footer g-gutter-top-2 g-gutter-bottom-2">
             <div class="l-inner">
                 <p>
-                    &copy; 2016 Pagepro
+                    &copy; 2016 {{ author }}
                 </p>
             </div>
         </footer>
