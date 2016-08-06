@@ -1,4 +1,4 @@
-# ![LibSasserPlate](docs/lib-sasserplate-intro.png)
+# ![LibSasserPlate](docs/lib-sasserplate-intro.jpg)
 
 
 > **LibSass** starter for front-end projects by Pagepro.
@@ -56,20 +56,3 @@ Once you have verified that your system can run LibSasserPlate, check out the [e
 * **/** - root directory with html files and configuration files (eslint, editorconfig)
 * **src** - directory with source files
 * **static** - directory compiled files, do not edit files in this directory because they will be overwritten
-
-## Gulp Tasks
-
-### Default Task
-
-This task is used for development.
-
-**What it does?**
-
-1. Compiles SASS (src/sass) files into CSS (static/css).
-2. Copies source files (js, images, fonts) to static catalog.
-3. Running [BrowserSync](http://www.browsersync.io/) (file server, autorefresh, remote debugging).
-
-```shell
-gulp
-```
-
