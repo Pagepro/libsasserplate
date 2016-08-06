@@ -1,11 +1,14 @@
 {
   "name": "LibSASSerPlate",
-  "version": "1.0.5",
-  "description": "LibSass starter for front-end projects by Pagepro.",
+  "version": "1.0.6",
+  "description": "LibSASS starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
     "type": "git",
     "url": "https://github.com/Pagepro/libsasserplate.git"
+  },
+  "scripts": {
+    "start": "gulp"
   },
   "license": "MIT",
   "devDependencies": {

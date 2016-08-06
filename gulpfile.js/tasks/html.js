@@ -24,20 +24,10 @@ var getData = function(file) {
 }
 
 var htmlTask = function() {
-  var manageEnvironment = function(environment) {
-    environment.addFilter('slug', function(str) {
-      return str && str.replace(/\s/g, '-', str).toLowerCase();
-    });
-   
-    environment.addGlobal('globalTitle', 'My global title')
-  }
-   
-
   return gulp.src(paths.src)
     .pipe(data(getData))
     .on('error', handleErrors)
     .pipe(render({
-      manageEnv: manageEnvironment,
       path: [path.join(config.root.src, config.tasks.html.src)],
       envOptions: {
         watch: false
