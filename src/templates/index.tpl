@@ -11,7 +11,7 @@
         <header class="l-header g-gutter-top-2 g-gutter-bottom-2">
             <div class="l-inner">
                 <div class="l-header__title">
-                    <h1 class="t-styleguide-heading-1">Libsasserplate</h1>
+                    <h1>{{ title }}</h1>
                 </div>
             </div>
         </header>
@@ -19,13 +19,11 @@
             <div class="l-inner">
                 <div class="l-main__head">
                     <div class="l-main__head__title">
-                        <h2 class="t-styleguide-heading-2">Page Content</h2>
+                        <h2>Page Content</h2>
                     </div>
                 </div>
                 <div class="l-main__content g-spacing-top-2">
-                <pre class="html"><code>{% filter escape %}{% include "partials/main-nav.tpl" %}
-                    {% endfilter %}
-                    </code></pre>
+                    <pre class="html"><code>{% filter escape %}{% include "partials/main-nav.tpl" %}{% endfilter %}</code></pre>
                     {% include "partials/main-nav.tpl" %}
                 </div>
             </div>

@@ -1,23 +1,24 @@
-# LibSasserPlate
+# ![LibSasserPlate](docs/lib-sasserplate-intro.png)
+
 
 > **LibSass** starter for front-end projects by Pagepro.
 
 ## Built with:
 
-1. [LibSass](http://libsass.org)
-2. [Gulp](http://gulpjs.com/)
-3. [BrowserSync](http://www.browsersync.io/)
-4. [Autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer)
-5. [Plumber](https://github.com/floatdrop/gulp-plumber)
-6. [normalize.css](https://necolas.github.io/normalize.css/)
-7. [Breakpoint](http://breakpoint-sass.com/)
-8. [gulp-image](https://github.com/1000ch/gulp-image)
-9. [ESlint](https://github.com/adametry/gulp-eslint)
-10. [htmllint](https://github.com/htmllint/htmllint/)
+Features | Tools Used
+------ | -----
+**CSS** | [Sass](http://sass-lang.com/) ([Libsass](http://libsass.org) via [node-sass](https://github.com/sass/node-sass)), [Autoprefixer](https://github.com/postcss/autoprefixer), [CSSNano](https://github.com/ben-eb/cssnano), Source Maps
+**JavaScript** | [Babel](http://babeljs.io/), [Webpack](http://webpack.github.io/)
+**HTML** | [Nunjucks](https://mozilla.github.io/nunjucks/), [gulp-data](https://github.com/colynb/gulp-data)
+**Images** | Compression with [imagemin](https://www.npmjs.com/package/gulp-imagemin)
+**Fonts** | Folder and `.sass` mixin for including WebFonts
+**Live Updating** | [BrowserSync](http://www.browsersync.io/), [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware), [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)
+**Production Builds** | JS and CSS are [uglified](https://github.com/terinjokes/gulp-uglify) and [minified](http://cssnano.co/), [filename md5 hashing (reving)](https://github.com/sindresorhus/gulp-rev), [file size reporting](https://github.com/jaysalvat/gulp-sizereport), local production [Express](http://expressjs.com/) server for testing builds.
+**JS Testing** | [Karma](http://karma-runner.github.io/0.12/index.html), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/), Example [Travis CI](https://travis-ci.org/) integration
 
 ## Requirements
 1. [node](https://nodejs.org/en/) & [npm](https://docs.npmjs.com/cli/install).
-2. sass
+2. SASS
 3. **gulp-cli** node package installed globally:
 `npm install -g gulp-cli`
 
@@ -27,6 +28,25 @@
 cd package_directory
 npm install
 ```
+
+## Usage
+
+### Run development tasks:
+
+```shell
+npm start
+```
+
+Aliases: `npm run gulp`, `gulp`
+
+
+### Build production files:
+
+```shell
+npm run production
+```
+
+Aliases: `gulp production`
 
 Be sure to look over the [installation docs](docs/install.md) to verify your environment is prepared to run LibSasserPlate.
 Once you have verified that your system can run LibSasserPlate, check out the [extra features](docs/extras.md) available.
@@ -53,30 +73,3 @@ This task is used for development.
 gulp
 ```
 
-### Compile Task
-
-This task is used only for SCSS -> CSS compilation.
-
-**What it does?**
-
-1. Compiles SASS (src/sass) files into CSS (static/css).
-
-```shell
-gulp compile
-```
-
-### Publish Task
-
-This task is used runing just before publishing project to Q&A or client.
-
-**What it does?**
-
-1. Adds random parameters at CSS&JS declarations to reset clients browser cache.
-2. Adds browser specific prefixes using [autoprefixer](https://github.com/postcss/autoprefixer).
-3. Lints html using [htmllint](https://github.com/htmllint/htmllint/).
-4. Lints JS using [ESlint](https://github.com/adametry/gulp-eslint).
-5. Optimize PNG, JPEG, GIF, SVG images using [gulp-image](https://github.com/1000ch/gulp-image).
-
-```shell
-gulp publish
-```
