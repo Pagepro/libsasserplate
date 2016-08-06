@@ -37,7 +37,7 @@ npm install
 npm start
 ```
 
-Aliases: `npm run gulp`, `gulp`
+Aliases: `gulp`
 
 
 ### Build production files:
