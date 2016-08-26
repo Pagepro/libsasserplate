@@ -4,6 +4,7 @@ if(!config.tasks.images) return
 var browserSync = require('browser-sync');
 var changed     = require('gulp-changed');
 var gulp        = require('gulp');
+var gulpif      = require('gulp-if');
 var imagemin    = require('gulp-imagemin');
 var path        = require('path');
 
@@ -12,10 +13,10 @@ var paths = {
   dest: path.join(config.root.dest, config.tasks.images.dest)
 }
 
-var imagesTask = function() {
+var imagesTask = function(env) {
   return gulp.src([paths.src, , '*!README.md'])
     .pipe(changed(paths.dest)) // Ignore unchanged files
-    .pipe(imagemin()) // Optimize
+    .pipe(gulpif(global.production, imagemin()))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }

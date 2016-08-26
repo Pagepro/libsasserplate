@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Modifiers
-   ========================================================================== */
-
 /* Backgrounds
 ========================================================================== */
 @for $i from 1 through length($colors) {
@@ -217,42 +213,57 @@
 // }
 
 
-/* Simple link
-========================================================================== */
-.u-default-link {
-    &:hover {
-        text-decoration: underline;
-    }
-}
-.u-default-link-anim {
-    position: relative;
-    &:before {
-        bottom: 0;
-        left: 0;
 
-        width: 100%;
-        height: 1px;
-
-        transition: .18s cubic-bezier(.52, .01, .16, 1);
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-
-        background: currentColor;
-
-        @extend %helper--pseudo--absolute;
-    }
-    &:hover {
-        &:before {
-            transition-timing-function: cubic-bezier(.62, .02, .34, 1);
-            transition-duration: .24s;
-            transform: scaleX(1);
-        }
+/* padding top
+=========================== */
+@for $i from $gutterTopNumber through 0 {
+    @include gridle_generate_custom_class( ('g','-','gutter','-','top','-', '#{$i}' ,'@','%state') ) {
+        padding-top: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
     }
 }
 
-/* Grid flex fix
-========================================================================== */
-.h-grid-flex-fix {
-    display: flex;
-    flex-direction: row;
+/* padding bottom
+=========================== */
+@for $i from $gutterBottomNumber through 0 {
+    @include gridle_generate_custom_class( ('g','-','gutter','-','bottom','-', '#{$i}' ,'@','%state') ) {
+        padding-bottom: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* margin top
+=========================== */
+@for $i from $spacingTopNumber through 0 {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','top','-', '#{$i}' ,'@','%state') ) {
+        margin-top: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* negative margin top
+=========================== */
+@for $i from $spacingTopNumber through 0 {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','top','-', 'minus','-', '#{$i}' ,'@','%state') ) {
+        margin-top: -$i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* margin bottom
+=========================== */
+@for $i from $spacingBottomNumber through 0 {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','bottom','-', '#{$i}' ,'@','%state') ) {
+        margin-bottom: $i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
+}
+
+/* negative margin bottom
+=========================== */
+@for $i from $spacingBottomNumber through 0 {
+    @include gridle_generate_custom_class( ('g','-','spacing','-','bottom','-', 'minus','-', '#{$i}' ,'@','%state') ) {
+        margin-bottom: -$i*$size_gutter;
+        content : "#{gridle_get_current_state_name()}";
+    }
 }
