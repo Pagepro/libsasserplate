@@ -1,8 +1,6 @@
-import $ from 'jquery';
-
 const Example = {
-    init: function () {
+  init: function () {
 
-    }
+  }
 }
-Example.init();
+Example.init()

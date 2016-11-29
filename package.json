@@ -1,6 +1,6 @@
 {
   "name": "LibSASSerPlate",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "LibSASS starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "gulp",
-    "production": "gulp production"
+    "production": "gulp production",
+    "test": "standard 'src/js/**/*.js'"
   },
   "license": "MIT",
   "devDependencies": {
@@ -49,9 +50,19 @@
     "jquery": "1.12.3",
     "lodash": "^4.13.1",
     "normalize.css": "^4.1.1",
+    "pre-commit": "^1.1.3",
     "require-dir": "^0.3.0",
+    "standard": "^8.6.0",
     "webpack": "1.12.14",
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.10.0"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "standard": {
+    "ignore": [
+      "src/js/vendor/*.js"
+    ]
   }
 }
