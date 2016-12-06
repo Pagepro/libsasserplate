@@ -1,0 +1,98 @@
+// .t-style {
+//     /* fmu = font Museo */
+//     &-fmu {
+//         /* xxl, xl etc = font sizes */
+//         &-xxl,
+//         &-xl,
+//         &-l,
+//         &-m,
+//         &-s,
+//         &-xs,
+//         &-xxs {
+//             /* b = bold, b-u = bold uppercase, l = light etc */
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 font-family: $font_sans;
+//             }
+//             &-b-u,
+//             &-l-u {
+//                 text-transform: uppercase;
+//             }
+//             &-b,
+//             &-b-u {
+//                 font-weight: 700; // bold
+//             }
+//             &-l,
+//             &-l-u {
+//                 font-weight: 300; // light
+//             }
+//         }
+//         &-xxl {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-xxl; // 64px -> 52px -> 37px
+//             }
+//         }
+//         &-xl {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-xl; // 50px -> 40px -> 30px
+//             }
+//         }
+//         &-l {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-l; // 40px -> 30px -> 30px
+//             }
+//         }
+//         &-m {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-m; // 18px -> 
+//             }
+//         }
+//         &-s {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-s; // 16px -> 
+//             }
+//         }
+//         &-xs {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-xs; // 14px -> 
+//             }
+//         }
+//         &-xxs {
+//             &,
+//             &-b,
+//             &-b-u,
+//             &-l,
+//             &-l-u {
+//                 @include helper--text-fmu-xxs; // 12px
+//             }
+//         }
+//     }   
+// }
+

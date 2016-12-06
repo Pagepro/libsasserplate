@@ -1,7 +1,8 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./static"
+    "dest": "./static",
+    "dist": "./dist"
   },
 
   "tasks": {

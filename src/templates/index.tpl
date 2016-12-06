@@ -5,16 +5,12 @@
         <title>{% block title %}{{ title }}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="./static/css/main.css">
+        {% include "head/head-links.tpl" %}
     </head>
     <body>
-        <header class="l-header g-gutter-top-2 g-gutter-bottom-2">
-            <div class="l-inner">
-                <div class="l-header__title">
-                    <h1>{{ title }}</h1>
-                </div>
-            </div>
-        </header>
+        {% import "partials/layouts/header.tpl" as l_header %}
+
+        {{ l_header.render() }}
         <main class="l-main">
             <div class="l-inner">
                 <div class="l-main__head">

@@ -1,10 +1,11 @@
-// ex. .l-with-decor etc
-
-* {
-    box-sizing: border-box;
-}
-
-
 .l-inner {
     @extend %helper--inner;
 }
+
+// body {
+//     @include gridle_state (mobile) {
+//         &.has-active-popup {
+//             overflow: hidden;
+//         }
+//     }
+// }

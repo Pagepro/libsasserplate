@@ -1,3 +1,104 @@
 /* ==========================================================================
    Forms
    ========================================================================== */
+.f-form {
+    fieldset {
+        margin: 0;
+        padding: 0;
+
+        border: 0;
+    }
+    input,
+    textarea,
+    select {
+        border-radius: 0;
+        box-shadow: none;
+        &:focus {
+            outline: none;
+        }
+    }
+    textarea {
+        min-height: $size_btn*5;
+        max-height: $size_btn*10;
+        padding: $size_gutter;
+
+        resize: vertical;
+    }
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+    }
+    *::-ms-clear {
+        display: none;
+    }
+    .f-input-wrapper,
+    .f-select-wrapper,
+    .f-textarea-wrapper {
+        position: relative;
+
+        cursor: pointer;
+    }
+    .f-input-wrapper,
+    .f-textarea-wrapper {
+        @extend %helper--flex--stretch;
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            color: currentColor;
+        }
+        input:-moz-placeholder,
+        textarea:-moz-placeholder {
+            color: currentColor;
+        }
+        input::-moz-placeholder,
+        textarea::-moz-placeholder {
+            color: currentColor;
+        }
+        input:-ms-input-placeholder,
+        textarea:-ms-input-placeholder {
+            color: currentColor;
+        }
+        input,
+        textarea {
+            width: 100%;
+
+            border: none;
+            background: transparent;
+        }
+    }
+    .f-input-wrapper {
+        input {
+            width: 100%;
+            height: $size_btn;
+            // padding: 0 calc(#{$size_btn} + #{$size_gutter} - 8px) 0 $size_gutter;
+        }
+    }
+    .f-textarea-wrapper {
+        // textarea {
+        //     padding-right: calc(#{$size_gutter} * 2 + 20px );
+        // }
+    }
+    .f-select-wrapper {
+        position: relative;
+
+        overflow: hidden;
+        select {
+            position: relative;
+            z-index: 3;
+
+            width: 100%;
+            height: $size_btn;
+            // padding: 0 calc(#{$size_btn} + #{$size_gutter} - 8px) 0 $size_gutter;
+
+            border: none;
+            border-radius: 0;
+            background: transparent;
+
+            -webkit-appearance: none;
+               -moz-appearance: none;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+    }
+}

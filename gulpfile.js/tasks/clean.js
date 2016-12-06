@@ -3,7 +3,8 @@ var del    = require('del')
 var config = require('../config')
 
 var cleanTask = function (cb) {
-  del([config.root.dest]).then(function (paths) {
+  var path = global.production ? config.root.dist : config.root.dest;
+  del([path]).then(function (paths) {
     cb()
   })
 }

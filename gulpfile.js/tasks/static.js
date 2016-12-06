@@ -6,9 +6,9 @@ var path    = require('path');
 var paths = {
   src: [
     path.join(config.root.src, config.tasks.static.src, '/**'),
-    path.join('!' + config.root.src, config.tasks.static.src, '/README.md')
+    path.join('!' + config.root.src, config.tasks.static.src, '/README.md'),
   ],
-  dest: path.join(config.root.dest, config.tasks.static.dest)
+  dest: path.join(global.production ? config.root.dist : '', config.root.dest, config.tasks.static.dest)
 }
 
 var staticTask = function() {

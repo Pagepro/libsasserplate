@@ -10,7 +10,8 @@ var handleErrors = require('../lib/handleErrors');
 var autoprefixer = require('gulp-autoprefixer');
 var path         = require('path');
 var cssnano      = require('gulp-cssnano');
-var replace      = require('gulp-replace');
+var combineMq    = require('gulp-combine-mq');
+var replace      = require('gulp-replace')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.css.src, '/**/main.{' + config.tasks.css.extensions + '}'),
@@ -20,14 +21,17 @@ var paths = {
 var cssTask = function () {
   return gulp.src(paths.src)
     .pipe(gulpif(!global.production, sourcemaps.init()))
-    .pipe(gulpif(global.production, replace('url("custom-classes.css")', '"base/custom-classes"')))
+    .pipe(gulpif(global.production, replace('// @import "custom-classes";', '@import "custom-classes";')))
     .pipe(sass(config.tasks.css.sass))
     .on('error', handleErrors)
     .pipe(autoprefixer(config.tasks.css.autoprefixer))
     .pipe(gulpif(global.production, cssnano({autoprefixer: false})))
     .pipe(gulpif(!global.production, sourcemaps.write()))
-    .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
+    .pipe(combineMq({
+        beautify: false
+    }))
+    .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
+    .pipe(gulpif(!global.production, browserSync.stream()))
 }
 
 gulp.task('css', cssTask);

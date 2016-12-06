@@ -1,0 +1,38 @@
+@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+@mixin gridle_state($breakpoint) {
+    $map-existance: map-has-key($breakpoints, $breakpoint);
+    @if $map-existance == true {
+        $element: map-get($breakpoints, $breakpoint);
+        $query: map-get($element, brakepoint); 
+        @include breakpoint($query) {
+            @content;
+        }
+    } @else {
+        $brakepointList: explode(#{$breakpoint},' ');
+
+        @each $breakpoint in $brakepointList {
+            $map-existance: map-has-key($breakpoints, $breakpoint);
+            
+            @if $map-existance == true {
+                $element: map-get($breakpoints, $breakpoint);
+                $query: map-get($element, brakepoint); 
+                @include breakpoint($query) {
+                    @content;
+                }
+            } @else {
+                content: 'Breakpoint not found for: #{$breakpoint}';
+                @warn 'Breakpoint not found for: #{$breakpoint}';
+            }
+        }
+    }
+}
+
+
+
+/* Layout Setup
+========================================================================== */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

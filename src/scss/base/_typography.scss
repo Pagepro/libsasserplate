@@ -16,10 +16,12 @@ body {
 
     color: $color_default;
 }
-figure {
+figure,
+blockquote {
     margin: 0;
 }
 a {
+    cursor: pointer;
     text-decoration: none;
 
     color: $color_default;
@@ -29,7 +31,27 @@ a {
     &:focus {
         outline: none;
     }
+    &:not([class]) {
+        color: $color_default_link;
+
+        @extend .u-default-link-anim;
+    }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    &:not([class]) + &:not([class]) {
+        margin-top: $size_gutter;
+    }
+}
+
 
 h1,
 h2,
@@ -41,7 +63,35 @@ p {
     margin: 0;
 }
 
+
 ul,
 ol {
+    padding-left: $size_gutter;
+
     @extend %helper--list;
+    &:not([class]) {
+        padding-left: $size_gutter;
+        li + li {
+            margin-top: $size_gutter/2;
+        }
+    }
+}
+
+ul {
+    &:not([class]) {
+        list-style-type: disc;
+    }
+}
+
+ol {
+    &:not([class]) {
+        list-style-type: decimal;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    &:focus {
+        outline: none;
+    }
 }

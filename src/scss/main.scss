@@ -13,43 +13,41 @@
 /* Base
    ========================================================================== */
 @import "base/reset";
+@import "base/fonts";
 @import "base/variables";
 @import "base/mixins";
-@import "base/grid";
-@import url("custom-classes.css");
+@import "base/grid-breakpoint";
 @import "base/typography";
 @import "base/helpers";
 @import "base/icons";
 @import "base/animations";
-@import "base/extends";
-@import "base/wysiwyg";
+@import "base/ui";
+@import "base/objects";
 
 
 /* Layouts and main layout elements
    ========================================================================== */
 @import "layout/common";
 @import "layout/header";
+// @import "layout/hero";
 @import "layout/main";
 @import "layout/footer";
-// @import "layouts/category-page";
+@import "layout/sections";
+// @import "layout/popups";
 
 
 /* Components
    ========================================================================== */
-@import "components/headings";
-@import "components/boxes";
 @import "components/logos";
 @import "components/buttons";
 @import "components/forms";
-@import "components/controls";
 @import "components/navigations";
-@import "components/lists";
 @import "components/links";
 
 /* Utilities
    ========================================================================== */
 @import "base/utilities";
-@import "base/utilities-sets";
+@import "base/text-styles";
 
 
 /* Vendor CSS

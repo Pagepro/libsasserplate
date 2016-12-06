@@ -10,12 +10,13 @@ var htmlmin      = require('gulp-htmlmin');
 var path         = require('path');
 var render       = require('gulp-nunjucks-render');
 var fs           = require('fs');
+var replace      = require('gulp-replace');
 
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**');
 
 var paths = {
   src: [path.join(config.root.src, config.tasks.html.src, '/*.{' + config.tasks.html.extensions + '}'), exclude],
-  dest: './'
+  dest: path.join('./')
 }
 
 var getData = function(file) {
@@ -34,9 +35,11 @@ var htmlTask = function() {
       }
     }))
     .on('error', handleErrors)
+    .pipe(gulpif(global.production, replace(' <br', '&nbsp;<br')))
+    .pipe(gulpif(global.production, replace('<link rel="stylesheet" href="./static/css/custom-classes.css">', '')))
     .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
-    .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
+    .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
+    .pipe(gulpif(!global.production, browserSync.stream()))
 }
 
 gulp.task('html', htmlTask);

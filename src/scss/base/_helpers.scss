@@ -15,25 +15,21 @@
         padding-left: $size_gutter;
     }
 }
-// %helper--sec {
-//     max-width: 100%;
+%helper--sec {
+    max-width: 100%;
 
-//     flex-wrap: wrap;
-//     flex-basis: 100%;
-//     @extend %helper--flex--center--top;
-// }
-// %helper--inner {
-//     position: relative;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    @extend %helper--flex--center--top;
+}
+%helper--sec--stretch {
+    max-width: 100%;
 
-//     width: $size_inner;
-// }
-// %helper--inner {
-//     @include gridle_state (desktop-small) {
-//         width: 100%;
-//         padding-right: $size_gutter;
-//         padding-left: $size_gutter;
-//     }
-// }
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    @extend %helper--flex--stretch;
+    justify-content: center;
+}
 
 /* Clearfixes
    ========================================================================== */
@@ -77,13 +73,15 @@
    ========================================================================== */
 %helper--reset--btn {
     border: none;
-    border: none;
     border-radius: 0;
     background: transparent;
     box-shadow: none;
 }
 %helper--transition {
     transition: 170ms ease;
+}
+%helper--bezier {
+    transition: 500ms cubic-bezier(.190, 1.000, .220, 1.000);
 }
 %helper--indent {
     display: block;
@@ -120,6 +118,15 @@
 
     margin: 0 auto;
 }
+%helper--fixed--center--center {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
 %helper--absolute--center-horizontal {
     position: absolute;
     right: 0;
@@ -136,6 +143,26 @@
     bottom: 0;
 
     @extend %helper--absolute--center-horizontal;
+}
+%helper--absolute--left--top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+%helper--absolute--right--top {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+%helper--absolute--left--bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+%helper--absolute--right--bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 %helper--absolute--center--center {
     position: absolute;
@@ -171,118 +198,121 @@
 %helper--flex {
     display: flex;
 }
-%helper--fl--v-top {
+%helper--inline-flex {
+    display: inline-flex;
+}
+%helper--align--start {
     align-items: flex-start;
     align-content: flex-start;
 }
-%helper--fl--v-center {
+%helper--align--center {
     align-items: center;
     align-content: center;
 }
-%helper--fl--v-bottom {
+%helper--align--end {
     align-items: flex-end;
     align-content: flex-end;
 }
-%helper--fl--v-space-between {
+%helper--align--space-between {
     align-items: flex-start;
     align-content: space-between;
 }
-%helper--fl--h-left {
+%helper--justify--start {
     justify-content: flex-start;
 }
-%helper--fl--h-center {
+%helper--justify--center {
     justify-content: center;
 }
-%helper--fl--h-right {
+%helper--justify--end {
     justify-content: flex-end;
 }
-%helper--fl--h-space-between {
+%helper--justify--space-between {
     justify-content: space-between;
 }
-%helper--fl--h-space-around {
+%helper--justify--space-around {
     justify-content: space-around;
 }
 %helper--flex--center--top {
     @extend %helper--flex;
-    @extend %helper--fl--h-center;
-    @extend %helper--fl--v-top;
+    @extend %helper--justify--center;
+    @extend %helper--align--start;
 }
 %helper--flex--center--center {
     @extend %helper--flex;
-    @extend %helper--fl--h-center;
-    @extend %helper--fl--v-center;
+    @extend %helper--justify--center;
+    @extend %helper--align--center;
 }
 %helper--flex--center--bottom {
     @extend %helper--flex;
-    @extend %helper--fl--h-center;
-    @extend %helper--fl--v-bottom;
+    @extend %helper--justify--center;
+    @extend %helper--align--end;
 }
 %helper--flex--center--space-between {
     @extend %helper--flex;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: space-between;
-    @extend %helper--fl--h-center;
+    @extend %helper--justify--center;
 }
 %helper--flex--space-between--top {
     @extend %helper--flex;
-    @extend %helper--fl--h-space-between;
-    @extend %helper--fl--v-top;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--start;
 }
 %helper--flex--space-between--center {
     @extend %helper--flex;
-    @extend %helper--fl--h-space-between;
-    @extend %helper--fl--v-center;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--center;
 }
 %helper--flex--space-between--bottom {
     @extend %helper--flex;
-    @extend %helper--fl--h-space-between;
-    @extend %helper--fl--v-bottom;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--end;
 }
 %helper--flex--space-around--top {
     @extend %helper--flex;
-    @extend %helper--fl--h-space-around;
-    @extend %helper--fl--v-top;
+    @extend %helper--justify--space-around;
+    @extend %helper--align--start;
 }
 %helper--flex--space-around--center {
     @extend %helper--flex;
-    @extend %helper--fl--h-space-around;
-    @extend %helper--fl--v-center;
+    @extend %helper--justify--space-around;
+    @extend %helper--align--center;
 }
 %helper--flex--space-around--bottom {
     @extend %helper--flex;
-    @extend %helper--fl--h-space-between;
-    @extend %helper--fl--v-bottom;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--end;
 }
 %helper--flex--left--top {
     @extend %helper--flex;
-    @extend %helper--fl--v-top;
-    @extend %helper--fl--h-left;
+    @extend %helper--align--start;
+    @extend %helper--justify--start;
 }
 %helper--flex--left--center {
     @extend %helper--flex;
-    @extend %helper--fl--v-center;
-    @extend %helper--fl--h-left;
+    @extend %helper--align--center;
+    @extend %helper--justify--start;
 }
 %helper--flex--left--bottom {
     @extend %helper--flex;
-    @extend %helper--fl--v-bottom;
-    @extend %helper--fl--h-left;
+    @extend %helper--align--end;
+    @extend %helper--justify--start;
 }
 %helper--flex--right--top {
     @extend %helper--flex;
-    @extend %helper--fl--h-right;
-    @extend %helper--fl--v-top;
+    @extend %helper--justify--end;
+    @extend %helper--align--start;
 }
 %helper--flex--right--center {
     @extend %helper--flex;
-    @extend %helper--fl--h-right;
-    @extend %helper--fl--v-center;
+    @extend %helper--justify--end;
+    @extend %helper--align--center;
 }
 %helper--flex--right--bottom {
     @extend %helper--flex;
-    @extend %helper--fl--h-right;
-    @extend %helper--fl--v-bottom;
+    @extend %helper--justify--end;
+    @extend %helper--align--end;
 }
 %helper--flex--stretch {
     @extend %helper--flex;
@@ -300,9 +330,177 @@
     flex-direction: column;
 
     @extend %helper--flex;
-    @extend %helper--fl--v-top;
-    @extend %helper--fl--h-left;
+    @extend %helper--align--start;
+    @extend %helper--justify--start;
 }
+%helper--flex--bottom--left {
+    flex-direction: column;
+
+    @extend %helper--flex;
+    @extend %helper--align--start;
+    @extend %helper--justify--end;
+}
+%helper--flex--space-between--left {
+    flex-direction: column;
+
+    @extend %helper--flex;
+    @extend %helper--align--start;
+    @extend %helper--justify--space-between;
+}
+
+%helper--flex--top--center {
+    flex-direction: column;
+
+    @extend %helper--flex;
+    @extend %helper--align--center;
+    @extend %helper--justify--start;
+}
+%helper--flex--bottom--center {
+    flex-direction: column;
+
+    @extend %helper--flex;
+    @extend %helper--align--center;
+    @extend %helper--justify--end;
+}
+%helper--flex--space-between--center-vertical {
+    flex-direction: column;
+
+    @extend %helper--flex;
+    @extend %helper--align--center;
+    @extend %helper--justify--space-between;
+}
+
+%helper--inline-flex--center--top {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--center;
+    @extend %helper--align--start;
+}
+%helper--inline-flex--center--center {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--center;
+    @extend %helper--align--center;
+}
+%helper--inline-flex--center--bottom {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--center;
+    @extend %helper--align--end;
+}
+%helper--inline-flex--center--space-between {
+    @extend %helper--inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-between;
+    @extend %helper--justify--center;
+}
+%helper--inline-flex--space-between--top {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--start;
+}
+%helper--inline-flex--space-between--center {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--center;
+}
+%helper--inline-flex--space-between--bottom {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--end;
+}
+%helper--inline-flex--space-around--top {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--space-around;
+    @extend %helper--align--start;
+}
+%helper--inline-flex--space-around--center {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--space-around;
+    @extend %helper--align--center;
+}
+%helper--inline-flex--space-around--bottom {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--space-between;
+    @extend %helper--align--end;
+}
+%helper--inline-flex--left--top {
+    @extend %helper--inline-flex;
+    @extend %helper--align--start;
+    @extend %helper--justify--start;
+}
+%helper--inline-flex--left--center {
+    @extend %helper--inline-flex;
+    @extend %helper--align--center;
+    @extend %helper--justify--start;
+}
+%helper--inline-flex--left--bottom {
+    @extend %helper--inline-flex;
+    @extend %helper--align--end;
+    @extend %helper--justify--start;
+}
+%helper--inline-flex--right--top {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--end;
+    @extend %helper--align--start;
+}
+%helper--inline-flex--right--center {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--end;
+    @extend %helper--align--center;
+}
+%helper--inline-flex--right--bottom {
+    @extend %helper--inline-flex;
+    @extend %helper--justify--end;
+    @extend %helper--align--end;
+}
+%helper--inline-flex--stretch {
+    @extend %helper--inline-flex;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+%helper--inline-flex--top--left {
+    flex-direction: column;
+
+    @extend %helper--inline-flex;
+    @extend %helper--align--start;
+    @extend %helper--justify--start;
+}
+%helper--inline-flex--top--center {
+    flex-direction: column;
+
+    @extend %helper--inline-flex;
+    @extend %helper--align--center;
+    @extend %helper--justify--start;
+}
+%helper--inline-flex--bottom--left {
+    flex-direction: column;
+
+    @extend %helper--inline-flex;
+    @extend %helper--align--start;
+    @extend %helper--justify--end;
+}
+%helper--inline-flex--space-between--left {
+    flex-direction: column;
+
+    @extend %helper--inline-flex;
+    @extend %helper--align--start;
+    @extend %helper--justify--space-between;
+}
+
+
+
+%helper--img--cover {
+    display: block;
+
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+
+    @extend %helper--absolute--center--center;
+}
+
+
+
 
 %helper--stop-animation {
     animation-play-state: paused;
@@ -323,4 +521,17 @@
 
 %helper--box-shadow--dark {
     box-shadow: 0 1px 10px 0 rgba(0,0,0,.4);
+}
+
+%helper--overlay {
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+
+    @extend %helper--pseudo--absolute--center;
+}
+
+%helper--dark-overlay {
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, .54) 25%, rgba(0, 0, 0, .54) 50%, rgba(0, 0, 0, .54) 75%, rgb(0, 0, 0) 100%);
 }
