@@ -1,4 +1,4 @@
-if(global.production) return
+if (global.production) return
 
 var browserSync       = require('browser-sync');
 var gulp              = require('gulp');

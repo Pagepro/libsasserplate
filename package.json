@@ -21,6 +21,7 @@
     "babel-preset-stage-1": "6.5.0",
     "breakpoint-sass": "^2.7.0",
     "browser-sync": "^2.12.5",
+    "critical": "^0.8.1",
     "del": "^2.2.1",
     "flex-helpers": "^1.0.0",
     "gridle": "^2.0.46",
