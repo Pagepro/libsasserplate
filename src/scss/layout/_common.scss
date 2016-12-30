@@ -16,4 +16,10 @@ body {
     @include media('>phone', '<=desktop-small') {
         border: 5px solid grey;
     }
+    @include media('>tablet', '<=1100px') {
+        color: red;
+    }
+    @include media('<phone', 'landscape') {
+        background: orange;
+    }
 }
