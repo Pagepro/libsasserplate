@@ -23,3 +23,20 @@ body {
         background: orange;
     }
 }
+
+
+
+
+@for $i from $gutterTopNumber through 0 {
+    [spacing^='#{$i}'] {
+	    margin-top: $size_gutter*$i;
+	}
+	@for $j from 1 through length($breakpoints_array) {
+		$breakpoint: nth($breakpoints_array, $j);
+		@include media('<#{$breakpoint}') {
+			[spacing*='#{$breakpoint}(#{$i})'] {
+		        margin-top: $size_gutter*$i;
+		    }
+		}
+	}
+}

@@ -49,16 +49,19 @@ $font_ico: 			'fontello';
 /* Breakpoints
 ========================================================================== */
 
-// $breakpoints: (
-//   'phone':              320px,
-//   'tablet':             768px,
-//   'desktop':            1024px
-// ) !default;
+$breakpoint_desktop-small:      'desktop-small';
+$breakpoint_tablet:             'tablet';
+$breakpoint_phone:              'phone';
+
+$breakpoints_array:
+    $breakpoint_desktop-small,
+    $breakpoint_tablet,
+    $breakpoint_phone;
 
 $breakpoints: (
-    'desktop-small':                $size_inner + $size_gutter*4,
-    'tablet':                       1024px,
-    'phone':                        767px  
+    $breakpoint_desktop-small:                $size_inner + $size_gutter*4,
+    $breakpoint_tablet:                       1024px,
+    $breakpoint_phone:                        767px  
 );
 
 $media-expressions: (
