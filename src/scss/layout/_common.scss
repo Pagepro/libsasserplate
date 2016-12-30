@@ -25,18 +25,30 @@ body {
 }
 
 
+$position_top:      		'top';
+$position_right:      		'right';
+$position_bottom:      		'bottom';
+$position_left:      		'left';
 
+$positions:
+    $position_top,
+    $position_right,
+    $position_bottom,
+    $position_left;
 
 @for $i from $gutterTopNumber through 0 {
-    [spacing^='#{$i}'] {
-	    margin-top: $size_gutter*$i;
-	}
-	@for $j from 1 through length($breakpoints_array) {
-		$breakpoint: nth($breakpoints_array, $j);
-		@include media('<#{$breakpoint}') {
-			[spacing*='#{$breakpoint}(#{$i})'] {
-		        margin-top: $size_gutter*$i;
-		    }
+	@for $k from 1 through length($positions) {
+		$position: nth($positions, $k);
+	    [spacing^='#{$position}#{$i}'] {
+		    margin-#{$position}: $size_gutter*$i;
+		}
+		@for $j from 1 through length($breakpoints_array) {
+			$breakpoint: nth($breakpoints_array, $j);
+			@include media('<#{$breakpoint}') {
+				[spacing*='#{$breakpoint}(#{$position}#{$i})'] {
+			        margin-#{$position}: $size_gutter*$i;
+			    }
+			}
 		}
 	}
 }
