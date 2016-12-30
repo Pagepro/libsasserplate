@@ -2,10 +2,18 @@
     @extend %helper--inner;
 }
 
-// body {
-//     @include gridle_state (mobile) {
-//         &.has-active-popup {
-//             overflow: hidden;
-//         }
-//     }
-// }
+
+body {
+    @include media('<desktop-small') {
+        background: pink;
+    }
+    @include media('<tablet') {
+        background: red;
+    }
+    @include media('<phone') {
+        background: yellow;
+    }
+    @include media('>phone', '<=desktop-small') {
+        border: 5px solid grey;
+    }
+}

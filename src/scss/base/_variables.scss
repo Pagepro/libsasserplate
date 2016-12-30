@@ -48,21 +48,15 @@ $font_ico: 			'fontello';
 
 /* Breakpoints
 ========================================================================== */
+
+// $breakpoints: (
+//   'phone':              320px,
+//   'tablet':             768px,
+//   'desktop':            1024px
+// ) !default;
+
 $breakpoints: (
-    "desktop-small": (
-        "brakepoint": (max-width $size_inner + $size_gutter*4),
-        "gridle": "screen and (max-width: #{$size_inner + $size_gutter*4})"
-    ),
-    "tablet": (
-        "brakepoint": (max-width 1024px),
-        "gridle": "screen and (max-width: 1024px)"
-    ),
-    "tablet-landscape": (
-        "brakepoint": ((max-width 1024px) (orientation landscape)),
-        "gridle": "screen and (max-width: 1024px) and (orientation : landscape)"
-    ),    
-    "mobile": (
-        "brakepoint": (max-width 767px),
-        "gridle": "screen and (max-width: 767px)"
-    )
+    'desktop-small':                $size_inner + $size_gutter*4,
+    'tablet':                       1024px,
+    'phone':                        767px  
 );

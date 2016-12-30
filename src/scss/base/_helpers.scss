@@ -9,12 +9,12 @@
     max-width: $size_inner;
     margin: 0 auto;
 }
-%helper--inner {
-    @include gridle_state (desktop-small) {
-        padding-right: $size_gutter;
-        padding-left: $size_gutter;
-    }
-}
+// %helper--inner {
+//     @include gridle_state (desktop-small) {
+//         padding-right: $size_gutter;
+//         padding-left: $size_gutter;
+//     }
+// }
 %helper--sec {
     max-width: 100%;
 

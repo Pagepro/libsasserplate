@@ -5,6 +5,7 @@
 /* Normalize
    ========================================================================== */
 @import "node_modules/normalize.css/normalize";
+@import "node_modules/include-media/dist/_include-media";
 
 /* Flex Helpers
    ========================================================================== */
@@ -16,7 +17,6 @@
 @import "base/fonts";
 @import "base/variables";
 @import "base/mixins";
-@import "base/grid-breakpoint";
 @import "base/typography";
 @import "base/helpers";
 @import "base/icons";
