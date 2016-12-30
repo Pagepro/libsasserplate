@@ -1,15 +1,5 @@
-$sapcingsNumber:             10;
-
-$position_top:      		'top';
-$position_right:      		'right';
-$position_bottom:      		'bottom';
-$position_left:      		'left';
-
-$positions:
-    $position_top,
-    $position_right,
-    $position_bottom,
-    $position_left;
+$sapcingsNumber: 10;
+$positions: 'top', 'right', 'bottom', 'left';
 
 @for $i from $sapcingsNumber through 0 {
 	@for $j from 1 through length($positions) {
