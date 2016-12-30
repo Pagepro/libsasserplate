@@ -20,19 +20,6 @@ $colors:
 $color_default_link:		$color_3;
 
 
-/* Gridle custom classes
-========================================================================== */
-$gutterTopNumber:                               10;
-$gutterBottomNumber:                            10;
-$gutterRightNumber:                             10;
-$gutterLeftNumber:                              10;
-$gutterNumber:                                  10;
-$spacingTopNumber:                              10;
-$spacingBottomNumber:                           10;
-$spacingRightNumber:                            10;
-$spacingLeftNumber:                             10;
-
-
 /* Sizes
 ========================================================================== */
 $size_inner:        				1240px;
@@ -74,3 +61,24 @@ $media-expressions: (
   'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
 ) !default;
 
+
+// body {
+//     @include media('<desktop-small') {
+//         background: pink;
+//     }
+//     @include media('<tablet') {
+//         background: red;
+//     }
+//     @include media('<phone') {
+//         background: yellow;
+//     }
+//     @include media('>phone', '<=desktop-small') {
+//         border: 5px solid grey;
+//     }
+//     @include media('>tablet', '<=1100px') {
+//         color: red;
+//     }
+//     @include media('<phone', 'landscape') {
+//         background: orange;
+//     }
+// }

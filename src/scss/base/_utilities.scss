@@ -8,6 +8,202 @@
     @extend %helper--indent;
 }
 
+/* Backgrounds
+   ========================================================================== */
+@for $i from 1 through length($colors) {
+    .u-bg-#{$i} {
+        background-color: nth($colors, $i);
+    }
+}
+@for $i from 1 through length($colors) {
+    .u-bg-#{$i}-on-hover {
+        &:hover {
+            background-color: nth($colors, $i);
+        }
+    }
+}
+
+// for double horizontal background
+// @for $i from 1 through length($colors) {
+//     @for $j from 1 through length($colors) {
+//         .u-bg-double-#{$i}-#{$j} {
+//             background: linear-gradient(to left, nth($colors, $i) 0%,nth($colors, $i) 50%, nth($colors, $j) 50%,nth($colors, $j) 100%);
+//         }
+//     }
+// }
+
+.u-bg-current {
+    background-color: currentColor;
+}
+.u-bg-current-on-hover {
+    &:hover {
+        background-color: currentColor;
+    }
+}
+.u-bg-transparent {
+    background-color: transparent;
+}
+.u-bg-transparent-on-hover {
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+/* Paints (colors)
+========================================================================== */
+@for $i from 1 through length($colors) {
+    .u-paint-#{$i} {
+        color: nth($colors, $i);
+    }
+}
+// if we want to change colors on different screens resolutions we need to generate griddle class instead of regular class
+// @for $i from 1 through length($colors) {
+//     @include gridle_generate_custom_class( ('u','-','paint','-','#{$i}','@','%state') ) {
+//         color: nth($colors, $i);
+        
+//         content: '#{gridle_get_current_state_name()}';
+//     }
+// }
+
+@for $i from 1 through length($colors) {
+    .u-paint-#{$i}-on-hover {
+        &:hover {
+            color: nth($colors, $i);
+        }
+    }
+}
+.u-paint-current-on-hover {
+    &:hover {
+        color: currentColor;
+    }
+}
+
+/* Borders
+========================================================================== */
+@for $i from 1 through length($colors) {
+    .u-border-#{$i} {
+        border-color: nth($colors, $i);
+    }
+}
+
+@for $i from 1 through length($colors) {
+    .u-border-#{$i}-on-hover {
+        &:hover {
+            border-color: nth($colors, $i);
+        }
+    }
+}
+.u-border-current {
+    border-color: currentColor;
+}
+.u-border-current-on-hover {
+    &:hover {
+        border-color: currentColor;
+    }
+}
+
+/* Change element color/background on parent hover
+========================================================================== */
+/* Example:
+    You set following colors in variables file: $color_1: black; $color_2: yellow;
+    You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color_1 (= black). "u-bg-2" class styles: background-color: $color_2 (= yellow)) inside some box (it doesn't have to be direct parent of this button).
+    You want the button switch colors on the box hover state - it means have reverse color/background: color: yellow; and background-color: black;
+    You need to give "u-rev-on-hover-parent" class to the box and "u-rev-on-hover" class to the button
+*/
+// .u-rev-on-hover-parent {
+//     &:hover {
+//         .u-rev-on-hover {
+//             @for $i from 1 through length($colors) {
+//                 &.u-paint-#{$i} {
+//                     background-color: nth($colors, $i);
+//                 }
+//                 &.u-bg-#{$i} {
+//                     color: nth($colors, $i);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+/* Example:
+    You set following colors in variables file: $color_1: black; $color_2: purple; $color_3: red; $color_4: yellow;
+    You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color_1. "u-bg-2" class styles: color: $color_2) inside some box (it doesn't have to be direct parent of this button).
+    You want the button change its color on $color_3 and its background on $color_4 while the box is hovered.
+    You need to give "u-change-on-parent-hov-parent" class to the box and "u-change-on-parent-hov-paint-3 u-change-on-parent-hov-bg-4" classes to the button
+*/
+// .u-change-on-parent-hov-parent {
+//     &:hover {
+//         @for $i from 1 through length($colors) {
+//             .u-change-on-parent-hov {
+//                 &-paint-#{$i} {
+//                     color: nth($colors, $i);
+                    
+//                 }
+//                 &-bg-#{$i} {
+//                    background-color: nth($colors, $i);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+/* Sets of utilities ex. set of styles for buttons (those classes can be added to linsk and buttons)
+   ========================================================================== */
+/*
+.s-btn-style {
+    &-1 {
+        position: relative;
+
+        overflow: hidden;
+
+        min-width: $size_s-btn_h;
+
+        color: $color_2;
+        background-color: $color_3;
+
+        @include helper--btn-styles;
+        &:before {
+            position: absolute;
+
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            margin: auto;
+
+            content: '';
+            transition: 500ms cubic-bezier(.190, 1.000, .220, 1.000);
+            transform: translateY(100%);
+
+            background-color: $color_5;
+        }
+        .c-label {
+            position: relative;
+            z-index: 2;
+
+            font-family: $font_sans;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        &:hover {
+            &:before {
+                transform: translateY(0%);
+            }
+        }
+    }
+}
+*/
+
 /* Translates
 ========================================================================== */
 .u-horizontal-middle-right {
