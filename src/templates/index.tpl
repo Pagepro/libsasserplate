@@ -18,7 +18,7 @@
                         <h2>Page Content</h2>
                     </div>
                 </div>
-                <div class="l-main__content" spacing="top5 tablet(top3) phone(top1)">
+                <div class="l-main__content" spacing="top5 tablet(top3) phone(top1)" offset="tablet(top3) left2 desktop-small(left1)">
                     <pre class="html"><code>{% filter escape %}{% include "partials/main-nav.tpl" %}{% endfilter %}</code></pre>
                     {% include "partials/main-nav.tpl" %}
                 </div>

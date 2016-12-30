@@ -25,6 +25,8 @@ body {
 }
 
 
+$sapcingsNumber:             10;
+
 $position_top:      		'top';
 $position_right:      		'right';
 $position_bottom:      		'bottom';
@@ -36,11 +38,14 @@ $positions:
     $position_bottom,
     $position_left;
 
-@for $i from $gutterTopNumber through 0 {
+@for $i from $sapcingsNumber through 0 {
 	@for $k from 1 through length($positions) {
 		$position: nth($positions, $k);
-	    [spacing^='#{$position}#{$i}'] {
+	    [spacing~='#{$position}#{$i}'] {
 		    margin-#{$position}: $size_gutter*$i;
+		}
+		[offset~='#{$position}#{$i}'] {
+		    padding-#{$position}: $size_gutter*$i;
 		}
 		@for $j from 1 through length($breakpoints_array) {
 			$breakpoint: nth($breakpoints_array, $j);
@@ -48,7 +53,11 @@ $positions:
 				[spacing*='#{$breakpoint}(#{$position}#{$i})'] {
 			        margin-#{$position}: $size_gutter*$i;
 			    }
+			    [offset*='#{$breakpoint}(#{$position}#{$i})'] {
+			        padding-#{$position}: $size_gutter*$i;
+			    }
 			}
 		}
 	}
 }
+
