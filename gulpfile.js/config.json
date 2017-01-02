@@ -78,19 +78,26 @@
       "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
     },
 
-    "svgSprite": {
-      "src": "icons",
-      "dest": "images",
+    "svgsprites": {
+      "src": "svg",
+      "dest": ".",
       "extensions": ["svg"]
     },
 
     "production" : {
       "rev": true
     },
+
     "critical" : {
       "src": "*.html",
       "width": 1920,
       "height": 1080
+    },
+
+    "favicon": {
+      "src": ".",
+      "name": "favicon.ico",
+      "dest": "."
     }
   }
 }
