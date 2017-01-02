@@ -8,7 +8,7 @@ var webpackManifest = require('./webpackManifest');
 
 module.exports = function(env) {
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
-  var jsDest = path.resolve(config.tasks.js.dest)
+  var jsDest = path.resolve(path.join(env === 'production' ? config.root.dist : '', config.tasks.js.dest))
 
   var publicPath = pathToUrl(config.tasks.js.dest, '/')
   var extensions = config.tasks.js.extensions.map(function(extension) {
@@ -68,11 +68,11 @@ module.exports = function(env) {
       )
     }
   }
-
-  if(env === 'production') {
+  if(env === 'production' || env === 'compile') {
     if(rev) {
-      webpackConfig.plugins.push(new webpackManifest(publicPath, config.root.dest))
+      webpackConfig.plugins.push(new webpackManifest(publicPath, path.join(config.root.dist, config.root.dest)))
     }
+
     webpackConfig.plugins.push(
       new webpack.DefinePlugin({
         'process.env': {
@@ -80,7 +80,15 @@ module.exports = function(env) {
         }
       }),
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+        },
+         sourceMap: false,
+         comments: false,
+         minimize: true,
+         mangle: true,
+      }),
       new webpack.NoErrorsPlugin()
     )
   }
