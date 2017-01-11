@@ -7,37 +7,25 @@
 /* Griddle Setup
 ========================================================================== */
 @include gridle_setup( (
-    context : 12,
+    context : 24,
     gutter-width : $size_gutter*2,
 ));
 
-
-// @each $name, $breakpoint in $breakpoints {
-//     @include gridle_register_state ( $name, (
-//         query : map-get($breakpoint, gridle)
-//     ));
-// }
-
-
-// $size_desktop-small:              $size_inner + $size_gutter*4;
-// $size_tablet:                     1024px;
-// $size_phone
-
-@include gridle_register_state ( desktop-small , (
-    max-width : $size_inner + $size_gutter*4
+@include gridle_register_state ( #{$breakpoint_desktop-small} , (
+    max-width : $size_desktop-small
 ));
 
-@include gridle_register_state ( tablet , (
-    max-width : 1024px
+@include gridle_register_state ( #{$breakpoint_tablet} , (
+    max-width : $size_tablet
 ));
 
-@include gridle_register_state ( phone , (
-    max-width : 767px
+@include gridle_register_state ( #{$breakpoint_phone} , (
+    max-width : $size_phone
 ));
 
 // /* Custom Classes
 // ========================================================================== */
-// @include gridle_generate_classes ( );
+@include gridle_generate_classes ( );
 
 /* Layout Setup
 ========================================================================== */
@@ -45,4 +33,3 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
-
