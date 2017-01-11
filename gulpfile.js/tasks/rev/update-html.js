@@ -5,9 +5,12 @@ var path       = require('path')
 
 // 5) Update asset references in HTML
 gulp.task('update-html', function(){
-  var manifest = gulp.src(path.join(config.root.dest, "/rev-manifest.json"))
-  console.log('html output' + path.join(config.root.dest, config.tasks.html.dest));
-  return gulp.src(['./*.html'])
+  var finalPath = path.join(global.production ? config.root.dist : '', config.root.dest)
+  var manifest = gulp.src(path.join(finalPath, "rev-manifest.json"))
+  var srcPath = global.production ? path.join('.', config.root.dist, '*.html') : './*.html'
+  var destPath = global.production ? path.join(config.root.dist) : './'
+
+  return gulp.src(srcPath)
     .pipe(revReplace({manifest: manifest}))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(destPath))
 })

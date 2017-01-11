@@ -1,22 +1,25 @@
-var config  = require('../config');
-var compact = require('lodash/compact');
+var config = require('../config')
+var compact = require('lodash/compact')
 
 // Grouped by what can run in parallel
-var assetTasks = ['images', 'fonts'];
-var codeTasks = ['html', 'css', 'js'];
+var assetTasks = ['images', 'fonts', 'svgsprites', 'favicon']
+var codeTasks = ['html', 'css', 'js']
 
-module.exports = function(env) {
-
-  function matchFilter(task) {
+module.exports = function (env) {
+  var isProduction = env === 'production'
+  function matchFilter (task) {
     if (config.tasks[task]) {
       if (task === 'js') {
-        task = env === 'production' ? 'webpack:production' : false
+        task = isProduction ? 'webpack:production' : false
+      }
+      if ((task === 'svgsprites' || task === 'favicon') && !isProduction) {
+        task = false
       }
       return task
     }
   }
 
-  function exists(value) {
+  function exists (value) {
     return !!value
   }
 
