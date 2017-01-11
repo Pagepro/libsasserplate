@@ -36,9 +36,13 @@ $font_ico: 			'fontello';
 /* Breakpoints
 ========================================================================== */
 
-$breakpoint_desktop-small:      'desktop-small';
-$breakpoint_tablet:             'tablet';
-$breakpoint_phone:              'phone';
+$breakpoint_desktop-small:        'desktop-small';
+$breakpoint_tablet:               'tablet';
+$breakpoint_phone:                'phone';
+
+$size_desktop-small:              $size_inner + $size_gutter*4;
+$size_tablet:                     1024px;
+$size_phone:                      767px;
 
 $breakpoints_array:
     $breakpoint_desktop-small,
@@ -46,9 +50,9 @@ $breakpoints_array:
     $breakpoint_phone;
 
 $breakpoints: (
-    $breakpoint_desktop-small:                $size_inner + $size_gutter*4,
-    $breakpoint_tablet:                       1024px,
-    $breakpoint_phone:                        767px  
+    $breakpoint_desktop-small:                $size_desktop-small,
+    $breakpoint_tablet:                       $size_tablet,
+    $breakpoint_phone:                        $size_phone  
 );
 
 $media-expressions: (

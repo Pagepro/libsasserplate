@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Grid System
+   ========================================================================== */
+
+@import "node_modules/gridle/sass/gridle/gridle-flex";
+
+/* Griddle Setup
+========================================================================== */
+@include gridle_setup( (
+    context : 12,
+    gutter-width : $size_gutter*2,
+));
+
+
+// @each $name, $breakpoint in $breakpoints {
+//     @include gridle_register_state ( $name, (
+//         query : map-get($breakpoint, gridle)
+//     ));
+// }
+
+
+// $size_desktop-small:              $size_inner + $size_gutter*4;
+// $size_tablet:                     1024px;
+// $size_phone
+
+@include gridle_register_state ( desktop-small , (
+    max-width : $size_inner + $size_gutter*4
+));
+
+@include gridle_register_state ( tablet , (
+    max-width : 1024px
+));
+
+@include gridle_register_state ( phone , (
+    max-width : 767px
+));
+
+// /* Custom Classes
+// ========================================================================== */
+// @include gridle_generate_classes ( );
+
+/* Layout Setup
+========================================================================== */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+

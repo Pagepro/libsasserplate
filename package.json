@@ -23,6 +23,7 @@
     "browser-sync": "^2.12.5",
     "del": "^2.2.1",
     "flex-helpers": "^1.0.0",
+    "gridle": "^2.0.46",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-changed": "^1.3.0",
