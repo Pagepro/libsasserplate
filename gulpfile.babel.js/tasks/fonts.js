@@ -22,4 +22,4 @@ function fontsTask () {
 }
 
 gulp.task('fonts', fontsTask)
-module.exports = fontsTask
+export default fontsTask
