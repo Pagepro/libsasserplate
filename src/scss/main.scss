@@ -27,7 +27,6 @@
 @import "base/ui";
 @import "base/objects";
 @import "base/custom-attributes";
-@import "base/grid-gridle";
 
 /* Layouts and main layout elements
    ========================================================================== */
@@ -57,8 +56,3 @@
 /* Vendor CSS
    ========================================================================== */
 // @import "vendor/";
-
-/* Custom Grid Classes CSS
-   Do not remove this - it's used in production build
-   ========================================================================== */
-// @import "custom-classes";

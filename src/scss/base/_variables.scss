@@ -69,7 +69,7 @@ $media-expressions: (
   'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
 ) !default;
 
-
+// breakpoint exaples
 // body {
 //     @include media('<desktop-small') {
 //         background: pink;
