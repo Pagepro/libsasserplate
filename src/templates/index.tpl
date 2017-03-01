@@ -18,13 +18,13 @@
                         <h2>Page Content</h2>
                     </div>
                 </div>
-                <div class="l-main__content" spacing="top5 tablet(top3) phone(top1)" offset="tablet(top3) left2 desktop-small(left1)">
+                <div class="l-main__content" data-css-spacing="top5 tablet(top3) phone(top1)" data-css-offset="tablet(top3) left2 desktop-small(left1)">
                     <pre class="html"><code>{% filter escape %}{% include "partials/main-nav.tpl" %}{% endfilter %}</code></pre>
                     {% include "partials/main-nav.tpl" %}
                 </div>
             </div>
         </main>
-        <footer class="l-footer" spacing="top2 tablet(top1) left5 tablet(left3)">
+        <footer class="l-footer" data-css-spacing="top2 tablet(top1) left5 tablet(left3)">
             <div class="l-inner">
                 <p>
                     &copy; 2016 {{ author }}

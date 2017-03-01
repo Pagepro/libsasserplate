@@ -1,22 +1,22 @@
-$sapcingsNumber: 10;
+$spacingsNumber: 10;
 $positions: 'top', 'right', 'bottom', 'left';
 
-@for $i from $sapcingsNumber through 0 {
+@for $i from $spacingsNumber through 0 {
 	@for $j from 1 through length($positions) {
 		$position: nth($positions, $j);
-	    [spacing~='#{$position}#{$i}'] {
+	    [data-css-spacing~='#{$position}#{$i}'] {
 		    margin-#{$position}: $size_gutter*$i;
 		}
-		[offset~='#{$position}#{$i}'] {
+		[data-css-offset~='#{$position}#{$i}'] {
 		    padding-#{$position}: $size_gutter*$i;
 		}
 		@for $k from 1 through length($breakpoints_array) {
 			$breakpoint: nth($breakpoints_array, $k);
 			@include media('<#{$breakpoint}') {
-				[spacing*='#{$breakpoint}(#{$position}#{$i})'] {
+				[data-css-spacing*='#{$breakpoint}(#{$position}#{$i})'] {
 			        margin-#{$position}: $size_gutter*$i;
 			    }
-			    [offset*='#{$breakpoint}(#{$position}#{$i})'] {
+			    [data-css-offset*='#{$breakpoint}(#{$position}#{$i})'] {
 			        padding-#{$position}: $size_gutter*$i;
 			    }
 			}
