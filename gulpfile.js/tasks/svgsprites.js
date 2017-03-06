@@ -13,8 +13,7 @@ var paths = {
   dest: path.join(config.root.dest, config.tasks.svgsprites.dest)
 }
 gulp.task('svgsprites', function () {
-  console.log('global.production: ' + global.production)
-  return gulp.src('**/*.{' + config.tasks.svgsprites.extensions + '}', {cwd: paths.src})
+  return gulp.src('**/*.' + config.tasks.svgsprites.extensions, {cwd: paths.src})
         .pipe(svgSprite(configSvg))
         .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
 })
