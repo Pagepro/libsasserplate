@@ -5,7 +5,7 @@
 /* Text indent
 ========================================================================== */
 .u-info {
-    @extend %helper--indent;
+    @include helper--indent;
 }
 
 /* Backgrounds
@@ -108,11 +108,11 @@
     You set following colors in variables file: $color_1: black; $color_2: yellow;
     You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color_1 (= black). "u-bg-2" class styles: background-color: $color_2 (= yellow)) inside some box (it doesn't have to be direct parent of this button).
     You want the button switch colors on the box hover state - it means have reverse color/background: color: yellow; and background-color: black;
-    You need to give "u-rev-on-hover-parent" class to the box and "u-rev-on-hover" class to the button
+    You need to give "u-rev-on-hover-parent@parent" class to the box and "u-rev-on-hover-parent@child" class to the button
 */
-// .u-rev-on-hover-parent {
+// .u-rev-on-hover-parent\@parent {
 //     &:hover {
-//         .u-rev-on-hover {
+//         .u-rev-on-hover-parent\@child {
 //             @for $i from 1 through length($colors) {
 //                 &.u-paint-#{$i} {
 //                     background-color: nth($colors, $i);
@@ -129,188 +129,109 @@
     You set following colors in variables file: $color_1: black; $color_2: purple; $color_3: red; $color_4: yellow;
     You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color_1. "u-bg-2" class styles: color: $color_2) inside some box (it doesn't have to be direct parent of this button).
     You want the button change its color on $color_3 and its background on $color_4 while the box is hovered.
-    You need to give "u-change-on-parent-hov-parent" class to the box and "u-change-on-parent-hov-paint-3 u-change-on-parent-hov-bg-4" classes to the button
+    You need to give "u-trigger-action-on-parent-hover@parent" class to the box and "u-trigger-action-on-parent-hover@child" classes to the button
 */
-// .u-change-on-parent-hov-parent {
+// .u-trigger-action-on-parent-hover\@parent {
+//     .u-trigger-action-on-parent-hover\@child {
+//         transition: ease-in-out .5s;
+//     }
 //     &:hover {
 //         @for $i from 1 through length($colors) {
-//             .u-change-on-parent-hov {
-//                 &-paint-#{$i} {
+//             .u-trigger-action-on-parent-hover\@child {
+//                 &.u-paint-#{$i}-on-hover {
 //                     color: nth($colors, $i);
-                    
-//                 }
-//                 &-bg-#{$i} {
-//                    background-color: nth($colors, $i);
 //                 }
 //             }
 //         }
 //     }
 // }
 
-/* Sets of utilities ex. set of styles for buttons (those classes can be added to linsk and buttons)
-   ========================================================================== */
-/*
-.s-btn-style {
-    &-1 {
-        position: relative;
-
-        overflow: hidden;
-
-        min-width: $size_s-btn_h;
-
-        color: $color_2;
-        background-color: $color_3;
-
-        @include helper--btn-styles;
-        &:before {
-            position: absolute;
-
-            z-index: 1;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-
-            display: block;
-
-            width: 100%;
-            height: 100%;
-            margin: auto;
-
-            content: '';
-            transition: 500ms cubic-bezier(.190, 1.000, .220, 1.000);
-            transform: translateY(100%);
-
-            background-color: $color_5;
-        }
-        .c-label {
-            position: relative;
-            z-index: 2;
-
-            font-family: $font_sans;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
-
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-        }
-        &:hover {
-            &:before {
-                transform: translateY(0%);
-            }
-        }
-    }
-}
-*/
 
 /* Translates
 ========================================================================== */
-.u-horizontal-middle-right {
-    transform: translateX(50%);
-}
-.u-horizontal-middle-left {
-    transform: translateX(-50%);
-}
-.u-vertical-middle-top {
-    transform: translateY(-50%);
-    &.u-horizontal-middle-right {
-        transform: translate(50%, -50%);
-    }
-    &.u-horizontal-middle-left {
-        transform: translate(-50%, -50%);
-    }
-    &.u-horizontal-total-right {
-        transform: translateX(100%, -50%);
-    }
-    &.u-horizontal-total-left {
-        transform: translateX(-100%, -50%);
-    }
-}
-.u-vertical-middle-bottom {
-    transform: translateY(50%);
-    &.u-horizontal-middle-right {
-        transform: translate(50%, 50%);
-    }
-    &.u-horizontal-middle-left {
-        transform: translate(-50%, 50%);
-    }
-    &.u-horizontal-total-right {
-        transform: translateX(100%, 50%);
-    }
-    &.u-horizontal-total-left {
-        transform: translateX(-100%, 50%);
-    }
-}
-.u-horizontal-total-right {
-    transform: translateX(100%);
-}
-.u-horizontal-total-left {
-    transform: translateX(-100%);
-}
-.u-vertical-total-top {
-    transform: translateY(-100%);
-    &.u-horizontal-middle-right {
-        transform: translate(50%, -100%);
-    }
-    &.u-horizontal-middle-left {
-        transform: translate(-50%, -100%);
-    }
-    &.u-horizontal-total-right {
-        transform: translateX(100%, -100%);
-    }
-    &.u-horizontal-total-left {
-        transform: translateX(-100%, -100%);
-    }
-}
-.u-vertical-total-bottom {
-    transform: translateY(100%);
-    &.u-horizontal-middle-right {
-        transform: translate(50%, 100%);
-    }
-    &.u-horizontal-middle-left {
-        transform: translate(-50%, 100%);
-    }
-    &.u-horizontal-total-right {
-        transform: translateX(100%, 100%);
-    }
-    &.u-horizontal-total-left {
-        transform: translateX(-100%, 100%);
-    }
-}
+// .u-horizontal-middle-right {
+//     transform: translateX(50%);
+// }
+// .u-horizontal-middle-left {
+//     transform: translateX(-50%);
+// }
+// .u-vertical-middle-top {
+//     transform: translateY(-50%);
+//     &.u-horizontal-middle-right {
+//         transform: translate(50%, -50%);
+//     }
+//     &.u-horizontal-middle-left {
+//         transform: translate(-50%, -50%);
+//     }
+//     &.u-horizontal-total-right {
+//         transform: translateX(100%, -50%);
+//     }
+//     &.u-horizontal-total-left {
+//         transform: translateX(-100%, -50%);
+//     }
+// }
+// .u-vertical-middle-bottom {
+//     transform: translateY(50%);
+//     &.u-horizontal-middle-right {
+//         transform: translate(50%, 50%);
+//     }
+//     &.u-horizontal-middle-left {
+//         transform: translate(-50%, 50%);
+//     }
+//     &.u-horizontal-total-right {
+//         transform: translateX(100%, 50%);
+//     }
+//     &.u-horizontal-total-left {
+//         transform: translateX(-100%, 50%);
+//     }
+// }
+// .u-horizontal-total-right {
+//     transform: translateX(100%);
+// }
+// .u-horizontal-total-left {
+//     transform: translateX(-100%);
+// }
+// .u-vertical-total-top {
+//     transform: translateY(-100%);
+//     &.u-horizontal-middle-right {
+//         transform: translate(50%, -100%);
+//     }
+//     &.u-horizontal-middle-left {
+//         transform: translate(-50%, -100%);
+//     }
+//     &.u-horizontal-total-right {
+//         transform: translateX(100%, -100%);
+//     }
+//     &.u-horizontal-total-left {
+//         transform: translateX(-100%, -100%);
+//     }
+// }
+// .u-vertical-total-bottom {
+//     transform: translateY(100%);
+//     &.u-horizontal-middle-right {
+//         transform: translate(50%, 100%);
+//     }
+//     &.u-horizontal-middle-left {
+//         transform: translate(-50%, 100%);
+//     }
+//     &.u-horizontal-total-right {
+//         transform: translateX(100%, 100%);
+//     }
+//     &.u-horizontal-total-left {
+//         transform: translateX(-100%, 100%);
+//     }
+// }
 
 /* Simple link
 ========================================================================== */
 .u-default-link-anim {
-    @extend %helper--inline-flex--center--center;
+    @include helper--inline-flex--center--center;
     .c-label {
-        position: relative;
-
-        overflow: hidden;
-        &:before {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-
-            width: 100%;
-            height: 1px;
-
-            transition: .18s cubic-bezier(.52, .01, .16, 1);
-            transform: scaleX(0);
-            transform-origin: 0 50%;
-
-            background: currentColor;
-
-            @extend %helper--pseudo;
-        }
+        @include helper--link-anim;
     }
     &:hover {
         .c-label {
-            &:before {
-                transition-timing-function: cubic-bezier(.62, .02, .34, 1);
-                transition-duration: .24s;
-                transform: scaleX(1);
-            }
+            @include helper--link-anim-dash-on-hover;
         }
     }
 }

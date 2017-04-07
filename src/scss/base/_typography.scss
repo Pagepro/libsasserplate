@@ -6,9 +6,9 @@
 /* Global texts
 ========================================================================== */
 html {
-    font-size: 16px;
-
     @include font-smoothing(on);
+
+    font-size: 16px;
 }
 body {
     font-family: $font_default;
@@ -21,11 +21,15 @@ blockquote {
     margin: 0;
 }
 a {
+    @include helper--link-anim;
+
     cursor: pointer;
     text-decoration: none;
 
     color: $color_default;
     &:hover {
+        @include helper--link-anim-dash-on-hover;
+
         text-decoration: none;
     }
     &:focus {
@@ -33,8 +37,6 @@ a {
     }
     &:not([class]) {
         color: $color_default_link;
-
-        @extend .u-default-link-anim;
     }
 }
 
@@ -66,9 +68,9 @@ p {
 
 ul,
 ol {
-    padding-left: $size_gutter;
+    @include helper--list;
 
-    @extend %helper--list;
+    padding-left: $size_gutter;
     &:not([class]) {
         padding-left: $size_gutter;
         li + li {

@@ -19,13 +19,19 @@ $colors:
 
 $color_default_link:		$color_3;
 
+/* Indexes
+========================================================================== */
+$index_header: 100;
 
 /* Sizes
 ========================================================================== */
-$size_inner:        				1240px;
-$size_gutter:       				20px;
+$size_inner:                                                    1240px;
+$size_gutter:                                                   20px;
 
-$size_btn:							48px;
+$size_btn:                                                      48px;
+
+$size_scalable-padding_16-9:                                    56%;
+$size_scalable-padding_4-3:                                     75%;
 
 
 /* Fonts
@@ -71,13 +77,13 @@ $media-expressions: (
 
 // breakpoint exaples
 // body {
-//     @include media('<desktop-small') {
+//     @include media('<=desktop-small') {
 //         background: pink;
 //     }
-//     @include media('<tablet') {
+//     @include media('<=tablet') {
 //         background: red;
 //     }
-//     @include media('<phone') {
+//     @include media('<=phone') {
 //         background: yellow;
 //     }
 //     @include media('>phone', '<=desktop-small') {
@@ -86,7 +92,7 @@ $media-expressions: (
 //     @include media('>tablet', '<=1100px') {
 //         color: red;
 //     }
-//     @include media('<phone', 'landscape') {
+//     @include media('<=phone', 'landscape') {
 //         background: orange;
 //     }
 // }

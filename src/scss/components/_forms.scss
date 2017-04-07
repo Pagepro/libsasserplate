@@ -2,6 +2,8 @@
    Forms
    ========================================================================== */
 .f-form {
+    /* Reset default form styles + tag styles
+       ========================================================================== */
     fieldset {
         margin: 0;
         padding: 0;
@@ -32,6 +34,25 @@
     *::-ms-clear {
         display: none;
     }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: currentColor;
+    }
+    input:-moz-placeholder,
+    textarea:-moz-placeholder {
+        color: currentColor;
+    }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+        color: currentColor;
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: currentColor;
+    }
+
+    /* Form elements wrappers
+       ========================================================================== */
     .f-input-wrapper,
     .f-select-wrapper,
     .f-textarea-wrapper {
@@ -41,23 +62,8 @@
     }
     .f-input-wrapper,
     .f-textarea-wrapper {
-        @extend %helper--flex--stretch;
-        input::-webkit-input-placeholder,
-        textarea::-webkit-input-placeholder {
-            color: currentColor;
-        }
-        input:-moz-placeholder,
-        textarea:-moz-placeholder {
-            color: currentColor;
-        }
-        input::-moz-placeholder,
-        textarea::-moz-placeholder {
-            color: currentColor;
-        }
-        input:-ms-input-placeholder,
-        textarea:-ms-input-placeholder {
-            color: currentColor;
-        }
+        @include helper--flex--stretch;
+        
         input,
         textarea {
             width: 100%;

@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Media scalable wrapper
+   ========================================================================== */
+.o-media-scalable-wrapper {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+    &:before {
+        @include helper--pseudo;
+
+        width: 100%;
+    }
+    iframe,
+    img {
+        @include helper--absolute--center--center;
+        display: block;
+
+        width: 100%;
+    }
+    iframe {
+
+        height: 100%;
+    }
+    img {
+        bottom: auto;
+        margin: 0 auto;
+    }
+    &--16-9 {
+        &:before {
+            padding-top: $size_scalable-padding_16-9;
+        }
+    }
+    &--4-3 {
+        &:before {
+            padding-top: $size_scalable-padding_4-3;
+        }
+    }
+}

@@ -1,0 +1,688 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+/* Layout oriented helpers
+   ========================================================================== */
+@mixin helper--inner () {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: $size_inner;
+    margin: 0 auto;
+
+    vertical-align: baseline;
+    @include media('<desktop-small') {
+        padding-right: $size_gutter;
+        padding-left: $size_gutter;
+    }
+}
+@mixin helper--sec () {
+    @include helper--flex--center--top;
+
+    max-width: 100%;
+
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+
+
+/* Content helpers
+   ========================================================================== */
+@mixin helper--reset--btn () {
+    padding: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+@mixin helper--dot-dot-dot () {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin helper--transition () {
+    transition: 170ms ease;
+}
+@mixin helper--transition-alt () {
+    transition: ease-in-out .3s;
+}
+
+@mixin helper--bezier () {
+    transition: 500ms cubic-bezier(.190, 1.000, .220, 1.000);
+}
+@mixin helper--bezier--duration () {
+    transition-duration: 500ms;
+}
+@mixin helper--bezier--delay--sequence-0 () {
+    transition-delay: 0;
+}
+@mixin helper--bezier--delay--sequence-1 () {
+    transition-delay: 180ms;
+}
+@mixin helper--bezier--delay--sequence-2 () {
+    transition-delay: 240ms;
+}
+@mixin helper--bezier--timing () {
+    transition-timing-function: cubic-bezier(.190, 1.000, .220, 1.000);
+}
+
+@mixin helper--bezier-H-before--duration () {
+    transition-duration: 0.18s;
+}
+@mixin helper--bezier-H-after--duration () {
+    transition-duration: 0.24s;
+}
+@mixin helper--bezier-H-before--timing () {
+    transition-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+@mixin helper--bezier-H-after--timing () {
+    transition-timing-function: cubic-bezier(0.62, 0.02, 0.34, 1);
+}
+
+@mixin helper--indent () {
+    display: block;
+
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    text-indent: -99998em;
+}
+@mixin helper--absolute--center-vertical () {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    margin: auto 0;
+}
+@mixin helper--absolute--center-vertical--horizontal-to-left () {
+    @include helper--absolute--center-vertical;
+
+    left: 0;
+}
+@mixin helper--absolute--center-vertical--horizontal-to-right () {
+    @include helper--absolute--center-vertical;
+
+    right: 0;
+}
+@mixin helper--absolute--center-horizontal () {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin: 0 auto;
+}
+@mixin helper--absolute--center-horizontal--vertical-to-top () {
+    @include helper--absolute--center-horizontal;
+
+    top: 0;
+}
+@mixin helper--absolute--center-horizontal--vertical-to-bottom () {
+    @include helper--absolute--center-horizontal;
+
+    bottom: 0;
+}
+@mixin helper--absolute--left--top () {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@mixin helper--absolute--right--top () {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+@mixin helper--absolute--left--bottom () {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@mixin helper--absolute--right--bottom () {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+@mixin helper--absolute--center--center () {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+@mixin helper--fixed--center-horizontal--vertical-to-top () {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    margin: 0 auto;
+}
+@mixin helper--fixed--center--center () {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+@mixin helper--pseudo () {
+    display: block;
+
+    content: '';
+}
+@mixin helper--pseudo--absolute () {
+    @include helper--pseudo;
+
+    position: absolute;
+}
+@mixin helper--pseudo--absolute--center () {
+    @include helper--pseudo;
+    @include helper--absolute--center--center;
+}
+@mixin helper--list () {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+@mixin helper--flex () {
+    display: flex;
+}
+@mixin helper--inline-flex () {
+    display: inline-flex;
+}
+@mixin helper--align--start () {
+    align-items: flex-start;
+    align-content: flex-start;
+}
+@mixin helper--align--center () {
+    align-items: center;
+    align-content: center;
+}
+@mixin helper--align--end () {
+    align-items: flex-end;
+    align-content: flex-end;
+}
+@mixin helper--align--space-between () {
+    align-items: flex-start;
+    align-content: space-between;
+}
+@mixin helper--align--stretch () {
+    align-items: stretch;
+    align-content: stretch;
+}
+@mixin helper--justify--start () {
+    justify-content: flex-start;
+}
+@mixin helper--justify--center () {
+    justify-content: center;
+}
+@mixin helper--justify--end () {
+    justify-content: flex-end;
+}
+@mixin helper--justify--space-between () {
+    justify-content: space-between;
+}
+@mixin helper--justify--space-around () {
+    justify-content: space-around;
+}
+@mixin helper--flex--center--top () {
+    @include helper--flex;
+    @include helper--justify--center;
+    @include helper--align--start;
+}
+@mixin helper--flex--center--center () {
+    @include helper--flex;
+    @include helper--justify--center;
+    @include helper--align--center;
+}
+@mixin helper--flex--center--bottom () {
+    @include helper--flex;
+    @include helper--justify--center;
+    @include helper--align--end;
+}
+@mixin helper--flex--center--space-between () {
+    @include helper--flex;
+    @include helper--justify--center;
+
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-between;
+}
+@mixin helper--flex--space-between--top () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--start;
+}
+@mixin helper--flex--space-between--center () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--center;
+}
+@mixin helper--flex--space-between--bottom () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+@mixin helper--flex--space-around--top () {
+    @include helper--flex;
+    @include helper--justify--space-around;
+    @include helper--align--start;
+}
+@mixin helper--flex--space-around--center () {
+    @include helper--flex;
+    @include helper--justify--space-around;
+    @include helper--align--center;
+}
+@mixin helper--flex--space-around--bottom () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+@mixin helper--flex--left--top () {
+    @include helper--flex;
+    @include helper--align--start;
+    @include helper--justify--start;
+}
+@mixin helper--flex--left--center () {
+    @include helper--flex;
+    @include helper--align--center;
+    @include helper--justify--start;
+}
+@mixin helper--flex--left--bottom () {
+    @include helper--flex;
+    @include helper--align--end;
+    @include helper--justify--start;
+}
+@mixin helper--flex--right--top () {
+    @include helper--flex;
+    @include helper--justify--end;
+    @include helper--align--start;
+}
+@mixin helper--flex--right--center () {
+    @include helper--flex;
+    @include helper--justify--end;
+    @include helper--align--center;
+}
+@mixin helper--flex--right--bottom () {
+    @include helper--flex;
+    @include helper--justify--end;
+    @include helper--align--end;
+}
+@mixin helper--flex--stretch () {
+    @include helper--flex;
+    @include helper--align--stretch;
+}
+@mixin helper--flex--vertical-space-between () {
+    @include helper--flex;
+
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-between;
+}
+
+@mixin helper--flex--top--left () {
+    @include helper--flex;
+    @include helper--align--start;
+    @include helper--justify--start;
+
+    flex-direction: column;
+}
+@mixin helper--flex--center--left () {
+    @include helper--flex;
+    @include helper--align--start;
+    @include helper--justify--center;
+
+    flex-direction: column;
+}
+@mixin helper--flex--bottom--left () {
+    @include helper--flex;
+    @include helper--align--start;
+    @include helper--justify--end;
+
+    flex-direction: column;
+}
+@mixin helper--flex--space-between--left () {
+    @include helper--flex;
+    @include helper--align--start;
+    @include helper--justify--space-between;
+
+    flex-direction: column;
+}
+
+@mixin helper--flex--top--center () {
+    @include helper--flex;
+    @include helper--align--center;
+    @include helper--justify--start;
+
+    flex-direction: column;
+}
+@mixin helper--flex--bottom--center () {
+    @include helper--flex;
+    @include helper--align--center;
+    @include helper--justify--end;
+
+    flex-direction: column;
+}
+@mixin helper--flex--space-between--center-vertical () {
+    @include helper--flex;
+    @include helper--align--center;
+    @include helper--justify--space-between;
+
+    flex-direction: column;
+}
+
+@mixin helper--inline-flex--center--top () {
+    @include helper--inline-flex;
+    @include helper--justify--center;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--center--center () {
+    @include helper--inline-flex;
+    @include helper--justify--center;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--center--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--center;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--center--space-between () {
+    @include helper--inline-flex;
+    @include helper--justify--center;
+
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-between;
+}
+@mixin helper--inline-flex--space-between--top () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--space-between--center () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--space-between--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--space-around--top () {
+    @include helper--inline-flex;
+    @include helper--justify--space-around;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--space-around--center () {
+    @include helper--inline-flex;
+    @include helper--justify--space-around;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--space-around--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--left--top () {
+    @include helper--inline-flex;
+    @include helper--align--start;
+    @include helper--justify--start;
+}
+@mixin helper--inline-flex--left--center () {
+    @include helper--inline-flex;
+    @include helper--align--center;
+    @include helper--justify--start;
+}
+@mixin helper--inline-flex--left--bottom () {
+    @include helper--inline-flex;
+    @include helper--align--end;
+    @include helper--justify--start;
+}
+@mixin helper--inline-flex--right--top () {
+    @include helper--inline-flex;
+    @include helper--justify--end;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--right--center () {
+    @include helper--inline-flex;
+    @include helper--justify--end;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--right--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--end;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--stretch () {
+    @include helper--inline-flex;
+
+    align-content: stretch;
+    align-items: stretch;
+}
+
+@mixin helper--inline-flex--top--left () {
+    @include helper--inline-flex;
+    @include helper--align--start;
+    @include helper--justify--start;
+
+    flex-direction: column;
+}
+@mixin helper--inline-flex--top--center () {
+    @include helper--inline-flex;
+    @include helper--align--center;
+    @include helper--justify--start;
+
+    flex-direction: column;
+}
+@mixin helper--inline-flex--top--right () {
+    @include helper--inline-flex;
+    @include helper--align--end;
+    @include helper--justify--start;
+
+    flex-direction: column;
+}
+@mixin helper--inline-flex--bottom--left () {
+    @include helper--inline-flex;
+    @include helper--align--start;
+    @include helper--justify--end;
+
+    flex-direction: column;
+}
+@mixin helper--inline-flex--bottom--right () {
+    @include helper--inline-flex;
+    @include helper--align--end;
+    @include helper--justify--end;
+
+    flex-direction: column;
+}
+@mixin helper--inline-flex--center--left () {
+    @include helper--inline-flex;
+    @include helper--align--start;
+    @include helper--justify--center;
+
+    flex-direction: column;
+}
+@mixin helper--inline-flex--space-between--left () {
+    @include helper--inline-flex;
+    @include helper--align--start;
+    @include helper--justify--space-between;
+
+    flex-direction: column;
+}
+
+
+
+@mixin helper--img--cover () {
+    @include helper--absolute--center--center;
+
+    display: block;
+
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+
+
+@mixin helper--stop-animation () {
+    animation-play-state: paused;
+}
+@mixin helper--run-animation () {
+    animation-play-state: running;
+}
+
+/* Apparence helpers functionnal
+   ========================================================================== */
+@mixin helper--children-margin-top-big () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-top: $size_gutter*3;
+    }
+}
+@mixin helper--children-margin-top-medium () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-top: $size_gutter*2;
+    }
+}
+@mixin helper--children-margin-top-default () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-top: $size_gutter;
+    }
+}
+@mixin helper--children-margin-top-micro () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-top: $size_gutter/3;
+    }
+}
+@mixin helper--children-margin-top-reset () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-top: 0;
+    }
+}
+@mixin helper--children-margin-left-default () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-left: $size_gutter;
+    }
+}
+@mixin helper--children-margin-left-small () {
+    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
+        margin-left: $size_gutter/2;
+    }
+}
+
+/* Apparence helpers
+   ========================================================================== */
+@mixin helper--link-anim () {
+    position: relative;
+
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+
+        transition: .18s cubic-bezier(.52, .01, .16, 1);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+
+        background: currentColor;
+
+        @include helper--pseudo;
+    }
+}
+@mixin helper--link-anim-dash-on-hover () {
+    &:before {
+        transition-timing-function: cubic-bezier(.62, .02, .34, 1);
+        transition-duration: .24s;
+        transform: scaleX(1);
+    }
+}
+
+@mixin helper--box-shadow--no-color () {
+    @include helper--absolute--center--center;
+    @include helper--transition;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+@mixin helper--box-shadow--dark () {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+}
+
+@mixin helper--overlay () {
+    @include helper--pseudo--absolute--center;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+}
+
+@mixin helper--dark-overlay () {
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, .54) 25%, rgba(0, 0, 0, .54) 50%, rgba(0, 0, 0, .54) 75%, rgb(0, 0, 0) 100%);
+}
+
+
+@mixin helper--close-btn {
+    @include helper--transition;
+    @include helper--flex--center--center;
+    @include helper--indent;
+    @include helper--box-shadow--dark;
+
+    box-sizing: border-box;
+    width: $size_btn;
+    height: $size_btn;
+
+    color: $color_2;
+    border: 1px solid $color_3;
+    background-color: $color_3;
+    text-shadow: none;
+    &:before,
+    &:after {
+        @include helper--pseudo;
+        @include helper--absolute--center-horizontal;
+
+        top: 45%;
+
+        display: block;
+
+        width: 50%;
+        height: 4px;
+
+        transform-origin: 50% 50%;
+
+        background: currentColor;
+    }
+    &:before {
+        transform: rotate3d(0, 0, 1, -$size_burger_angle);
+    }
+    &:after {
+        transform: rotate3d(0, 0, 1, $size_burger_angle);
+    }
+    &:hover {
+        color: $color_3;
+        // background-color: transparent;
+        background-color: $color_2;
+    }
+}
+

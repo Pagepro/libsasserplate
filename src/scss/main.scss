@@ -10,27 +10,27 @@
    ========================================================================== */
 @import "node_modules/include-media/dist/_include-media";
 
-/* Flex Helpers
-   ========================================================================== */
-// @import "node_modules/flex-helpers/flex-helpers";
-
 /* Base
    ========================================================================== */
 @import "base/reset";
 @import "base/fonts";
 @import "base/variables";
+@import "base/functions";
+@import "base/helper-mixins";
 @import "base/mixins";
 @import "base/typography";
-@import "base/helpers";
+@import "base/clearfixes";
 @import "base/icons";
 @import "base/animations";
 @import "base/ui";
 @import "base/objects";
+@import "base/media-wrappers";
 @import "base/custom-attributes";
 
 /* Layouts and main layout elements
    ========================================================================== */
 @import "layout/common";
+@import "layout/inner";
 @import "layout/header";
 // @import "layout/hero";
 @import "layout/main";
