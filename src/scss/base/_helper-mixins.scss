@@ -523,8 +523,6 @@
     flex-direction: column;
 }
 
-
-
 @mixin helper--img--cover () {
     @include helper--absolute--center--center;
 
@@ -534,9 +532,6 @@
     min-width: 100%;
     min-height: 100%;
 }
-
-
-
 
 @mixin helper--stop-animation () {
     animation-play-state: paused;

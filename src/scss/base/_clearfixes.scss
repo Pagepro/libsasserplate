@@ -14,6 +14,7 @@
 
     content: '.';
 }
+
 %helper--clear-after {
     display: block;
     clear: both;
@@ -22,6 +23,7 @@
 
     content: '.';
 }
+
 %helper--clearfix {
     &:before,
     &:after {

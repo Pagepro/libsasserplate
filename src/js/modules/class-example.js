@@ -1,7 +1,7 @@
 // import $ from 'jquery'
-// import { scssVariables, breakpoints } from './_utils'
+// import { SCSS_VARIABLES, BREAKPOINTS } from './../utils'
 
-class ClassExample {
+export default class ClassExample {
   constructor (userConfig) {
     const defaultConfig = {
       exemplaryCssSelector: '.js-exemplary-selector',
@@ -11,9 +11,7 @@ class ClassExample {
   }
 
   init () {
-    // console.log(scssVariables.inner)
-    // console.log(breakpoints.phone)
+    // console.log(SCSS_VARIABLES.inner)
+    // console.log(BREAKPOINTS.phone)
   }
 }
-
-export default ClassExample
