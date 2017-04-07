@@ -1,12 +1,25 @@
 /* ==========================================================================
    Reset
    ========================================================================== */
-iframe {
-    border: none;
+* {
+    box-sizing: border-box;
+    &:focus {
+        outline: none;
+    }
 }
 
 iframe,
 img {
     display: block;
+
     max-width: 100%;
+}
+
+iframe {
+    border: none;
+}
+
+figure,
+blockquote {
+    margin: 0;
 }

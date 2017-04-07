@@ -8,6 +8,18 @@
     @include helper--indent;
 }
 
+/* Background attachment fixed
+   ========================================================================== */
+.u-bg-fixed {
+    background-attachment: fixed;
+    background-size: cover;
+}
+.u-bg-fixed {
+    @include media('<=tablet') {
+        background-attachment: scroll;
+    }
+}
+
 /* Backgrounds
    ========================================================================== */
 @for $i from 1 through length($colors) {
@@ -31,23 +43,22 @@
 //         }
 //     }
 // }
-
-.u-bg-current {
-    background-color: currentColor;
-}
-.u-bg-current-on-hover {
-    &:hover {
-        background-color: currentColor;
-    }
-}
-.u-bg-transparent {
-    background-color: transparent;
-}
-.u-bg-transparent-on-hover {
-    &:hover {
-        background-color: transparent;
-    }
-}
+// .u-bg-current {
+//     background-color: currentColor;
+// }
+// .u-bg-current-on-hover {
+//     &:hover {
+//         background-color: currentColor;
+//     }
+// }
+// .u-bg-transparent {
+//     background-color: transparent;
+// }
+// .u-bg-transparent-on-hover {
+//     &:hover {
+//         background-color: transparent;
+//     }
+// }
 
 /* Paints (colors)
 ========================================================================== */
@@ -72,35 +83,35 @@
         }
     }
 }
-.u-paint-current-on-hover {
-    &:hover {
-        color: currentColor;
-    }
-}
+// .u-paint-current-on-hover {
+//     &:hover {
+//         color: currentColor;
+//     }
+// }
 
 /* Borders
 ========================================================================== */
-@for $i from 1 through length($colors) {
-    .u-border-#{$i} {
-        border-color: nth($colors, $i);
-    }
-}
+// @for $i from 1 through length($colors) {
+//     .u-border-#{$i} {
+//         border-color: nth($colors, $i);
+//     }
+// }
 
-@for $i from 1 through length($colors) {
-    .u-border-#{$i}-on-hover {
-        &:hover {
-            border-color: nth($colors, $i);
-        }
-    }
-}
-.u-border-current {
-    border-color: currentColor;
-}
-.u-border-current-on-hover {
-    &:hover {
-        border-color: currentColor;
-    }
-}
+// @for $i from 1 through length($colors) {
+//     .u-border-#{$i}-on-hover {
+//         &:hover {
+//             border-color: nth($colors, $i);
+//         }
+//     }
+// }
+// .u-border-current {
+//     border-color: currentColor;
+// }
+// .u-border-current-on-hover {
+//     &:hover {
+//         border-color: currentColor;
+//     }
+// }
 
 /* Change element color/background on parent hover
 ========================================================================== */
@@ -221,20 +232,6 @@
 //         transform: translateX(-100%, 100%);
 //     }
 // }
-
-/* Simple link
-========================================================================== */
-.u-default-link-anim {
-    @include helper--inline-flex--center--center;
-    .c-label {
-        @include helper--link-anim;
-    }
-    &:hover {
-        .c-label {
-            @include helper--link-anim-dash-on-hover;
-        }
-    }
-}
 
 // .u-nowrap {
 //     white-space: nowrap;

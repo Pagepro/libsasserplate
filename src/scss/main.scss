@@ -26,6 +26,7 @@
 @import "base/objects";
 @import "base/media-wrappers";
 @import "base/custom-attributes";
+@import "base/utilities-sets";
 
 /* Layouts and main layout elements
    ========================================================================== */
@@ -49,8 +50,8 @@
 
 /* Utilities
    ========================================================================== */
-@import "base/utilities";
 @import "base/text-styles";
+@import "base/utilities";
 
 
 /* Vendor CSS

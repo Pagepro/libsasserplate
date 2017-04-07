@@ -1,12 +1,12 @@
 /* ==========================================================================
    COMMON
    ========================================================================== */
-[class*='t-default'] {
-    line-height: 1;
-    > a {
-        @include helper--transition;
-    }
-}
+// [class*='t-default'] {
+//     line-height: 1;
+//     > a {
+//         @include helper--transition;
+//     }
+// }
 
 .t-upper {
     text-transform: uppercase;
@@ -33,9 +33,9 @@
 
 /* Font default (opensans)
    ========================================================================== */
-[class*='t-default'] {
-    font-family: $font_default;
-}
+// [class*='t-default'] {
+//     font-family: $font_default;
+// }
 
 
 /* ==========================================================================
