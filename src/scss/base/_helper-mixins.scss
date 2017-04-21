@@ -957,7 +957,7 @@
 /* ==========================================================================
    Buttons
    ========================================================================== */
-@mixin helper--close-btn {
+@mixin helper--close-btn ($size_btn: 38px, $size_angle: 45deg, $paint: $color_2, $hover_paint: $color_3, $border_paint: $color_3, $background_paint: $color_3, $hover_background_paint: $color_2) {
     @include helper--transition;
     @include helper--flex--center--center;
     @include helper--indent;
@@ -967,9 +967,9 @@
     width: $size_btn;
     height: $size_btn;
 
-    color: $color_2;
-    border: 1px solid $color_3;
-    background-color: $color_3;
+    color: $paint;
+    border: 1px solid $border_paint;
+    background-color: $background_paint;
     text-shadow: none;
     &:before,
     &:after {
@@ -988,13 +988,13 @@
         background: currentColor;
     }
     &:before {
-        transform: rotate3d(0, 0, 1, -$size_burger_angle);
+        transform: rotate3d(0, 0, 1, -$size_angle);
     }
     &:after {
-        transform: rotate3d(0, 0, 1, $size_burger_angle);
+        transform: rotate3d(0, 0, 1, $size_angle);
     }
     &:hover {
-        color: $color_3;
-        background-color: $color_2;
+        color: $hover_paint;
+        background-color: $hover_background_paint;
     }
 }
