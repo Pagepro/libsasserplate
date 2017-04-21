@@ -1,10 +1,14 @@
 /* ==========================================================================
-   Helpers
-   ========================================================================== */
-
-/* Layout oriented helpers
+   ==========================================================================
+   LAYOUT ORIENTED HELPERS
+   ==========================================================================
    ========================================================================== */
 @mixin helper--inner () {
+    @include media('<desktop-small') {
+        padding-right: $size_gutter;
+        padding-left: $size_gutter;
+    }
+
     display: flex;
     flex-direction: column;
 
@@ -13,22 +17,16 @@
     margin: 0 auto;
 
     vertical-align: baseline;
-    @include media('<desktop-small') {
-        padding-right: $size_gutter;
-        padding-left: $size_gutter;
-    }
-}
-@mixin helper--sec () {
-    @include helper--flex--center--top;
-
-    max-width: 100%;
-
-    flex-wrap: wrap;
-    flex-basis: 100%;
 }
 
+/* ==========================================================================
+   ==========================================================================
+   CONTENT HELPERS
+   ==========================================================================
+   ========================================================================== */
 
-/* Content helpers
+/* ==========================================================================
+   Reset helpers
    ========================================================================== */
 @mixin helper--reset--btn () {
     padding: 0;
@@ -39,51 +37,6 @@
     background: transparent;
     box-shadow: none;
 }
-@mixin helper--dot-dot-dot () {
-    overflow: hidden;
-
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-@mixin helper--transition () {
-    transition: 170ms ease;
-}
-@mixin helper--transition-alt () {
-    transition: ease-in-out .3s;
-}
-
-@mixin helper--bezier () {
-    transition: 500ms cubic-bezier(.190, 1.000, .220, 1.000);
-}
-@mixin helper--bezier--duration () {
-    transition-duration: 500ms;
-}
-@mixin helper--bezier--delay--sequence-0 () {
-    transition-delay: 0;
-}
-@mixin helper--bezier--delay--sequence-1 () {
-    transition-delay: 180ms;
-}
-@mixin helper--bezier--delay--sequence-2 () {
-    transition-delay: 240ms;
-}
-@mixin helper--bezier--timing () {
-    transition-timing-function: cubic-bezier(.190, 1.000, .220, 1.000);
-}
-
-@mixin helper--bezier-H-before--duration () {
-    transition-duration: 0.18s;
-}
-@mixin helper--bezier-H-after--duration () {
-    transition-duration: 0.24s;
-}
-@mixin helper--bezier-H-before--timing () {
-    transition-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@mixin helper--bezier-H-after--timing () {
-    transition-timing-function: cubic-bezier(0.62, 0.02, 0.34, 1);
-}
-
 @mixin helper--indent () {
     display: block;
 
@@ -94,100 +47,6 @@
 
     text-indent: -99998em;
 }
-@mixin helper--absolute--center-vertical () {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-
-    margin: auto 0;
-}
-@mixin helper--absolute--center-vertical--horizontal-to-left () {
-    @include helper--absolute--center-vertical;
-
-    left: 0;
-}
-@mixin helper--absolute--center-vertical--horizontal-to-right () {
-    @include helper--absolute--center-vertical;
-
-    right: 0;
-}
-@mixin helper--absolute--center-horizontal () {
-    position: absolute;
-    right: 0;
-    left: 0;
-
-    margin: 0 auto;
-}
-@mixin helper--absolute--center-horizontal--vertical-to-top () {
-    @include helper--absolute--center-horizontal;
-
-    top: 0;
-}
-@mixin helper--absolute--center-horizontal--vertical-to-bottom () {
-    @include helper--absolute--center-horizontal;
-
-    bottom: 0;
-}
-@mixin helper--absolute--left--top () {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-@mixin helper--absolute--right--top () {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-@mixin helper--absolute--left--bottom () {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@mixin helper--absolute--right--bottom () {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-@mixin helper--absolute--center--center () {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    margin: auto;
-}
-@mixin helper--fixed--center-horizontal--vertical-to-top () {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-
-    margin: 0 auto;
-}
-@mixin helper--fixed--center--center () {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    margin: auto;
-}
-@mixin helper--pseudo () {
-    display: block;
-
-    content: '';
-}
-@mixin helper--pseudo--absolute () {
-    @include helper--pseudo;
-
-    position: absolute;
-}
-@mixin helper--pseudo--absolute--center () {
-    @include helper--pseudo;
-    @include helper--absolute--center--center;
-}
 @mixin helper--list () {
     margin: 0;
     padding: 0;
@@ -195,13 +54,213 @@
     list-style: none;
 }
 
+/* ==========================================================================
+   Transitions helpers
+   ========================================================================== */
+@mixin helper--transition () {
+    transition: 170ms ease;
+}
+@mixin helper--transition-alt () {
+    transition: ease-in-out .3s;
+}
+@mixin helper--bezier () {
+    transition: 500ms cubic-bezier(.190, 1.000, .220, 1.000);
+}
+@mixin helper--bezier--timing () {
+    transition-timing-function: cubic-bezier(.190, 1.000, .220, 1.000);
+}
+@mixin helper--bezier--delay--sequence-0 () {
+    transition-delay: 0;
+}
+@mixin helper--bezier--delay--sequence-1 () {
+    transition-delay: 180ms;
+}
+@mixin helper--bezier--delay--sequence-2 () {
+    transition-delay: 240ms;
+}
+@mixin helper--bezier-H-before--duration () {
+    transition-duration: .18s;
+}
+@mixin helper--bezier-H-after--duration () {
+    transition-duration: .24s;
+}
+@mixin helper--bezier-H-before--timing () {
+    transition-timing-function: cubic-bezier(.52, .01, .16, 1);
+}
+@mixin helper--bezier-H-after--timing () {
+    transition-timing-function: cubic-bezier(.62, .02, .34, 1);
+}
 
+/* ==========================================================================
+   Animation helpers
+   ========================================================================== */
+@mixin helper--stop-animation () {
+    animation-play-state: paused;
+}
+@mixin helper--run-animation () {
+    animation-play-state: running;
+}
+
+/* ==========================================================================
+   Postion helpers
+   ========================================================================== */
+@mixin helper--position--center-vertical {
+    top: 0;
+    bottom: 0;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+@mixin helper--position--center-horizontal {
+    right: 0;
+    left: 0;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Postions absolute
+   ========================================================================== */
+@mixin helper--absolute--center-vertical () {
+    @include helper--position--center-vertical;
+
+    position: absolute;
+}
+@mixin helper--absolute--center-horizontal () {
+    @include helper--position--center-horizontal;
+
+    position: absolute;
+}
+@mixin helper--absolute--left--top () {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@mixin helper--absolute--left--center () {
+    @include helper--absolute--center-vertical;
+
+    left: 0;
+}
+@mixin helper--absolute--left--bottom () {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@mixin helper--absolute--center--top () {
+    @include helper--absolute--center-horizontal;
+
+    top: 0;
+}
+@mixin helper--absolute--center--center () {
+    @include helper--absolute--center-horizontal;
+    @include helper--position--center-vertical;
+
+    position: absolute;
+}
+@mixin helper--absolute--center--bottom () {
+    @include helper--absolute--center-horizontal;
+
+    bottom: 0;
+}
+@mixin helper--absolute--right--top () {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+@mixin helper--absolute--right--center () {
+    @include helper--absolute--center-vertical;
+
+    right: 0;
+}
+@mixin helper--absolute--right--bottom () {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Postions fixed
+   ========================================================================== */
+@mixin helper--fixed--center-vertical () {
+    @include helper--position--center-vertical;
+
+    position: fixed;
+}
+@mixin helper--fixed--center-horizontal () {
+    @include helper--position--center-horizontal;
+
+    position: fixed;
+}
+@mixin helper--fixed--center--center () {
+    @include helper--absolute--center-horizontal;
+    @include helper--position--center-vertical;
+
+    position: fixed;
+}
+@mixin helper--fixed--center--top () {
+    @include helper--fixed--center-horizontal;
+
+    top: 0;
+}
+
+/* ==========================================================================
+   Other content helpers
+   ========================================================================== */
+@mixin helper--dot-dot-dot () {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin helper--img--cover () {
+    @include helper--absolute--center--center;
+
+    display: block;
+
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+@mixin helper--pseudo () {
+    display: block;
+
+    content: '';
+}
+
+/* ==========================================================================
+   ==========================================================================
+   GENERAL CHUNK FLEX HELPERS
+   ==========================================================================
+   ========================================================================== */
+
+/* Display helpers
+   ========================================================================== */
 @mixin helper--flex () {
     display: flex;
 }
 @mixin helper--inline-flex () {
     display: inline-flex;
 }
+@mixin helper--flex--wrap () {
+    display: flex;
+
+    flex-wrap: wrap;
+}
+@mixin helper--inline-flex--wrap () {
+    display: inline-flex;
+
+    flex-wrap: wrap;
+}
+@mixin helper--flex--column () {
+    display: flex;
+    flex-direction: column;
+}
+@mixin helper--inline-flex--column () {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+/* Align helpers
+   ========================================================================== */
 @mixin helper--align--start () {
     align-items: flex-start;
     align-content: flex-start;
@@ -218,10 +277,17 @@
     align-items: flex-start;
     align-content: space-between;
 }
+@mixin helper--align--space-around () {
+    align-items: flex-start;
+    align-content: space-around;
+}
 @mixin helper--align--stretch () {
     align-items: stretch;
     align-content: stretch;
 }
+
+/* Justify helpers
+   ========================================================================== */
 @mixin helper--justify--start () {
     justify-content: flex-start;
 }
@@ -237,6 +303,53 @@
 @mixin helper--justify--space-around () {
     justify-content: space-around;
 }
+
+
+/* ==========================================================================
+   ==========================================================================
+   FLEX HELPERS
+   ==========================================================================
+   ========================================================================== */
+
+/* ==========================================================================
+   Flex row helpers
+   ========================================================================== */
+
+/* flex row horizontal to left
+   ========================================================================== */
+@mixin helper--flex--left--top () {
+    @include helper--flex;
+    @include helper--justify--start;
+    @include helper--align--start;
+}
+@mixin helper--flex--left--center () {
+    @include helper--flex;
+    @include helper--justify--start;
+    @include helper--align--center;
+}
+@mixin helper--flex--left--bottom () {
+    @include helper--flex;
+    @include helper--justify--start;
+    @include helper--align--end;
+}
+@mixin helper--flex--left--stretch () {
+    @include helper--flex;
+    @include helper--justify--start;
+    @include helper--align--stretch;
+}
+@mixin helper--flex--left--space-between () {
+    @include helper--flex--wrap;
+    @include helper--justify--start;
+    @include helper--align--space-between;
+}
+@mixin helper--flex--left--space-around () {
+    @include helper--flex--wrap;
+    @include helper--justify--start;
+    @include helper--align--space-around;
+}
+
+/* flex row horizontal centered
+   ========================================================================== */
 @mixin helper--flex--center--top () {
     @include helper--flex;
     @include helper--justify--center;
@@ -252,59 +365,24 @@
     @include helper--justify--center;
     @include helper--align--end;
 }
-@mixin helper--flex--center--space-between () {
+@mixin helper--flex--center--stretch () {
     @include helper--flex;
     @include helper--justify--center;
+    @include helper--align--stretch;
+}
+@mixin helper--flex--center--space-between () {
+    @include helper--flex--wrap;
+    @include helper--justify--center;
+    @include helper--align--space-between;
+}
+@mixin helper--flex--center--space-around () {
+    @include helper--flex--wrap;
+    @include helper--justify--center;
+    @include helper--align--space-around;
+}
 
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: space-between;
-}
-@mixin helper--flex--space-between--top () {
-    @include helper--flex;
-    @include helper--justify--space-between;
-    @include helper--align--start;
-}
-@mixin helper--flex--space-between--center () {
-    @include helper--flex;
-    @include helper--justify--space-between;
-    @include helper--align--center;
-}
-@mixin helper--flex--space-between--bottom () {
-    @include helper--flex;
-    @include helper--justify--space-between;
-    @include helper--align--end;
-}
-@mixin helper--flex--space-around--top () {
-    @include helper--flex;
-    @include helper--justify--space-around;
-    @include helper--align--start;
-}
-@mixin helper--flex--space-around--center () {
-    @include helper--flex;
-    @include helper--justify--space-around;
-    @include helper--align--center;
-}
-@mixin helper--flex--space-around--bottom () {
-    @include helper--flex;
-    @include helper--justify--space-between;
-    @include helper--align--end;
-}
-@mixin helper--flex--left--top () {
-    @include helper--flex;
-    @include helper--align--start;
-    @include helper--justify--start;
-}
-@mixin helper--flex--left--center () {
-    @include helper--flex;
-    @include helper--align--center;
-    @include helper--justify--start;
-}
-@mixin helper--flex--left--bottom () {
-    @include helper--flex;
-    @include helper--align--end;
-    @include helper--justify--start;
-}
+/* flex row horizontal to right
+   ========================================================================== */
 @mixin helper--flex--right--top () {
     @include helper--flex;
     @include helper--justify--end;
@@ -320,69 +398,228 @@
     @include helper--justify--end;
     @include helper--align--end;
 }
-@mixin helper--flex--stretch () {
+@mixin helper--flex--right--stretch () {
     @include helper--flex;
+    @include helper--justify--end;
     @include helper--align--stretch;
 }
-@mixin helper--flex--vertical-space-between () {
-    @include helper--flex;
-
-    flex-wrap: wrap;
-    align-items: stretch;
-    align-content: space-between;
-}
-
-@mixin helper--flex--top--left () {
-    @include helper--flex;
-    @include helper--align--start;
-    @include helper--justify--start;
-
-    flex-direction: column;
-}
-@mixin helper--flex--center--left () {
-    @include helper--flex;
-    @include helper--align--start;
-    @include helper--justify--center;
-
-    flex-direction: column;
-}
-@mixin helper--flex--bottom--left () {
-    @include helper--flex;
-    @include helper--align--start;
+@mixin helper--flex--right--space-between () {
+    @include helper--flex--wrap;
     @include helper--justify--end;
-
-    flex-direction: column;
+    @include helper--align--space-between;
 }
-@mixin helper--flex--space-between--left () {
+@mixin helper--flex--right--space-around () {
+    @include helper--flex--wrap;
+    @include helper--justify--end;
+    @include helper--align--space-around;
+}
+
+/* flex row horizontal space between
+   ========================================================================== */
+@mixin helper--flex--space-between--top () {
     @include helper--flex;
-    @include helper--align--start;
     @include helper--justify--space-between;
-
-    flex-direction: column;
+    @include helper--align--start;
+}
+@mixin helper--flex--space-between--center () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--center;
+}
+@mixin helper--flex--space-between--bottom () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+@mixin helper--flex--space-between--stretch () {
+    @include helper--flex;
+    @include helper--justify--space-between;
+    @include helper--align--stretch;
+}
+@mixin helper--flex--space-between--space-between () {
+    @include helper--flex--wrap;
+    @include helper--justify--space-between;
+    @include helper--align--space-between;
+}
+@mixin helper--flex--space-between--space-around () {
+    @include helper--flex--wrap;
+    @include helper--justify--space-between;
+    @include helper--align--space-around;
 }
 
-@mixin helper--flex--top--center () {
+/* flex row horizontal space around
+   ========================================================================== */
+@mixin helper--flex--space-around--top () {
     @include helper--flex;
+    @include helper--justify--space-around;
+    @include helper--align--start;
+}
+@mixin helper--flex--space-around--center () {
+    @include helper--flex;
+    @include helper--justify--space-around;
     @include helper--align--center;
-    @include helper--justify--start;
+}
+@mixin helper--flex--space-around--bottom () {
+    @include helper--flex;
+    @include helper--justify--space-around;
+    @include helper--align--end;
+}
+@mixin helper--flex--space-around--stretch () {
+    @include helper--flex;
+    @include helper--justify--space-around;
+    @include helper--align--stretch;
+}
+@mixin helper--flex--space-around--space-between () {
+    @include helper--flex--wrap;
+    @include helper--justify--space-around;
+    @include helper--align--space-between;
+}
+@mixin helper--flex--space-around--space-around () {
+    @include helper--flex--wrap;
+    @include helper--justify--space-around;
+    @include helper--align--space-around;
+}
 
-    flex-direction: column;
+/* ==========================================================================
+   Flex column helpers
+   ========================================================================== */
+
+/* flex column vertical to top
+   ========================================================================== */
+@mixin helper--flex--top--left () {
+    @include helper--flex--column;
+    @include helper--justify--start;
+    @include helper--align--start;
+}
+@mixin helper--flex--top--center () {
+    @include helper--flex--column;
+    @include helper--justify--start;
+    @include helper--align--center;
+}
+@mixin helper--flex--top--right () {
+    @include helper--flex--column;
+    @include helper--justify--start;
+    @include helper--align--end;
+}
+
+/* flex column vertical centered
+   ========================================================================== */
+@mixin helper--flex--center--left () {
+    @include helper--flex--column;
+    @include helper--justify--center;
+    @include helper--align--start;
+}
+@mixin helper--flex--center--center--column () {
+    @include helper--flex--column;
+    @include helper--justify--center;
+    @include helper--align--center;
+}
+@mixin helper--flex--center--right () {
+    @include helper--flex--column;
+    @include helper--justify--center;
+    @include helper--align--end;
+}
+
+/* flex column vertical to bottom
+   ========================================================================== */
+@mixin helper--flex--bottom--left () {
+    @include helper--flex--column;
+    @include helper--justify--end;
+    @include helper--align--start;
 }
 @mixin helper--flex--bottom--center () {
-    @include helper--flex;
-    @include helper--align--center;
+    @include helper--flex--column;
     @include helper--justify--end;
-
-    flex-direction: column;
-}
-@mixin helper--flex--space-between--center-vertical () {
-    @include helper--flex;
     @include helper--align--center;
-    @include helper--justify--space-between;
-
-    flex-direction: column;
+}
+@mixin helper--flex--bottom--right () {
+    @include helper--flex--column;
+    @include helper--justify--end;
+    @include helper--align--end;
 }
 
+/* flex column vertical space between
+   ========================================================================== */
+@mixin helper--flex--space-between--left () {
+    @include helper--flex--column;
+    @include helper--justify--space-between;
+    @include helper--align--start;
+}
+@mixin helper--flex--space-between--center () {
+    @include helper--flex--column;
+    @include helper--justify--space-between;
+    @include helper--align--center;
+}
+@mixin helper--flex--space-between--right () {
+    @include helper--flex--column;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+
+/* flex column vertical space between
+   ========================================================================== */
+@mixin helper--flex--space-around--left () {
+    @include helper--flex--column;
+    @include helper--justify--space-around;
+    @include helper--align--start;
+}
+@mixin helper--flex--space-around--center () {
+    @include helper--flex--column;
+    @include helper--justify--space-around;
+    @include helper--align--center;
+}
+@mixin helper--flex--space-around--right () {
+    @include helper--flex--column;
+    @include helper--justify--space-around;
+    @include helper--align--end;
+}
+
+
+/* ==========================================================================
+   ==========================================================================
+   INLINE-FLEX HELPERS
+   ==========================================================================
+   ========================================================================== */
+
+/* ==========================================================================
+   Inline-flex row helpers
+   ========================================================================== */
+
+/* inline-flex row horizontal to left
+   ========================================================================== */
+@mixin helper--inline-flex--left--top () {
+    @include helper--inline-flex;
+    @include helper--justify--start;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--left--center () {
+    @include helper--inline-flex;
+    @include helper--justify--start;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--left--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--start;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--left--stretch () {
+    @include helper--inline-flex;
+    @include helper--justify--start;
+    @include helper--align--stretch;
+}
+@mixin helper--inline-flex--left--space-between () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--start;
+    @include helper--align--space-between;
+}
+@mixin helper--inline-flex--left--space-around () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--start;
+    @include helper--align--space-around;
+}
+
+/* inline-flex row horizontal centered
+   ========================================================================== */
 @mixin helper--inline-flex--center--top () {
     @include helper--inline-flex;
     @include helper--justify--center;
@@ -398,59 +635,24 @@
     @include helper--justify--center;
     @include helper--align--end;
 }
-@mixin helper--inline-flex--center--space-between () {
+@mixin helper--inline-flex--center--stretch () {
     @include helper--inline-flex;
     @include helper--justify--center;
+    @include helper--align--stretch;
+}
+@mixin helper--inline-flex--center--space-between () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--center;
+    @include helper--align--space-between;
+}
+@mixin helper--inline-flex--center--space-around () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--center;
+    @include helper--align--space-around;
+}
 
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: space-between;
-}
-@mixin helper--inline-flex--space-between--top () {
-    @include helper--inline-flex;
-    @include helper--justify--space-between;
-    @include helper--align--start;
-}
-@mixin helper--inline-flex--space-between--center () {
-    @include helper--inline-flex;
-    @include helper--justify--space-between;
-    @include helper--align--center;
-}
-@mixin helper--inline-flex--space-between--bottom () {
-    @include helper--inline-flex;
-    @include helper--justify--space-between;
-    @include helper--align--end;
-}
-@mixin helper--inline-flex--space-around--top () {
-    @include helper--inline-flex;
-    @include helper--justify--space-around;
-    @include helper--align--start;
-}
-@mixin helper--inline-flex--space-around--center () {
-    @include helper--inline-flex;
-    @include helper--justify--space-around;
-    @include helper--align--center;
-}
-@mixin helper--inline-flex--space-around--bottom () {
-    @include helper--inline-flex;
-    @include helper--justify--space-between;
-    @include helper--align--end;
-}
-@mixin helper--inline-flex--left--top () {
-    @include helper--inline-flex;
-    @include helper--align--start;
-    @include helper--justify--start;
-}
-@mixin helper--inline-flex--left--center () {
-    @include helper--inline-flex;
-    @include helper--align--center;
-    @include helper--justify--start;
-}
-@mixin helper--inline-flex--left--bottom () {
-    @include helper--inline-flex;
-    @include helper--align--end;
-    @include helper--justify--start;
-}
+/* inline-flex row horizontal to right
+   ========================================================================== */
 @mixin helper--inline-flex--right--top () {
     @include helper--inline-flex;
     @include helper--justify--end;
@@ -466,81 +668,191 @@
     @include helper--justify--end;
     @include helper--align--end;
 }
-@mixin helper--inline-flex--stretch () {
+@mixin helper--inline-flex--right--stretch () {
     @include helper--inline-flex;
-
-    align-content: stretch;
-    align-items: stretch;
+    @include helper--justify--end;
+    @include helper--align--stretch;
+}
+@mixin helper--inline-flex--right--space-between () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--end;
+    @include helper--align--space-between;
+}
+@mixin helper--inline-flex--right--space-around () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--end;
+    @include helper--align--space-around;
 }
 
-@mixin helper--inline-flex--top--left () {
+/* inline-flex row horizontal space between
+   ========================================================================== */
+@mixin helper--inline-flex--space-between--top () {
     @include helper--inline-flex;
+    @include helper--justify--space-between;
     @include helper--align--start;
-    @include helper--justify--start;
+}
+@mixin helper--inline-flex--space-between--center () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--space-between--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--space-between--stretch () {
+    @include helper--inline-flex;
+    @include helper--justify--space-between;
+    @include helper--align--stretch;
+}
+@mixin helper--inline-flex--space-between--space-between () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--space-between;
+    @include helper--align--space-between;
+}
+@mixin helper--inline-flex--space-between--space-around () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--space-between;
+    @include helper--align--space-around;
+}
 
-    flex-direction: column;
+/* inline-flex row horizontal space around
+   ========================================================================== */
+@mixin helper--inline-flex--space-around--top () {
+    @include helper--inline-flex;
+    @include helper--justify--space-around;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--space-around--center () {
+    @include helper--inline-flex;
+    @include helper--justify--space-around;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--space-around--bottom () {
+    @include helper--inline-flex;
+    @include helper--justify--space-around;
+    @include helper--align--end;
+}
+@mixin helper--inline-flex--space-around--stretch () {
+    @include helper--inline-flex;
+    @include helper--justify--space-around;
+    @include helper--align--stretch;
+}
+@mixin helper--inline-flex--space-around--space-between () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--space-around;
+    @include helper--align--space-between;
+}
+@mixin helper--inline-flex--space-around--space-around () {
+    @include helper--inline-flex--wrap;
+    @include helper--justify--space-around;
+    @include helper--align--space-around;
+}
+
+/* ==========================================================================
+   Inline-flex column helpers
+   ========================================================================== */
+
+/* inline-flex column vertical to top
+   ========================================================================== */
+@mixin helper--inline-flex--top--left () {
+    @include helper--inline-flex--column;
+    @include helper--justify--start;
+    @include helper--align--start;
 }
 @mixin helper--inline-flex--top--center () {
-    @include helper--inline-flex;
-    @include helper--align--center;
+    @include helper--inline-flex--column;
     @include helper--justify--start;
-
-    flex-direction: column;
+    @include helper--align--center;
 }
 @mixin helper--inline-flex--top--right () {
-    @include helper--inline-flex;
-    @include helper--align--end;
+    @include helper--inline-flex--column;
     @include helper--justify--start;
-
-    flex-direction: column;
+    @include helper--align--end;
 }
-@mixin helper--inline-flex--bottom--left () {
-    @include helper--inline-flex;
-    @include helper--align--start;
-    @include helper--justify--end;
 
-    flex-direction: column;
+/* inline-flex column vertical centered
+   ========================================================================== */
+@mixin helper--inline-flex--center--left () {
+    @include helper--inline-flex--column;
+    @include helper--justify--center;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--center--center--column () {
+    @include helper--inline-flex--column;
+    @include helper--justify--center;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--center--right () {
+    @include helper--inline-flex--column;
+    @include helper--justify--center;
+    @include helper--align--end;
+}
+
+/* inline-flex column vertical to bottom
+   ========================================================================== */
+@mixin helper--inline-flex--bottom--left () {
+    @include helper--inline-flex--column;
+    @include helper--justify--end;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--bottom--center () {
+    @include helper--inline-flex--column;
+    @include helper--justify--end;
+    @include helper--align--center;
 }
 @mixin helper--inline-flex--bottom--right () {
-    @include helper--inline-flex;
-    @include helper--align--end;
+    @include helper--inline-flex--column;
     @include helper--justify--end;
-
-    flex-direction: column;
+    @include helper--align--end;
 }
-@mixin helper--inline-flex--center--left () {
-    @include helper--inline-flex;
-    @include helper--align--start;
-    @include helper--justify--center;
 
-    flex-direction: column;
-}
+/* inline-flex column vertical space between
+   ========================================================================== */
 @mixin helper--inline-flex--space-between--left () {
-    @include helper--inline-flex;
-    @include helper--align--start;
+    @include helper--inline-flex--column;
     @include helper--justify--space-between;
-
-    flex-direction: column;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--space-between--center () {
+    @include helper--inline-flex--column;
+    @include helper--justify--space-between;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--space-between--right () {
+    @include helper--inline-flex--column;
+    @include helper--justify--space-between;
+    @include helper--align--end;
 }
 
-@mixin helper--img--cover () {
-    @include helper--absolute--center--center;
-
-    display: block;
-
-    width: 100%;
-    min-width: 100%;
-    min-height: 100%;
+/* inline-flex column vertical space between
+   ========================================================================== */
+@mixin helper--inline-flex--space-around--left () {
+    @include helper--inline-flex--column;
+    @include helper--justify--space-around;
+    @include helper--align--start;
+}
+@mixin helper--inline-flex--space-around--center () {
+    @include helper--inline-flex--column;
+    @include helper--justify--space-around;
+    @include helper--align--center;
+}
+@mixin helper--inline-flex--space-around--right () {
+    @include helper--inline-flex--column;
+    @include helper--justify--space-around;
+    @include helper--align--end;
 }
 
-@mixin helper--stop-animation () {
-    animation-play-state: paused;
-}
-@mixin helper--run-animation () {
-    animation-play-state: running;
-}
 
-/* Apparence helpers functionnal
+/* ==========================================================================
+   ==========================================================================
+   APPARENCE HELPERS
+   ==========================================================================
+   ========================================================================== */
+
+/* ==========================================================================
+   Spacing helpers
    ========================================================================== */
 @mixin helper--children-margin-top-big () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
@@ -578,37 +890,9 @@
     }
 }
 
-/* Apparence helpers
+/* ==========================================================================
+   Shadows, overalys etc
    ========================================================================== */
-@mixin helper--link-anim () {
-    position: relative;
-
-    overflow: hidden;
-    &:before {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-        height: 1px;
-
-        transition: .18s cubic-bezier(.52, .01, .16, 1);
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-
-        background: currentColor;
-
-        @include helper--pseudo;
-    }
-}
-@mixin helper--link-anim-dash-on-hover () {
-    &:before {
-        transition-timing-function: cubic-bezier(.62, .02, .34, 1);
-        transition-duration: .24s;
-        transform: scaleX(1);
-    }
-}
-
 @mixin helper--box-shadow--no-color () {
     @include helper--absolute--center--center;
     @include helper--transition;
@@ -625,7 +909,8 @@
 }
 
 @mixin helper--overlay () {
-    @include helper--pseudo--absolute--center;
+    @include helper--pseudo;
+    @include helper--absolute--center--center;
 
     width: 100%;
     height: 100%;
@@ -637,7 +922,41 @@
     background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, .54) 25%, rgba(0, 0, 0, .54) 50%, rgba(0, 0, 0, .54) 75%, rgb(0, 0, 0) 100%);
 }
 
+/* ==========================================================================
+   Links helpers
+   ========================================================================== */
+@mixin helper--link-anim () {
+    position: relative;
 
+    overflow: hidden;
+    &:before {
+        @include helper--pseudo;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+
+        transition: .18s cubic-bezier(.52, .01, .16, 1);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+
+        background: currentColor;
+    }
+}
+@mixin helper--link-anim-dash-on-hover () {
+    &:before {
+        transition-timing-function: cubic-bezier(.62, .02, .34, 1);
+        transition-duration: .24s;
+        transform: scaleX(1);
+    }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
 @mixin helper--close-btn {
     @include helper--transition;
     @include helper--flex--center--center;
@@ -676,8 +995,6 @@
     }
     &:hover {
         color: $color_3;
-        // background-color: transparent;
         background-color: $color_2;
     }
 }
-
