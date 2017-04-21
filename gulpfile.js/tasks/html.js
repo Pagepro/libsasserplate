@@ -36,7 +36,6 @@ var htmlTask = function() {
     }))
     .on('error', handleErrors)
     .pipe(gulpif(global.production, replace(' <br', '&nbsp;<br')))
-    .pipe(gulpif(global.production, replace('<link rel="stylesheet" href="./static/css/custom-classes.css">', '')))
     .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
     .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
     .pipe(gulpif(!global.production, browserSync.stream()))

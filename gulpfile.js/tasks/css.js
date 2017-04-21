@@ -21,7 +21,6 @@ var paths = {
 var cssTask = function () {
   return gulp.src(paths.src)
     .pipe(gulpif(!global.production, sourcemaps.init()))
-    .pipe(gulpif(global.production, replace('// @import "custom-classes";', '@import "custom-classes";')))
     .pipe(sass(config.tasks.css.sass))
     .on('error', handleErrors)
     .pipe(autoprefixer(config.tasks.css.autoprefixer))
