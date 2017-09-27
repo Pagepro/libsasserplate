@@ -56,4 +56,3 @@ Once you have verified that your system can run LibSasserPlate, check out the [e
 * **/** - root directory with html files and configuration files (eslint, editorconfig)
 * **src** - directory with source files
 * **static** - directory compiled files, do not edit files in this directory because they will be overwritten
-# solair
