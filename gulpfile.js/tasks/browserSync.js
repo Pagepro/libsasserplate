@@ -8,7 +8,6 @@ var config = require('../config')
 var pathToUrl = require('../lib/pathToUrl')
 
 var browserSyncTask = function() {
-
   var webpackConfig = webpackMultiConfig('development')
   var compiler = webpack(webpackConfig)
   var proxyConfig = config.tasks.browserSync.proxy || null
@@ -23,7 +22,7 @@ var browserSyncTask = function() {
 
   server.middleware = [
     require('webpack-dev-middleware')(compiler, {
-      stats: 'errors-only',
+      stats: false,
       publicPath: pathToUrl('/', webpackConfig.output.publicPath)
     }),
     require('webpack-hot-middleware')(compiler)

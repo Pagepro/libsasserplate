@@ -25,12 +25,7 @@
       "entries": {
         "app": ["./app.js"]
       },
-      "extensions": ["js", "json"],
-      "babel": {
-        "presets": ["es2015", "stage-1"],
-        "plugins": []
-      },
-      "extractSharedJs": false
+      "extensions": ["js", "json"]
     },
 
     "css": {
@@ -89,6 +84,7 @@
     },
 
     "critical" : {
+      "enabled": false,
       "src": "*.html",
       "width": 1920,
       "height": 1080
