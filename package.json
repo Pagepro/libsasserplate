@@ -60,7 +60,7 @@
     "webpack-hot-middleware": "2.21.0"
   },
   "pre-commit": [
-    "build"
+    "lint"
   ],
   "standard": {
     "ignore": [
