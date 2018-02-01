@@ -48,7 +48,7 @@ p,
 ul,
 ol {
     &:not([class]) + &:not([class]) {
-        margin-top: $size_gutter;
+        margin-top: $size-gutter;
     }
 }
 

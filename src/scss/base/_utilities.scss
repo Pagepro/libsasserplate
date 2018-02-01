@@ -116,8 +116,8 @@
 /* Change element color/background on parent hover
 ========================================================================== */
 /* Example:
-    You set following colors in variables file: $color_1: black; $color_2: yellow;
-    You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color_1 (= black). "u-bg-2" class styles: background-color: $color_2 (= yellow)) inside some box (it doesn't have to be direct parent of this button).
+    You set following colors in variables file: $color-1: black; $color-2: yellow;
+    You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color-1 (= black). "u-bg-2" class styles: background-color: $color-2 (= yellow)) inside some box (it doesn't have to be direct parent of this button).
     You want the button switch colors on the box hover state - it means have reverse color/background: color: yellow; and background-color: black;
     You need to give "u-rev-on-hover-parent@parent" class to the box and "u-rev-on-hover-parent@child" class to the button
 */
@@ -137,9 +137,9 @@
 // }
 
 /* Example:
-    You set following colors in variables file: $color_1: black; $color_2: purple; $color_3: red; $color_4: yellow;
-    You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color_1. "u-bg-2" class styles: color: $color_2) inside some box (it doesn't have to be direct parent of this button).
-    You want the button change its color on $color_3 and its background on $color_4 while the box is hovered.
+    You set following colors in variables file: $color-1: black; $color-2: purple; $color-3: red; $color-4: yellow;
+    You have button with following classes="u-paint-1 u-bg-2" ("u-paint-1" class styles: color: $color-1. "u-bg-2" class styles: color: $color-2) inside some box (it doesn't have to be direct parent of this button).
+    You want the button change its color on $color-3 and its background on $color-4 while the box is hovered.
     You need to give "u-trigger-action-on-parent-hover@parent" class to the box and "u-trigger-action-on-parent-hover@child" classes to the button
 */
 // .u-trigger-action-on-parent-hover\@parent {

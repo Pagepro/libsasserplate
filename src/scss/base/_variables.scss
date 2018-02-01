@@ -53,7 +53,7 @@ $size-tablet: 1024px;
 $size-phone: 767px;
 
 // breakpoints names array - used to generate custom attributes with include-media rwd
-$breakpoints_array:
+$breakpoints-array:
     $breakpoint-desktop-small,
     $breakpoint-tablet,
     $breakpoint-phone;
