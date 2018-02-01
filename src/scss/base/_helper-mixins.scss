@@ -5,15 +5,15 @@
    ========================================================================== */
 @mixin helper--inner () {
     @include media('<desktop-small') {
-        padding-right: $size_gutter;
-        padding-left: $size_gutter;
+        padding-right: $size-gutter;
+        padding-left: $size-gutter;
     }
 
     display: flex;
     flex-direction: column;
 
     width: 100%;
-    max-width: $size_inner;
+    max-width: $size-inner;
     margin: 0 auto;
 
     vertical-align: baseline;
@@ -860,22 +860,22 @@
    ========================================================================== */
 @mixin helper--children-margin-top-big () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size_gutter*3;
+        margin-top: $size-gutter*3;
     }
 }
 @mixin helper--children-margin-top-medium () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size_gutter*2;
+        margin-top: $size-gutter*2;
     }
 }
 @mixin helper--children-margin-top-default () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size_gutter;
+        margin-top: $size-gutter;
     }
 }
 @mixin helper--children-margin-top-micro () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size_gutter/3;
+        margin-top: $size-gutter/3;
     }
 }
 @mixin helper--children-margin-top-reset () {
@@ -885,23 +885,23 @@
 }
 @mixin helper--children-margin-left-default () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-left: $size_gutter;
+        margin-left: $size-gutter;
     }
 }
 @mixin helper--children-margin-left-small () {
     [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-left: $size_gutter/2;
+        margin-left: $size-gutter/2;
     }
 }
 
 /* ==========================================================================
    Shadows, overalys etc
    ========================================================================== */
-@mixin helper--box-shadow ($horizontal_length: 0, $vertical_length: 5px, $blur_radius: 10px, $spread_radius: 0, $opacity: .2) {
-    box-shadow: $horizontal_length $vertical_length $blur_radius $spread_radius rgba(0,0,0,$opacity);
+@mixin helper--box-shadow ($horizontal-length: 0, $vertical-length: 5px, $blur-radius: 10px, $spread-radius: 0, $opacity: .2) {
+    box-shadow: $horizontal-length $vertical-length $blur-radius $spread-radius rgba(0,0,0,$opacity);
 }
-@mixin helper--text-shadow ($horizontal_length: 0, $vertical_length: 2px, $blur_radius: 12px, $opacity: .2) {
-    text-shadow: $horizontal_length $vertical_length $blur_radius rgba(0,0,0,$opacity);
+@mixin helper--text-shadow ($horizontal-length: 0, $vertical-length: 2px, $blur-radius: 12px, $opacity: .2) {
+    text-shadow: $horizontal-length $vertical-length $blur-radius rgba(0,0,0,$opacity);
 }
 @mixin helper--overlay () {
     @include helper--pseudo;
@@ -919,7 +919,7 @@
 /* ==========================================================================
    Links helpers
    ========================================================================== */
-@mixin helper--link-anim ($anim_line_h: 100%, $anim_line_v: 1px, $paint: currentColor) {
+@mixin helper--link-anim ($anim-line-h: 100%, $anim-line-v: 1px, $paint: currentColor) {
     position: relative;
 
     overflow: hidden;
@@ -930,8 +930,8 @@
         bottom: 0;
         left: 0;
 
-        width: $anim_line_h;
-        height: $anim_line_v;
+        width: $anim-line-h;
+        height: $anim-line-v;
 
         transition: .18s cubic-bezier(.52, .01, .16, 1);
         transform: scaleX(0);
@@ -951,19 +951,19 @@
 /* ==========================================================================
    Buttons
    ========================================================================== */
-@mixin helper--close-btn ($size_btn: 38px, $size_angle: 45deg, $paint: $color_2, $hover_paint: $color_3, $border_paint: $color_3, $background_paint: $color_3, $hover_background_paint: $color_2) {
+@mixin helper--close-btn ($size-btn: 38px, $size-angle: 45deg, $paint: $color-2, $hover-paint: $color-3, $border-paint: $color-3, $background-paint: $color-3, $hover-background-paint: $color-2) {
     @include helper--transition;
     @include helper--flex--center--center;
     @include helper--indent;
     @include helper--box-shadow;
 
     box-sizing: border-box;
-    width: $size_btn;
-    height: $size_btn;
+    width: $size-btn;
+    height: $size-btn;
 
     color: $paint;
-    border: 1px solid $border_paint;
-    background-color: $background_paint;
+    border: 1px solid $border-paint;
+    background-color: $background-paint;
     text-shadow: none;
     &:before,
     &:after {
@@ -982,13 +982,13 @@
         background: currentColor;
     }
     &:before {
-        transform: rotate3d(0, 0, 1, -$size_angle);
+        transform: rotate3d(0, 0, 1, -$size-angle);
     }
     &:after {
-        transform: rotate3d(0, 0, 1, $size_angle);
+        transform: rotate3d(0, 0, 1, $size-angle);
     }
     &:hover {
-        color: $hover_paint;
-        background-color: $hover_background_paint;
+        color: $hover-paint;
+        background-color: $hover-background-paint;
     }
 }

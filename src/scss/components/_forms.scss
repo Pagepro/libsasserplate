@@ -20,9 +20,9 @@
         }
     }
     textarea {
-        min-height: $size_btn*5;
-        max-height: $size_btn*10;
-        padding: $size_gutter;
+        min-height: $size-btn*5;
+        max-height: $size-btn*10;
+        padding: $size-gutter;
 
         resize: vertical;
     }
@@ -75,13 +75,13 @@
     .f-input-wrapper {
         input {
             width: 100%;
-            height: $size_btn;
-            // padding: 0 calc(#{$size_btn} + #{$size_gutter} - 8px) 0 $size_gutter;
+            height: $size-btn;
+            // padding: 0 calc(#{$size-btn} + #{$size-gutter} - 8px) 0 $size-gutter;
         }
     }
     .f-textarea-wrapper {
         // textarea {
-        //     padding-right: calc(#{$size_gutter} * 2 + 20px );
+        //     padding-right: calc(#{$size-gutter} * 2 + 20px );
         // }
     }
     .f-select-wrapper {
@@ -93,8 +93,8 @@
             z-index: 3;
 
             width: 100%;
-            height: $size_btn;
-            // padding: 0 calc(#{$size_btn} + #{$size_gutter} - 8px) 0 $size_gutter;
+            height: $size-btn;
+            // padding: 0 calc(#{$size-btn} + #{$size-gutter} - 8px) 0 $size-gutter;
 
             border: none;
             border-radius: 0;

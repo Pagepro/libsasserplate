@@ -11,10 +11,10 @@ html {
     font-size: 16px;
 }
 body {
-    font-family: $font_default;
+    font-family: $font-default;
     line-height: 1.4;
 
-    color: $color_default;
+    color: $color-default;
 }
 
 a {
@@ -31,7 +31,7 @@ a {
     &:not([class]) {
         @include helper--link-anim;
 
-        color: $color_default_link;
+        color: $color-default-link;
         &:hover {
             @include helper--link-anim-dash-on-hover;
         }
@@ -48,7 +48,7 @@ p,
 ul,
 ol {
     &:not([class]) + &:not([class]) {
-        margin-top: $size_gutter;
+        margin-top: $size-gutter;
     }
 }
 
@@ -68,11 +68,11 @@ ul,
 ol {
     @include helper--list;
 
-    padding-left: $size_gutter;
+    padding-left: $size-gutter;
     &:not([class]) {
-        padding-left: $size_gutter;
+        padding-left: $size-gutter;
         li + li {
-            margin-top: $size_gutter/2;
+            margin-top: $size-gutter/2;
         }
     }
 }

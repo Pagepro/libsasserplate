@@ -19,22 +19,22 @@
 /*
  * font families used in project:
  *
- * $font_default: 'opensans'
+ * $font-default: 'opensans'
  *
  */
 
 /*
  * font weights used in project:
  *
- * $weight_regular:   400;  // Oswald, Opensans
- * $weight_bold:      600;  // Oswald, Opensans
+ * $weight-regular:   400;  // Oswald, Opensans
+ * $weight-bold:      600;  // Oswald, Opensans
  *
  */
 
 /* Font default (opensans)
    ========================================================================== */
 // [class*='t-default'] {
-//     font-family: $font_default;
+//     font-family: $font-default;
 // }
 
 
@@ -53,5 +53,5 @@
 /* size s: 16px
    ========================================================================== */
 // .t-size-s {
-//     font-size: $font_s;
+//     font-size: $font-s;
 // }
