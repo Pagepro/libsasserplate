@@ -19,18 +19,23 @@ module.exports = function(env) {
   var filenamePattern = rev ? '[name]-[hash].js' : '[name].js'
   var webpackConfig = {
     context: jsSrc,
-    plugins: [],
+    plugins: [
+        new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery"
+       })
+    ],
     resolve: {
-      extensions: extensions,
-      modules: ['node_modules', 'src/js'],
-      unsafeCache: true
+      root: jsSrc,
+      extensions: [''].concat(extensions)
     },
     module: {
-      rules: [
+      loaders: [
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          exclude: /node_modules/
+          exclude: /node_modules/,
+          query: config.tasks.js.babel
         }
       ]
     }
@@ -68,7 +73,6 @@ module.exports = function(env) {
       )
     }
   }
-
   if(env === 'production' || env === 'compile') {
     if(rev) {
       webpackConfig.plugins.push(new webpackManifest(publicPath, path.join(config.root.dist, config.root.dest)))
@@ -80,6 +84,7 @@ module.exports = function(env) {
           'NODE_ENV': JSON.stringify('production')
         }
       }),
+      new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false,
@@ -89,7 +94,7 @@ module.exports = function(env) {
          minimize: true,
          mangle: true,
       }),
-      new webpack.optimize.ModuleConcatenationPlugin()
+      new webpack.NoErrorsPlugin()
     )
   }
 

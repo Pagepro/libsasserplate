@@ -75,7 +75,7 @@
     .f-input-wrapper {
         input {
             width: 100%;
-            height: $size_btn;
+            height: $size-btn;
             // padding: 0 calc(#{$size_btn} + #{$size_gutter} - 8px) 0 $size_gutter;
         }
     }
@@ -93,7 +93,7 @@
             z-index: 3;
 
             width: 100%;
-            height: $size_btn;
+            height: $size-btn;
             // padding: 0 calc(#{$size_btn} + #{$size_gutter} - 8px) 0 $size_gutter;
 
             border: none;

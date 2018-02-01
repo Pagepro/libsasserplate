@@ -8,9 +8,9 @@ var gulpif       = require('gulp-if');
 var handleErrors = require('../lib/handleErrors');
 var htmlmin      = require('gulp-htmlmin');
 var path         = require('path');
+var render       = require('gulp-nunjucks-render');
 var fs           = require('fs');
 var replace      = require('gulp-replace');
-var twig = require('gulp-twig');
 
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**');
 
@@ -28,7 +28,12 @@ var htmlTask = function() {
   return gulp.src(paths.src)
     .pipe(data(getData))
     .on('error', handleErrors)
-    .pipe(twig())
+    .pipe(render({
+      path: [path.join(config.root.src, config.tasks.html.src)],
+      envOptions: {
+        watch: false
+      }
+    }))
     .on('error', handleErrors)
     .pipe(gulpif(global.production, replace(' <br', '&nbsp;<br')))
     .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
