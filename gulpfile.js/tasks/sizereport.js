@@ -1,9 +1,9 @@
-var config       = require('../config')
-var gulp         = require('gulp')
+var config = require('../config')
+var gulp = require('gulp')
 var repeatString = require('../lib/repeatString')
-var sizereport   = require('gulp-sizereport')
+var sizereport = require('gulp-sizereport')
 
-gulp.task('size-report', function() {
+gulp.task('size-report', function () {
   return gulp.src([(global.production ? config.root.dist : config.root.dest) + '/**/*', '*!rev-manifest.json'])
     .pipe(sizereport({
       gzip: true

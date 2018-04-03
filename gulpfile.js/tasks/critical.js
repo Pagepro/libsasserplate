@@ -22,5 +22,4 @@ var criticalTask = function (cb) {
     .pipe(gulp.dest(paths.dest))
 }
 
-
 gulp.task('critical', criticalTask)
