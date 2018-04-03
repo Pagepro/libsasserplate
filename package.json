@@ -65,6 +65,7 @@
     "scrolltofixed": "^1.0.6",
     "standard": "^8.6.0",
     "svg-injector": "^1.1.3",
+    "svg4everybody": "^2.1.9",
     "swiper": "^3.4.2",
     "webpack": "1.12.14",
     "webpack-dev-middleware": "1.5.1",

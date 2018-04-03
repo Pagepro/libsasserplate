@@ -1,11 +1,11 @@
-var config    = require('../config');
-var gulp      = require('gulp');
-var combineMq = require('gulp-combine-mq');
+var config = require('../config')
+var gulp = require('gulp')
+var combineMq = require('gulp-combine-mq')
 
 gulp.task('mediaqueries', function () {
-    return gulp.src('static/css/main.css')
+  return gulp.src('static/css/main.css')
     .pipe(combineMq({
-        beautify: false
+      beautify: false
     }))
-    .pipe(gulp.dest('static/css'));
-});
+    .pipe(gulp.dest('static/css'))
+})
