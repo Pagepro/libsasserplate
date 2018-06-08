@@ -26,7 +26,7 @@ Features | Tools Used
 
 ```shell
 cd package_directory
-npm install
+yarn
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ npm install
 ### Run development tasks:
 
 ```shell
-npm start
+yarn start
 ```
 
 Aliases: `gulp`
@@ -43,7 +43,7 @@ Aliases: `gulp`
 ### Build production files:
 
 ```shell
-npm run production
+yarn run production
 ```
 
 Aliases: `gulp production`
