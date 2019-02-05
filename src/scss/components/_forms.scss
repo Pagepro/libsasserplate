@@ -61,7 +61,8 @@
     }
     .f-input-wrapper,
     .f-textarea-wrapper {
-        @include helper--align--stretch;
+        align-items: stretch;
+        justify-content: stretch;
 
         display: flex;
         input,

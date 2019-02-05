@@ -5,6 +5,7 @@ var path            = require('path');
 var pathToUrl       = require('./pathToUrl');
 var webpack         = require('webpack');
 var webpackManifest = require('./webpackManifest');
+const readBabelrcUp = require('read-babelrc-up')
 
 module.exports = function(env) {
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
@@ -17,32 +18,36 @@ module.exports = function(env) {
 
   var rev = config.tasks.production.rev && env === 'production'
   var filenamePattern = rev ? '[name]-[hash].js' : '[name].js'
+  
   var webpackConfig = {
     context: jsSrc,
     plugins: [
-        new webpack.ProvidePlugin({
-           $: "jquery",
-           jQuery: "jquery"
-       })
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+      })
     ],
     resolve: {
-      root: jsSrc,
-      extensions: [''].concat(extensions)
+      extensions
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
-          query: config.tasks.js.babel
+          query: readBabelrcUp().then(result => result.babel)
         }
       ]
     }
   }
 
   if(env === 'development') {
-    webpackConfig.devtool = 'inline-source-map'
+    webpackConfig = {
+      ...webpackConfig,
+      devtool: 'inline-source-map',
+      mode: 'development'
+    }
 
     // Create new entries object with webpack-hot-middleware added
     for (var key in config.tasks.js.entries) {
@@ -78,24 +83,10 @@ module.exports = function(env) {
       webpackConfig.plugins.push(new webpackManifest(publicPath, path.join(config.root.dist, config.root.dest)))
     }
 
-    webpackConfig.plugins.push(
-      new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': JSON.stringify('production')
-        }
-      }),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-         sourceMap: false,
-         comments: false,
-         minimize: true,
-         mangle: true,
-      }),
-      new webpack.NoErrorsPlugin()
-    )
+    webpackConfig = {
+      ...webpackConfig,
+      mode: 'production'
+    }
   }
 
   return webpackConfig
