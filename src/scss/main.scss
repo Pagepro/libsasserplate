@@ -2,59 +2,33 @@
    Index of scss files
    ========================================================================== */
 
-   
-/* Normalize
+/* External
    ========================================================================== */
-@import "../../node_modules/normalize.css/normalize"; // Absolute paths to node_modules/ cause build errors on windows.
-
-/* Breakpoint
-   ========================================================================== */
+// Normalize
+@import url("../../node_modules/normalize.css/normalize.css"); // Absolute paths to node_modules/ cause build errors on windows.
+// Breakpoints
 @import "../../node_modules/include-media/dist/_include-media";  // Absolute paths to node_modules/ cause build errors on windows.
 
 /* Base
    ========================================================================== */
-@import "base/reset";
-@import "base/fonts";
 @import "base/variables";
-@import "base/functions";
+
 @import "base/helper-mixins";
 @import "base/mixins";
 @import "base/typography";
-@import "base/clearfixes";
-@import "base/icons";
-@import "base/animations";
 @import "base/ui";
-@import "base/objects";
-@import "base/media-wrappers";
-@import "base/custom-attributes";
-@import "base/utilities-sets";
+@import "base/utilities";
 
-/* Layouts and main layout elements
+/* Layout and sections
    ========================================================================== */
-@import "layout/common";
-@import "layout/inner";
-@import "layout/header";
-// @import "layout/hero";
-@import "layout/main";
 @import "layout/footer";
+@import "layout/header";
+@import "layout/inner";
+@import "layout/main";
 @import "layout/sections";
-// @import "layout/popups";
-
 
 /* Components
    ========================================================================== */
-@import "components/logos";
 @import "components/buttons";
 @import "components/forms";
-@import "components/navigations";
-@import "components/links";
-
-/* Utilities
-   ========================================================================== */
-@import "base/text-styles";
-@import "base/utilities";
-
-
-/* Vendor CSS
-   ========================================================================== */
-// @import "vendor/";
+@import "components/logo";

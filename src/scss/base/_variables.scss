@@ -30,10 +30,6 @@ $size-gutter: 20px;
 
 $size-btn: 8px;
 
-$size-scalable-padding_16-9: 56%;
-$size-scalable-padding_4-3: 75%;
-
-
 /* Fonts
 ========================================================================== */
 $font-default: 		Arial, sans-serif;
@@ -42,23 +38,19 @@ $font-ico: 			'fontello';
 /* Breakpoints
 ========================================================================== */
 
-// breakpoints names used for include-media breakpoint and for gridle
 $breakpoint-desktop-small: 'desktop-small';
 $breakpoint-tablet: 'tablet';
 $breakpoint-phone: 'phone';
 
-// breakpoints values used for include media and for grid gridle
 $size-desktop-small: $size-inner + $size-gutter*4;
 $size-tablet: 1024px;
 $size-phone: 767px;
 
-// breakpoints names array - used to generate custom attributes with include-media rwd
 $breakpoints-array:
     $breakpoint-desktop-small,
     $breakpoint-tablet,
     $breakpoint-phone;
 
-// breakpoints values array - used to generate custom attributes with include-media rwd and for include-media itself
 $breakpoints: (
     $breakpoint-desktop-small: $size-desktop-small,
     $breakpoint-tablet: $size-tablet,
@@ -75,7 +67,6 @@ $media-expressions: (
   'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
 ) !default;
 
-// breakpoint exaples
 // body {
 //     @include media('<=desktop-small') {
 //         background: pink;

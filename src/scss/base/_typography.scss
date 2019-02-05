@@ -28,52 +28,17 @@ a {
     &:focus {
         outline: none;
     }
-    &:not([class]) {
-        @include helper--link-anim;
-
-        color: $color-default-link;
-        &:hover {
-            @include helper--link-anim-dash-on-hover;
-        }
-    }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
 ul,
 ol {
-    &:not([class]) + &:not([class]) {
-        margin-top: $size-gutter;
-    }
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
     margin: 0;
-}
+    padding: 0;
 
-
-ul,
-ol {
-    @include helper--list;
-
+    list-style: none;
     padding-left: $size-gutter;
-    &:not([class]) {
-        padding-left: $size-gutter;
-        li + li {
-            margin-top: $size-gutter/2;
-        }
+    li {
+        margin: 1rem 0;
     }
 }
 
