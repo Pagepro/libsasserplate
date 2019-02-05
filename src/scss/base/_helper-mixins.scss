@@ -96,16 +96,6 @@
 }
 
 /* ==========================================================================
-   Animation helpers
-   ========================================================================== */
-@mixin helper--stop-animation () {
-    animation-play-state: paused;
-}
-@mixin helper--run-animation () {
-    animation-play-state: running;
-}
-
-/* ==========================================================================
    Postion helpers
    ========================================================================== */
 @mixin helper--position--center-vertical {
