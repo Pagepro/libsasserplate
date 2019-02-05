@@ -231,51 +231,6 @@
 }
 
 /* ==========================================================================
-   ==========================================================================
-   APPARENCE HELPERS
-   ==========================================================================
-   ========================================================================== */
-
-/* ==========================================================================
-   Spacing helpers
-   ========================================================================== */
-@mixin helper--children-margin-top-big () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size-gutter*3;
-    }
-}
-@mixin helper--children-margin-top-medium () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size-gutter*2;
-    }
-}
-@mixin helper--children-margin-top-default () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size-gutter;
-    }
-}
-@mixin helper--children-margin-top-micro () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: $size-gutter/3;
-    }
-}
-@mixin helper--children-margin-top-reset () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-top: 0;
-    }
-}
-@mixin helper--children-margin-left-default () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-left: $size-gutter;
-    }
-}
-@mixin helper--children-margin-left-small () {
-    [class^='#{str-replace(#{&}, '.', '')}__'] + [class^='#{str-replace(#{&}, '.', '')}__'] {
-        margin-left: $size-gutter/2;
-    }
-}
-
-/* ==========================================================================
    Shadows, overalys etc
    ========================================================================== */
 @mixin helper--box-shadow ($horizontal-length: 0, $vertical-length: 5px, $blur-radius: 10px, $spread-radius: 0, $opacity: .2) {
