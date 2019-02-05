@@ -1,12 +1,11 @@
 /* ==========================================================================
    User interface
    ========================================================================== */
-
 .ui-link {
-  @include helper--link-anim;
+  @include animate-link;
   
   color: $color-default-link;
   &:hover {
-      @include helper--link-anim-dash-on-hover;
+      @include animate-link-reverse;
   }
 }

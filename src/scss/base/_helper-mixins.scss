@@ -4,227 +4,25 @@
    ==========================================================================
    ========================================================================== */
 
-/* ==========================================================================
-   Reset helpers
-   ========================================================================== */
-@mixin helper--reset--btn () {
-    padding: 0;
-    padding: 0;
-
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-}
-@mixin helper--indent () {
-    display: block;
-
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-
-    text-indent: -99998em;
-}
-
-/* ==========================================================================
-   Transitions helpers
-   ========================================================================== */
-@mixin helper--transition ($duration: 170ms, $timing: ease) {
+@mixin transition ($duration: 170ms, $timing: ease) {
     transition-timing-function: $timing;
     transition-duration: $duration;
 }
-@mixin helper--transition-alt ($timing: ease-in-out, $delay: .3s) {
-    transition-delay: $delay;
-    transition-timing-function: $timing;
-}
-@mixin helper--bezier--timing () {
-    transition-timing-function: cubic-bezier(.190, 1.000, .220, 1.000);
-}
-@mixin helper--bezier ($duration: 500ms) {
-    @include helper--bezier--timing;
 
-    transition-duration: $duration;
-}
-@mixin helper--bezier--delay--sequence-0 () {
-    transition-delay: 0;
-}
-@mixin helper--bezier--delay--sequence-1 () {
-    transition-delay: 180ms;
-}
-@mixin helper--bezier--delay--sequence-2 () {
-    transition-delay: 240ms;
-}
-@mixin helper--bezier-H-before--duration () {
-    transition-duration: .18s;
-}
-@mixin helper--bezier-H-after--duration () {
-    transition-duration: .24s;
-}
-@mixin helper--bezier-H-before--timing () {
-    transition-timing-function: cubic-bezier(.52, .01, .16, 1);
-}
-@mixin helper--bezier-H-after--timing () {
-    transition-timing-function: cubic-bezier(.62, .02, .34, 1);
-}
-
-/* ==========================================================================
-   Postion helpers
-   ========================================================================== */
-@mixin helper--position--center-vertical {
-    top: 0;
-    bottom: 0;
-
-    margin-top: auto;
-    margin-bottom: auto;
-}
-@mixin helper--position--center-horizontal {
-    right: 0;
-    left: 0;
-
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* Postions absolute
-   ========================================================================== */
-@mixin helper--absolute--center-vertical () {
-    @include helper--position--center-vertical;
-
-    position: absolute;
-}
-@mixin helper--absolute--center-horizontal () {
-    @include helper--position--center-horizontal;
-
-    position: absolute;
-}
-@mixin helper--absolute--left--top () {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-@mixin helper--absolute--left--center () {
-    @include helper--absolute--center-vertical;
-
-    left: 0;
-}
-@mixin helper--absolute--left--bottom () {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@mixin helper--absolute--center--top () {
-    @include helper--absolute--center-horizontal;
-
-    top: 0;
-}
-@mixin helper--absolute--center--center () {
-    @include helper--absolute--center-horizontal;
-    @include helper--position--center-vertical;
-
-    position: absolute;
-}
-@mixin helper--absolute--center--bottom () {
-    @include helper--absolute--center-horizontal;
-
-    bottom: 0;
-}
-@mixin helper--absolute--right--top () {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-@mixin helper--absolute--right--center () {
-    @include helper--absolute--center-vertical;
-
-    right: 0;
-}
-@mixin helper--absolute--right--bottom () {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-/* Postions fixed
-   ========================================================================== */
-@mixin helper--fixed--center-vertical () {
-    @include helper--position--center-vertical;
-
-    position: fixed;
-}
-@mixin helper--fixed--center-horizontal () {
-    @include helper--position--center-horizontal;
-
-    position: fixed;
-}
-@mixin helper--fixed--center--center () {
-    @include helper--absolute--center-horizontal;
-    @include helper--position--center-vertical;
-
-    position: fixed;
-}
-@mixin helper--fixed--center--top () {
-    @include helper--fixed--center-horizontal;
-
-    top: 0;
-}
-
-/* ==========================================================================
-   Other content helpers
-   ========================================================================== */
-@mixin helper--dot-dot-dot () {
+@mixin ellipsis () {
     overflow: hidden;
 
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-@mixin helper--img--cover () {
-    @include helper--absolute--center--center;
 
-    display: block;
-
-    width: 100%;
-    min-width: 100%;
-    min-height: 100%;
-}
-@mixin helper--pseudo () {
-    display: block;
-
-    content: '';
-}
-
-/* ==========================================================================
-   Shadows, overalys etc
-   ========================================================================== */
-@mixin helper--box-shadow ($horizontal-length: 0, $vertical-length: 5px, $blur-radius: 10px, $spread-radius: 0, $opacity: .2) {
-    box-shadow: $horizontal-length $vertical-length $blur-radius $spread-radius rgba(0,0,0,$opacity);
-}
-@mixin helper--text-shadow ($horizontal-length: 0, $vertical-length: 2px, $blur-radius: 12px, $opacity: .2) {
-    text-shadow: $horizontal-length $vertical-length $blur-radius rgba(0,0,0,$opacity);
-}
-@mixin helper--overlay () {
-    @include helper--pseudo;
-    @include helper--absolute--center--center;
-
-    width: 100%;
-    height: 100%;
-
-    opacity: 1;
-}
-@mixin helper--dark-overlay () {
-    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, .54) 25%, rgba(0, 0, 0, .54) 50%, rgba(0, 0, 0, .54) 75%, rgb(0, 0, 0) 100%);
-}
-
-/* ==========================================================================
-   Links helpers
-   ========================================================================== */
-@mixin helper--link-anim ($anim-line-h: 100%, $anim-line-v: 1px, $paint: currentColor) {
+@mixin animate-link ($anim-line-h: 100%, $anim-line-v: 1px, $paint: currentColor) {
     position: relative;
 
     overflow: hidden;
     &:before {
-        @include helper--pseudo;
-
+        content: '';
+        display: block;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -239,55 +37,10 @@
         background: $paint;
     }
 }
-@mixin helper--link-anim-dash-on-hover () {
+@mixin animate-link-reverse () {
     &:before {
         transition-timing-function: cubic-bezier(.62, .02, .34, 1);
         transition-duration: .24s;
         transform: scaleX(1);
-    }
-}
-
-/* ==========================================================================
-   Buttons
-   ========================================================================== */
-@mixin helper--close-btn ($size-btn: 38px, $size-angle: 45deg, $paint: $color-2, $hover-paint: $color-3, $border-paint: $color-3, $background-paint: $color-3, $hover-background-paint: $color-2) {
-    @include helper--transition;
-    @include helper--flex--center--center;
-    @include helper--indent;
-    @include helper--box-shadow;
-
-    box-sizing: border-box;
-    width: $size-btn;
-    height: $size-btn;
-
-    color: $paint;
-    border: 1px solid $border-paint;
-    background-color: $background-paint;
-    text-shadow: none;
-    &:before,
-    &:after {
-        @include helper--pseudo;
-        @include helper--absolute--center-horizontal;
-
-        top: 45%;
-
-        display: block;
-
-        width: 50%;
-        height: 4px;
-
-        transform-origin: 50% 50%;
-
-        background: currentColor;
-    }
-    &:before {
-        transform: rotate3d(0, 0, 1, -$size-angle);
-    }
-    &:after {
-        transform: rotate3d(0, 0, 1, $size-angle);
-    }
-    &:hover {
-        color: $hover-paint;
-        background-color: $hover-background-paint;
     }
 }
