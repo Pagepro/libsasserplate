@@ -16,6 +16,9 @@
         -moz-osx-font-smoothing: auto;
     }
 }
+
+/* 2. A clearfix for floated elements
+========================================================================== */
 @mixin clearfix {
     &:after {
         display: block;
