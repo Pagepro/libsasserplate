@@ -28,10 +28,6 @@
 
         line-height: 0;
 
-        content: '.';
+        content: '';
     }
 }
-@mixin transition($property: all) {
-    transition: $property .1s ease-in-out;
-}
-
