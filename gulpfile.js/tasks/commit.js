@@ -1,7 +1,7 @@
-var gulp = require('gulp')
-var gulpSequence = require('gulp-sequence')
+const gulp = require('gulp')
+const gulpSequence = require('gulp-sequence')
 
-var commitTask = function (cb) {
+const commitTask = cb => {
   gulpSequence('webpack-compile', cb)
 }
 require('gulp-stats')(gulp)
