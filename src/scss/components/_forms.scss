@@ -22,7 +22,7 @@
     textarea {
         min-height: $size-btn*5;
         max-height: $size-btn*10;
-        padding: $size-gutter;
+        padding: $white-space;
 
         resize: vertical;
     }
@@ -77,12 +77,12 @@
         input {
             width: 100%;
             height: $size-btn;
-            // padding: 0 calc(#{$size-btn} + #{$size-gutter} - 8px) 0 $size-gutter;
+            // padding: 0 calc(#{$size-btn} + #{$white-space} - 8px) 0 $white-space;
         }
     }
     .f-textarea-wrapper {
         // textarea {
-        //     padding-right: calc(#{$size-gutter} * 2 + 20px );
+        //     padding-right: calc(#{$white-space} * 2 + 20px );
         // }
     }
     .f-select-wrapper {
@@ -95,7 +95,7 @@
 
             width: 100%;
             height: $size-btn;
-            // padding: 0 calc(#{$size-btn} + #{$size-gutter} - 8px) 0 $size-gutter;
+            // padding: 0 calc(#{$size-btn} + #{$white-space} - 8px) 0 $white-space;
 
             border: none;
             border-radius: 0;

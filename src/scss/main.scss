@@ -12,12 +12,12 @@
 /* Base
    ========================================================================== */
 @import "base/variables";
-
+@import "base/functions";
+@import "base/config-include-media";
 @import "base/helper-mixins";
 @import "base/mixins";
 @import "base/typography";
 @import "base/ui";
-@import "base/utilities";
 
 /* Layout and sections
    ========================================================================== */

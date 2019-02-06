@@ -4,8 +4,14 @@
 .ui-link {
   @include animate-link;
   
-  color: var(--color-accent);
+  color: color(accent);
   &:hover {
-      @include animate-link-reverse;
+    @include animate-link-reverse;
   }
+}
+.ui-bg {
+  @include background-modifiers;
+}
+.ui-color {
+  @include color-modifiers;
 }

@@ -34,3 +34,20 @@
         content: '';
     }
 }
+/* 3. Append a modificator class that changes color/bg
+========================================================================== */
+@mixin color-modifiers {
+    @each $name, $hex in $colors {
+      &--#{$name} {
+        color: $hex;
+      }
+    }
+  }
+  
+  @mixin background-modifiers {
+    @each $name, $hex in $colors {
+      &--#{$name} {
+        background: $hex;
+      }
+    }
+  }

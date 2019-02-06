@@ -8,11 +8,12 @@
 html {
     @include font-smoothing(on);
 
-    font-size: var(--fz-default);
+    font-size: font-size(main);
 }
+
 body {
-    font-family: var(--font-main);
-    color: var(--color-main);
+    font-family: font(main);
+    color: color(main);
 
     line-height: 1.2;
 }
@@ -36,7 +37,7 @@ ol {
     padding: 0;
 
     list-style: none;
-    padding-left: var(--white-space);
+    padding-left: $white-space;
     li {
         margin: 1rem 0;
     }

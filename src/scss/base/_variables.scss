@@ -2,71 +2,59 @@
    Variables
    ========================================================================== */
 
-   /* Indexes
+/* Maps
 ========================================================================== */
-$index-header: 100;
-
-/* Sizes
-========================================================================== */
-$size-inner: 1240px;
-$size-gutter: 20px;
-
-$size-btn: 8px;
-
-/* Fonts
-========================================================================== */
-$font-default: 		Arial, sans-serif;
-
-/* Breakpoints
-========================================================================== */
-
-// include-media require SCSS variables
-$bp-desktop: 'desktop';
-$bp-tablet: 'tablet';
-$bp-phone: 'phone';
-$size-desktop: 1400px;
-$size-tablet: 1024px;
-$size-phone: 768px;
-
-:root {
-    // sizes
-    --size-desktop: #{$size-desktop};
-    --size-tablet: #{$size-tablet};
-    --size-phone: #{$size-phone};
-
-    // colors
-    --color-main: #464646;
-    --color-accent: #d4213d;
-
-    // font-sizes
-    --fz-default: 16px;
-    --fz-big: 28px;
-
-    // typography
-    --font-main: 'Arial', sans-serif; 
-    // --font-icons: 'fontello', sans-serif;
-
-    // white-spaces
-    --white-space: 16px;
-}
-
-$breakpoints-array:
-    $bp-desktop,
-    $bp-tablet,
-    $bp-phone;
-
-$breakpoints: (
-    $bp-desktop: $size-desktop,
-    $bp-tablet: $size-tablet,
-    $bp-phone: $size-phone
+/* 
+    The names and values of variables in maps are just suggestions/random values.
+    Feel free to add new values, modify both the values and/or keys of the items depending on the project and your prefferences.
+    For each map, a functions is defined (in base/_functions.scss).
+    By default, function names are single a singular form of the map's variable name.
+    Eg. To use the "main" color, a getter function "color" is defined.
+    To use it, simply call: color(main). 
+*/
+$colors: (
+    main: #000,
+    accent: #d4213d,
+    blue: #09A6E4
 );
 
-$media-expressions: (
-  'screen': 'screen',
-  'print': 'print',
-  'handheld': 'handheld',
-  'landscape': '(orientation: landscape)',
-  'portrait': '(orientation: portrait)',
-  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
-  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
-) !default;
+$sizes: (
+    media: 400px,
+    inner: (
+        desktop: 960px,
+        tablet: 760px,
+        mobile: 320px
+    ),
+    breakpoint: (
+        desktop: 1400px,
+        tablet: 1024px,
+        mobile: 767px
+    )
+);
+
+// Set main font size to body (eg. 12px), then refer to it using rem, eg. secondary: 2rem -> 24px
+$font-sizes: (
+    main: 14px,
+    h1: 3rem,
+    h2: 2rem,
+    h3: 1.5rem,
+    small: 0.8rem,
+    quote: 9px
+);
+
+$offsets: (
+    default: 16px,
+    large: 24px,
+    small: 8px
+);
+
+$fonts: (
+    main: #{'Arial', sans-serif},
+    secondary: 'Helvetica', 
+    icon: #{'fontello', serif}
+);
+
+/* Standalone variables
+========================================================================== */
+$white-space: 1em;
+$size-btn: 20px;
