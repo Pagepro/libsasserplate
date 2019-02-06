@@ -1,25 +1,36 @@
-var gulp = require('gulp')
-var config = require('../config')
-var critical = require('critical').stream
-var path = require('path')
+const gulp = require('gulp')
+const config = require('../config')
+const critical = require('critical').stream
+const path = require('path')
 
-var paths = {
-  src: path.join(config.root.dist, config.tasks.critical.src),
-  dest: config.root.dist
+const {
+  root: {
+    dist
+  },
+  tasks: {
+    critical: forcedConfig
+  }
+} = config
+
+const criticalConfig = {
+  src: '*.html',
+  width: 1920,
+  height: 1080,
+  inline: true,
+  base: dist,
+  minify: true,
+  extract: false,
+  ignore: ['font-face'],
+  ...forcedConfig
 }
 
-var criticalTask = function (cb) {
-  return gulp.src(paths.src)
-    .pipe(critical({
-      inline: true,
-      base: paths.dest,
-      height: config.tasks.critical.height,
-      width: config.tasks.critical.width,
-      minify: true,
-      extract: false,
-      ignore: ['font-face']
-    }))
-    .pipe(gulp.dest(paths.dest))
-}
+const srcPath = path.join(dist, criticalConfig.src)
+
+const criticalTask = () => gulp
+  .src(srcPath)
+  .pipe(critical(criticalConfig))
+  .pipe(gulp.dest(dist))
 
 gulp.task('critical', criticalTask)
+
+module.exports = criticalTask

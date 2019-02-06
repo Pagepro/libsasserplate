@@ -6,19 +6,10 @@
   },
 
   "tasks": {
-    "browserSync": {
-      "port": 4500,
-      "open": false,
-      "server": {
-        "baseDir": "./"
-      }
-    },
-
     "static": {
       "src": "src",
       "dest": "static"
     },
-
     "js": {
       "src": "js",
       "dest": "static/js",
@@ -26,10 +17,6 @@
         "app": ["./app.js"]
       },
       "extensions": ["js", "json"],
-      "babel": {
-        "presets": ["es2015", "stage-1"],
-        "plugins": []
-      },
       "extractSharedJs": false
     },
 
@@ -87,12 +74,6 @@
 
     "production" : {
       "rev": true
-    },
-
-    "critical" : {
-      "src": "*.html",
-      "width": 1920,
-      "height": 1080
     },
 
     "favicon": {
