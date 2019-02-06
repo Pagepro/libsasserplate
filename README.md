@@ -1,57 +1,58 @@
-# ![LibSasserPlate](docs/lib-sasserplate-intro.jpg)
-
+![LibSasserPlate](docs/lib-sasserplate-intro.png)
 
 > **LibSass** starter for front-end projects by Pagepro.
 
-## Built with:
+# Requirements
+1. [node v8.12.0 or later](https://nodejs.org/en/)
+2. [yarn](https://yarnpkg.com/)
 
-Features | Tools Used
------- | -----
-**CSS** | [Sass](http://sass-lang.com/) ([Libsass](http://libsass.org) via [node-sass](https://github.com/sass/node-sass)), [Autoprefixer](https://github.com/postcss/autoprefixer), [CSSNano](https://github.com/ben-eb/cssnano), Source Maps
-**JavaScript** | [Babel](http://babeljs.io/), [Webpack](http://webpack.github.io/)
-**HTML** | [Nunjucks](https://mozilla.github.io/nunjucks/), [gulp-data](https://github.com/colynb/gulp-data)
-**Images** | Compression with [imagemin](https://www.npmjs.com/package/gulp-imagemin)
-**Fonts** | Folder and `.sass` mixin for including WebFonts
-**Live Updating** | [BrowserSync](http://www.browsersync.io/), [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware), [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)
-**Production Builds** | JS and CSS are [uglified](https://github.com/terinjokes/gulp-uglify) and [minified](http://cssnano.co/), [filename md5 hashing (reving)](https://github.com/sindresorhus/gulp-rev), [file size reporting](https://github.com/jaysalvat/gulp-sizereport), local production [Express](http://expressjs.com/) server for testing builds.
-**JS Testing** | [Karma](http://karma-runner.github.io/0.12/index.html), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/), Example [Travis CI](https://travis-ci.org/) integration
+# Getting started
+Three simple steps to start:
 
-## Requirements
-1. [node](https://nodejs.org/en/) & [npm](https://docs.npmjs.com/cli/install).
-2. SASS
-3. **gulp-cli** node package installed globally:
-`npm install -g gulp-cli`
+1. Install the required libraries.
+2. Get a copy of LibSasserPlate.
+3. Install the dependencies if you don't already have them.
 
-## [Installation](docs/install.md)
+## Installing the required libraries
 
-```shell
-cd package_directory
-yarn
+### [Node.js](https://nodejs.org)
+If you require Node, go to [nodejs.org](https://nodejs.org) and click on the big green Install button.
+
+If you have node already installed on your OS, please make sure you have a supported version running. To check node's version, open a terminal and run:
+```sh
+node --version
+```
+Node should respond with a version at or above 8.12.0. If the command is not recognized or nothing happens, you might want to re-install node.
+
+## Getting the starter
+[Download LibSasserPlate](https://github.com/Pagepro/libsasserplate/releases/latest) and extract it to catalog you want to work.
+
+
+## Local dependencies
+Next, install the local development dependencies required by LibSasserPlate. To do that, simply run:
+
+```sh
+$ yarn install
 ```
 
-## Usage
+That's it! You should now have everything needed to use the LibSasserPlate.
 
-### Run development tasks:
+# Usage
 
+## Run development tasks:
+To develop using LibSasserPlate, run: 
 ```shell
 yarn start
 ```
+This will start a local server and watch files for changes.  
 
-Aliases: `gulp`
-
-
-### Build production files:
+## Build production files:
 
 ```shell
 yarn run production
 ```
 
-Aliases: `gulp production`
-
-Be sure to look over the [installation docs](docs/install.md) to verify your environment is prepared to run LibSasserPlate.
-Once you have verified that your system can run LibSasserPlate, check out the [extra features](docs/extras.md) available.
-
-## Directory structure explanation
+# Directory structure explanation
 
 * **/** - root directory with html files and configuration files (eslint, editorconfig)
 * **src** - directory with source files
