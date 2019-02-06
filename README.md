@@ -5,6 +5,7 @@
 # Requirements
 1. [node v8.12.0 or later](https://nodejs.org/en/)
 2. [yarn](https://yarnpkg.com/)
+3. [EditorConfig](https://editorconfig.org/) for the code editor of your choice(optional).
 
 # Getting started
 Three simple steps to start:
