@@ -2,24 +2,7 @@
    Variables
    ========================================================================== */
 
-/* Colors
-========================================================================== */
-$color-default: #464646;
-$color-black: #000;
-$color-white: #fff;
-
-$color-1: $color-black;
-$color-2: $color-white;
-$color-3: #d4213d;			// red
-
-$colors:
-    $color-1,
-    $color-2,
-    $color-3;
-
-$color-default-link: $color-3;
-
-/* Indexes
+   /* Indexes
 ========================================================================== */
 $index-header: 100;
 
@@ -33,28 +16,49 @@ $size-btn: 8px;
 /* Fonts
 ========================================================================== */
 $font-default: 		Arial, sans-serif;
-$font-ico: 			'fontello';
 
 /* Breakpoints
 ========================================================================== */
 
-$breakpoint-desktop-small: 'desktop-small';
-$breakpoint-tablet: 'tablet';
-$breakpoint-phone: 'phone';
-
-$size-desktop-small: $size-inner + $size-gutter*4;
+// include-media require SCSS variables
+$bp-desktop: 'desktop';
+$bp-tablet: 'tablet';
+$bp-phone: 'phone';
+$size-desktop: 1400px;
 $size-tablet: 1024px;
-$size-phone: 767px;
+$size-phone: 768px;
+
+:root {
+    // sizes
+    --size-desktop: #{$size-desktop};
+    --size-tablet: #{$size-tablet};
+    --size-phone: #{$size-phone};
+
+    // colors
+    --color-main: #464646;
+    --color-accent: #d4213d;
+
+    // font-sizes
+    --fz-default: 16px;
+    --fz-big: 28px;
+
+    // typography
+    --font-main: 'Arial', sans-serif; 
+    // --font-icons: 'fontello', sans-serif;
+
+    // white-spaces
+    --white-space: 16px;
+}
 
 $breakpoints-array:
-    $breakpoint-desktop-small,
-    $breakpoint-tablet,
-    $breakpoint-phone;
+    $bp-desktop,
+    $bp-tablet,
+    $bp-phone;
 
 $breakpoints: (
-    $breakpoint-desktop-small: $size-desktop-small,
-    $breakpoint-tablet: $size-tablet,
-    $breakpoint-phone: $size-phone  
+    $bp-desktop: $size-desktop,
+    $bp-tablet: $size-tablet,
+    $bp-phone: $size-phone
 );
 
 $media-expressions: (
@@ -66,24 +70,3 @@ $media-expressions: (
   'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
   'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
 ) !default;
-
-// body {
-//     @include media('<=desktop-small') {
-//         background: pink;
-//     }
-//     @include media('<=tablet') {
-//         background: red;
-//     }
-//     @include media('<=phone') {
-//         background: yellow;
-//     }
-//     @include media('>phone', '<=desktop-small') {
-//         border: 5px solid grey;
-//     }
-//     @include media('>tablet', '<=1100px') {
-//         color: red;
-//     }
-//     @include media('<=phone', 'landscape') {
-//         background: orange;
-//     }
-// }

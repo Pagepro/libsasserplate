@@ -2,7 +2,7 @@
    Inner
    ========================================================================== */
 @mixin inner () {
-    @include media('<desktop-small') {
+    @include media('<desktop') {
         padding-right: $size-gutter;
         padding-left: $size-gutter;
     }

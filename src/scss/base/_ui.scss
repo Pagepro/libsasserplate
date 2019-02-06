@@ -4,7 +4,7 @@
 .ui-link {
   @include animate-link;
   
-  color: $color-default-link;
+  color: var(--color-accent);
   &:hover {
       @include animate-link-reverse;
   }
