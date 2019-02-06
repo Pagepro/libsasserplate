@@ -1,24 +1,21 @@
-var config = require('../config');
-if(!config.tasks.js) return;
-
-var path            = require('path');
-var pathToUrl       = require('./pathToUrl');
-var webpack         = require('webpack');
-var webpackManifest = require('./webpackManifest');
+const config = require('../config');
+const path = require('path');
+const pathToUrl =  require('./pathToUrl');
+const webpack = require('webpack');
+const webpackManifest = require('./webpackManifest');
 const readBabelrcUp = require('read-babelrc-up')
 
-module.exports = function(env) {
-  var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
-  var jsDest = path.resolve(path.join(env === 'production' ? config.root.dist : '', config.tasks.js.dest))
-
-  var publicPath = pathToUrl(config.tasks.js.dest, '/')
-  var extensions = config.tasks.js.extensions.map(function(extension) {
+module.exports = env => {
+  const jsSrc = path.resolve(config.root.src, config.tasks.js.src)
+  const jsDest = path.resolve(path.join(env === 'production' ? config.root.dist : '', config.tasks.js.dest))
+  const publicPath = pathToUrl(config.tasks.js.dest, '/')
+  const extensions = config.tasks.js.extensions.map(function(extension) {
     return '.' + extension
   })
 
   var rev = config.tasks.production.rev && env === 'production'
   var filenamePattern = rev ? '[name]-[hash].js' : '[name].js'
-  
+
   var webpackConfig = {
     context: jsSrc,
     plugins: [
@@ -75,19 +72,19 @@ module.exports = function(env) {
           name: 'shared',
           filename: filenamePattern,
         })
-      )
+        )
+      }
     }
-  }
-  if(env === 'production' || env === 'compile') {
-    if(rev) {
-      webpackConfig.plugins.push(new webpackManifest(publicPath, path.join(config.root.dist, config.root.dest)))
+    if(env === 'production' || env === 'compile') {
+      if(rev) {
+        webpackConfig.plugins.push(new webpackManifest(publicPath, path.join(config.root.dist, config.root.dest)))
+      }
+
+      webpackConfig = {
+        ...webpackConfig,
+        mode: 'production'
+      }
     }
 
-    webpackConfig = {
-      ...webpackConfig,
-      mode: 'production'
-    }
+    return webpackConfig
   }
-
-  return webpackConfig
-}
