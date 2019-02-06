@@ -35,6 +35,7 @@
     @return null;
 }
 
+// This function check 2 levels deep.
 @function size($key, $secondKey: '') {
     @if map-has-key($sizes, $key) {
         $temp-size: map-get($sizes, $key);

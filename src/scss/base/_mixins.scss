@@ -47,7 +47,7 @@
 @mixin background-modifiers {
     @each $name, $hex in $colors {
         &--#{$name} {
-            background: $hex;
+            background-color: $hex;
         }
     }
 }

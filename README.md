@@ -53,6 +53,9 @@ This will start a local server and watch files for changes.
 yarn run production
 ```
 
+## Instructions
+Some of the pre-defined functionality might seem intimidating at first. You can read on how to use it in the detailed [instruction manual](docs/instruction.md).
+
 # Directory structure explanation
 
 * **/** - root directory with html files and configuration files (eslint, editorconfig)
