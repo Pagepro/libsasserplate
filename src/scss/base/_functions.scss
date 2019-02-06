@@ -1,57 +1,57 @@
 // This is as WET as it can get, but unfortunately you can't nest SASS functions so the alternative is to make complex map definitions.
 @function color($key) {
-  @if map-has-key($colors, $key) {
-    @return map-get($colors, $key);
-  }
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
 
-  @warn "Unknown `#{$key}` in $colors.";
-  @return null;
+    @warn "Unknown `#{$key}` in $colors.";
+    @return null;
 }
 
 @function font-size($key) {
-  @if map-has-key($font-sizes, $key) {
-    @return map-get($font-sizes, $key);
-  }
+    @if map-has-key($font-sizes, $key) {
+        @return map-get($font-sizes, $key);
+    }
 
-  @warn "Unknown `#{$key}` in $font-sizes.";
-  @return null;
+    @warn "Unknown `#{$key}` in $font-sizes.";
+    @return null;
 }
 
 @function offset($key) {
-  @if map-has-key($offsets, $key) {
-    @return map-get($offsets, $key);
-  }
+    @if map-has-key($offsets, $key) {
+        @return map-get($offsets, $key);
+    }
 
-  @warn "Unknown `#{$key}` in $offsets.";
-  @return null;
+    @warn "Unknown `#{$key}` in $offsets.";
+    @return null;
 }
 
 @function font($key) {
-  @if map-has-key($fonts, $key) {
-    @return map-get($fonts, $key);
-  }
+    @if map-has-key($fonts, $key) {
+        @return map-get($fonts, $key);
+    }
 
-  @warn "Unknown `#{$key}` in $fonts.";
-  @return null;
+    @warn "Unknown `#{$key}` in $fonts.";
+    @return null;
 }
 
 @function size($key, $secondKey: '') {
-  @if map-has-key($sizes, $key) {
-    $temp-size: map-get($sizes, $key);
-    
-    @if type-of($temp-size) != 'number' {
-      @if map-has-key($temp-size, $secondKey) {
-        @return map-get($temp-size, $secondKey);
-      }
-      @else {
-        @warn "Size `#{$secondKey}` not defined within `#{$key}`.";
-        @return null;
-      }
+    @if map-has-key($sizes, $key) {
+        $temp-size: map-get($sizes, $key);
+
+        @if type-of($temp-size) != 'number' {
+            @if map-has-key($temp-size, $secondKey) {
+                @return map-get($temp-size, $secondKey);
+            }
+            @else {
+                @warn "Size `#{$secondKey}` not defined within `#{$key}`.";
+                @return null;
+            }
+        }
+        @else {
+            @return $temp-size;
+        }
     }
-    @else {
-      @return $temp-size;
-    }
-  }
-  @warn "Unknown `#{$key}` in $sizes.";
-  @return null;
+    @warn "Unknown `#{$key}` in $sizes.";
+    @return null;
 }

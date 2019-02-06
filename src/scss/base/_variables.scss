@@ -10,7 +10,7 @@
     For each map, a functions is defined (in base/_functions.scss).
     By default, function names are single a singular form of the map's variable name.
     Eg. To use the "main" color, a getter function "color" is defined.
-    To use it, simply call: color(main). 
+    To use it, simply call: color(main).
 */
 $colors: (
     main: #000,

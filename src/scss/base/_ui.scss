@@ -1,17 +1,17 @@
 /* ==========================================================================
-   User interface
-   ========================================================================== */
+User interface
+========================================================================== */
 .ui-link {
-  @include animate-link;
-  
-  color: color(accent);
-  &:hover {
-    @include animate-link-reverse;
-  }
+    @include animate-link;
+
+    color: color(accent);
+    &:hover {
+        @include animate-link-reverse;
+    }
 }
 .ui-bg {
-  @include background-modifiers;
+    @include background-modifiers;
 }
 .ui-color {
-  @include color-modifiers;
+    @include color-modifiers;
 }

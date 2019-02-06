@@ -38,16 +38,58 @@
 ========================================================================== */
 @mixin color-modifiers {
     @each $name, $hex in $colors {
-      &--#{$name} {
-        color: $hex;
-      }
+        &--#{$name} {
+            color: $hex;
+        }
     }
-  }
-  
-  @mixin background-modifiers {
+}
+
+@mixin background-modifiers {
     @each $name, $hex in $colors {
-      &--#{$name} {
-        background: $hex;
-      }
+        &--#{$name} {
+            background: $hex;
+        }
     }
-  }
+}
+
+@mixin transition ($duration: 170ms, $timing: ease) {
+    transition-timing-function: $timing;
+    transition-duration: $duration;
+}
+
+@mixin ellipsis () {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin animate-link ($anim-line-h: 100%, $anim-line-v: 1px, $paint: currentColor) {
+    position: relative;
+
+    overflow: hidden;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: $anim-line-h;
+        height: $anim-line-v;
+
+        transition: .18s cubic-bezier(.52, .01, .16, 1);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+
+        background: $paint;
+    }
+}
+
+@mixin animate-link-reverse () {
+    &:before {
+        transition-timing-function: cubic-bezier(.62, .02, .34, 1);
+        transition-duration: .24s;
+        transform: scaleX(1);
+    }
+}
