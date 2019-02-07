@@ -1,111 +1,25 @@
 /* ==========================================================================
-   Forms
-   ========================================================================== */
-.f-form {
-    /* Reset default form styles + tag styles
-       ========================================================================== */
-    fieldset {
-        margin: 0;
-        padding: 0;
-
-        border: 0;
-    }
-    input,
-    textarea,
-    select {
-        border-radius: 0;
-        box-shadow: none;
-        &:focus {
-            outline: none;
-        }
-    }
-    textarea {
-        min-height: $size-btn*5;
-        max-height: $size-btn*10;
-        padding: $white-space;
-
-        resize: vertical;
-    }
-    input:-webkit-autofill,
-    textarea:-webkit-autofill,
-    select:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 1000px white inset;
-    }
-    *::-ms-clear {
-        display: none;
-    }
-    input::-webkit-input-placeholder,
-    textarea::-webkit-input-placeholder {
-        color: currentColor;
-    }
-    input:-moz-placeholder,
-    textarea:-moz-placeholder {
-        color: currentColor;
-    }
-    input::-moz-placeholder,
-    textarea::-moz-placeholder {
-        color: currentColor;
-    }
-    input:-ms-input-placeholder,
-    textarea:-ms-input-placeholder {
-        color: currentColor;
-    }
+Forms
+========================================================================== */
+.c-form {
     /* Form elements wrappers
        ========================================================================== */
-    .f-input-wrapper,
-    .f-select-wrapper,
-    .f-textarea-wrapper {
-        position: relative;
-
-        cursor: pointer;
-    }
-    .f-input-wrapper,
-    .f-textarea-wrapper {
+    &__section {
         align-items: stretch;
         justify-content: stretch;
 
         display: flex;
-        input,
-        textarea {
-            width: 100%;
-
-            border: none;
-            background: transparent;
-        }
-    }
-    .f-input-wrapper {
-        input {
-            width: 100%;
-            height: $size-btn;
-            // padding: 0 calc(#{$size-btn} + #{$white-space} - 8px) 0 $white-space;
-        }
-    }
-    .f-textarea-wrapper {
-        // textarea {
-        //     padding-right: calc(#{$white-space} * 2 + 20px );
-        // }
-    }
-    .f-select-wrapper {
         position: relative;
-
-        overflow: hidden;
+        input,
+        textarea,
         select {
-            position: relative;
-            z-index: 3;
-
             width: 100%;
-            height: $size-btn;
-            // padding: 0 calc(#{$size-btn} + #{$white-space} - 8px) 0 $white-space;
-
-            border: none;
-            border-radius: 0;
-            background: transparent;
-
-            -webkit-appearance: none;
-               -moz-appearance: none;
         }
-        select::-ms-expand {
-            display: none;
+        & + & {
+            margin-top: $white-space;
+        }
+        > * + * {
+            margin-left: $white-space;
         }
     }
 }

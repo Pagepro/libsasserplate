@@ -10,7 +10,7 @@ const watchTask = () => {
     const task = config.tasks[taskName]
     if (task) {
       const glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
-      watch(glob, function () {
+      watch(glob, () => {
         require('./' + taskName)()
       })
     }

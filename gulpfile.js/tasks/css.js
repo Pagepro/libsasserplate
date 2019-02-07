@@ -1,5 +1,5 @@
 const config = require('../config')
-const checkEnv = require('../utils').checkEnv
+const gulpif = require('gulp-if')
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const sass = require('gulp-sass')
@@ -33,17 +33,17 @@ const paths = {
   dest: path.join(rootDest, dest)
 }
 
-const cssTask = () => gulp
+var cssTask = () => gulp
   .src(paths.src)
-  .pipe(checkEnv(sourcemaps.init(), false))
+  .pipe(gulpif(!global.production, sourcemaps.init()))
   .pipe(sass(sassConfig))
   .on('error', handleErrors)
   .pipe(autoprefixer(autoprefixerConfig))
-  .pipe(checkEnv(cssnano({ autoprefixer: false, reduceIdents: { encoder } })))
-  .pipe(checkEnv(sourcemaps.write(), false))
+  .pipe(gulpif(global.production, cssnano({ autoprefixer: false, reduceIdents: { encoder } })))
+  .pipe(gulpif(!global.production, sourcemaps.write()))
   .pipe(combineMq({ beautify: false }))
   .pipe(gulp.dest(path.join(global.production ? dist : '', paths.dest)))
-  .pipe(checkEnv(browserSync.stream(), false))
+  .pipe(gulpif(!global.production, browserSync.stream()))
 
 gulp.task('css', cssTask)
 module.exports = cssTask

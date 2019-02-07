@@ -1,5 +1,5 @@
 const config = require('../config')
-const checkEnv = require('../utils').checkEnv
+const gulpif = require('gulp-if')
 const browserSync = require('browser-sync')
 const data = require('gulp-data')
 const gulp = require('gulp')
@@ -34,15 +34,13 @@ const htmlTask = () => gulp
   .on('error', handleErrors)
   .pipe(render({
     path: [path.join(config.root.src, htmlConfig.src)],
-    envOptions: {
-      watch: false
-    }
+    envOptions: { watch: false }
   }))
   .on('error', handleErrors)
-  .pipe(checkEnv(replace(' <br', '&nbsp;<br')))
-  .pipe(checkEnv(htmlmin(htmlConfig.htmlmin)))
+  .pipe(gulpif(global.production, replace(' <br', '&nbsp;<br')))
+  .pipe(gulpif(global.production, htmlmin(htmlConfig.htmlmin)))
   .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
-  .pipe(checkEnv(browserSync.stream(), false))
+  .pipe(gulpif(!global.production, browserSync.stream()))
 
 gulp.task('html', htmlTask)
 module.exports = htmlTask

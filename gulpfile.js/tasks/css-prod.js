@@ -1,5 +1,5 @@
 const config = require('../config')
-const checkEnv = require('../utils').checkEnv
+const gulpif = require('gulp-if')
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const sass = require('gulp-sass')
@@ -39,7 +39,7 @@ const cssProdTask = () => gulp
   .pipe(cssnano({ autoprefixer: false }))
   .pipe(combineMq({ beautify: false }))
   .pipe(gulp.dest(path.join(global.production ? dist : '', paths.dest)))
-  .pipe(checkEnv(browserSync.stream(), false))
+  .pipe(gulpif(!global.production, browserSync.stream()))
 
 gulp.task('css-prod', cssProdTask)
 module.exports = cssProdTask

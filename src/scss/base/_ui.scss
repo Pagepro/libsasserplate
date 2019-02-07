@@ -9,9 +9,101 @@ User interface
         @include animate-link-reverse;
     }
 }
+
 .ui-bg {
     @include background-modifiers;
 }
+
 .ui-color {
     @include color-modifiers;
+}
+
+fieldset {
+    .ui-form &,
+    &.ui-fieldset {
+        margin: 0;
+        padding: 0;
+
+        border: 0;
+    }
+}
+
+input {
+    .ui-form &,
+    &.ui-#{&} {
+        &[type=text]::-ms-clear {
+            display: none;
+        }
+    }
+}
+
+select {
+    .ui-form &,
+    &.ui-#{&} {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        border-radius: 0;
+        background: transparent;
+
+        appearance: none;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+
+textarea {
+    .ui-form &,
+    &.ui-#{&} {
+        --padding: #{$white-space}; // a separate CSS variable in case you want to use a different than default whitepace padding value, eg. to match default input height, replace with $white-space * 0.5
+
+        min-height: calc(#{$base-lineheight} * 1em  + var(--padding) * 2); // at least one row and the padding on both sides
+        max-height: 10em;
+        padding: var(--padding);
+
+        resize: vertical;
+    }
+}
+
+input,
+textarea {
+    .ui-form &,
+    &.ui-#{&} {
+        &::placeholder {
+            color: currentColor;
+        }
+    }
+}
+
+input,
+select {
+    .ui-form &,
+    &.ui-#{&} {
+        padding: 0 #{$white-space * 0.5};
+        height: $form-control-height;
+    }
+}
+
+input,
+textarea,
+select {
+    .ui-form &,
+    &.ui-#{&} {
+        border-radius: 0;
+        box-shadow: none;
+
+        &,
+        &:-webkit-autofill {
+            border: solid 1px color(main);
+        }
+        &:-webkit-autofill {
+            box-shadow: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
 }

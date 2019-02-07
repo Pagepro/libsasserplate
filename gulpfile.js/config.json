@@ -57,7 +57,7 @@
           "collapseWhitespace": true
         },
         "extensions": ["html", "json", "tpl"],
-        "excludeFolders": ["layout", "components", "macros"]
+        "excludeFolders": [""]
       },
 
       "images": {

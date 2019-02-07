@@ -22,6 +22,21 @@
                     {% include "components/main-nav.tpl" %}
                 </div>
             </div>
+            <div class="l-inner">
+                <form action="" class="ui-form c-form">
+                    <fieldset>
+                        <div class="c-form__section">
+                            <select name="select" id="select1">
+                                <option value="Foo">FooBar</option>
+                            </select>
+                            <input type="text" name="name" id="name1" />
+                        </div>
+                        <div class="c-form__section">
+                            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </main>
         <footer class="l-footer">
             <div class="l-inner">

@@ -7,4 +7,8 @@ export default class ClassExample {
     }
     this.config = Object.assign(defaultConfig, userConfig)
   }
+
+  init () {
+
+  }
 }
