@@ -1,45 +1,54 @@
-var config       = require('../config');
-if(!config.tasks.html) return;
+const config = require('../config')
+const checkEnv = require('../utils').checkEnv
+const browserSync = require('browser-sync')
+const data = require('gulp-data')
+const gulp = require('gulp')
+const handleErrors = require('../lib/handleErrors')
+const htmlmin = require('gulp-htmlmin')
+const path = require('path')
+const render = require('gulp-nunjucks-render')
+const fs = require('fs')
+const replace = require('gulp-replace')
 
-var browserSync  = require('browser-sync');
-var data         = require('gulp-data');
-var gulp         = require('gulp');
-var gulpif       = require('gulp-if');
-var handleErrors = require('../lib/handleErrors');
-var htmlmin      = require('gulp-htmlmin');
-var path         = require('path');
-var render       = require('gulp-nunjucks-render');
-var fs           = require('fs');
-var replace      = require('gulp-replace');
+const htmlConfig = {
+  src: 'templates',
+  dest: './',
+  dataFile: 'data/global.json',
+  htmlmin: {
+    collapseWhitespace: true
+  },
+  extensions: ['html', 'json', 'tpl'],
+  excludeFolders: ['layouts', 'partials', 'macros', 'data', 'components']
+}
 
-var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**');
+const exclude = path.normalize('!**/{' + htmlConfig.excludeFolders.join(',') + '}/**')
 
-var paths = {
-  src: [path.join(config.root.src, config.tasks.html.src, '/*.{' + config.tasks.html.extensions + '}'), exclude],
+const paths = {
+  src: [path.join(config.root.src, htmlConfig.src, '/*.{' + htmlConfig.extensions + '}'), exclude],
   dest: path.join('./')
 }
 
-var getData = function(file) {
-  var dataPath = path.resolve(config.root.src, config.tasks.html.src, config.tasks.html.dataFile)
+const getData = () => {
+  const dataPath = path.resolve(config.root.src, htmlConfig.src, htmlConfig.dataFile)
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
 
-var htmlTask = function() {
+const htmlTask = () => {
   return gulp.src(paths.src)
     .pipe(data(getData))
     .on('error', handleErrors)
     .pipe(render({
-      path: [path.join(config.root.src, config.tasks.html.src)],
+      path: [path.join(config.root.src, htmlConfig.src)],
       envOptions: {
         watch: false
       }
     }))
     .on('error', handleErrors)
-    .pipe(gulpif(global.production, replace(' <br', '&nbsp;<br')))
-    .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
+    .pipe(checkEnv(replace(' <br', '&nbsp;<br')))
+    .pipe(checkEnv(htmlmin(htmlConfig.htmlmin)))
     .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
-    .pipe(gulpif(!global.production, browserSync.stream()))
+    .pipe(checkEnv(browserSync.stream(), false))
 }
 
-gulp.task('html', htmlTask);
-module.exports = htmlTask;
+gulp.task('html', htmlTask)
+module.exports = htmlTask

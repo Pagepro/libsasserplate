@@ -1,25 +1,17 @@
 if (global.production) return
-
-const browserSync= require('browser-sync')
+const browserSync = require('browser-sync')
 const gulp = require('gulp')
 const webpack = require('webpack')
 const webpackMultiConfig = require('../lib/webpack-multi-config')
 const pathToUrl = require('../lib/pathToUrl')
+const config = require('../config').tasks.browserSync
 
-const config = {
-  port: 4500,
-  open: false,
-  server: {
-    baseDir: './'
-  }
-}
-
-const browserSyncTask = function() {
+const browserSyncTask = () => {
   const webpackConfig = webpackMultiConfig('development')
   const compiler = webpack(webpackConfig)
   const proxyConfig = config.proxy
 
-  if (typeof(proxyConfig) === 'string') {
+  if (typeof (proxyConfig) === 'string') {
     config.proxy = {
       target: proxyConfig
     }

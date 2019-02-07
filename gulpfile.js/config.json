@@ -1,85 +1,104 @@
 {
-  "root": {
-    "src": "./src",
-    "dest": "./static",
-    "dist": "./dist"
-  },
-
-  "tasks": {
-    "static": {
-      "src": "src",
-      "dest": "static"
+    "root": {
+      "src": "./src",
+      "dest": "./static",
+      "dist": "./dist"
     },
-    "js": {
-      "src": "js",
-      "dest": "static/js",
-      "entries": {
-        "app": ["./app.js"]
+
+    "tasks": {
+      "browserSync": {
+        "port": 4500,
+        "open": false,
+        "server": {
+          "baseDir": "./"
+        }
       },
-      "extensions": ["js", "json"],
-      "extractSharedJs": false
-    },
 
-    "css": {
-      "src": "scss",
-      "dest": "css",
-      "autoprefixer": {
-        "grid": true,
-        "browsers": ["> 0%"]
+      "static": {
+        "src": "src",
+        "dest": "static"
       },
-      "sass": {
-        "indentedSyntax": true,
-        "includePaths": [
-          "./node_modules/normalize.css"
-        ]
+
+      "js": {
+        "src": "js",
+        "dest": "static/js",
+        "entries": {
+          "app": ["./app.js"]
+        },
+        "extensions": ["js", "json"],
+        "babel": {
+          "presets": ["es2015", "stage-1"],
+          "plugins": []
+        },
+        "extractSharedJs": false
       },
-      "extensions": ["sass", "scss", "css"]
-    },
 
-    "html": {
-      "src": "templates",
-      "dest": "./",
-      "dataFile": "data/global.json",
-      "htmlmin": {
-        "collapseWhitespace": true
+      "css": {
+        "src": "scss",
+        "dest": "css",
+        "autoprefixer": {
+          "grid": true,
+          "browsers": ["> 0%"]
+        },
+        "sass": {
+          "indentedSyntax": true,
+          "includePaths": [
+            "./node_modules/normalize.css"
+          ]
+        },
+        "extensions": ["sass", "scss", "css"]
       },
-      "extensions": ["html", "json", "tpl"],
-      "excludeFolders": ["layouts", "partials", "macros", "data", "components"]
-    },
 
-    "images": {
-      "src": "img",
-      "dest": "img",
-      "extensions": ["jpg", "png", "svg", "gif"]
-    },
+      "html": {
+        "src": "templates",
+        "dest": "./",
+        "dataFile": "data/global.json",
+        "htmlmin": {
+          "collapseWhitespace": true
+        },
+        "extensions": ["html", "json", "tpl"],
+        "excludeFolders": ["layouts", "partials", "macros", "data", "components"]
+      },
 
-    "fonts": {
-      "src": "fonts",
-      "dest": "fonts",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
+      "images": {
+        "src": "img",
+        "dest": "img",
+        "extensions": ["jpg", "png", "svg", "gif"]
+      },
 
-    "iconFont": {
-      "src": "icons",
-      "dest": "fonts",
-      "sassDest": "generated",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
+      "fonts": {
+        "src": "fonts",
+        "dest": "fonts",
+        "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+      },
 
-    "svgsprites": {
-      "src": "svg",
-      "dest": ".",
-      "extensions": ["svg"]
-    },
+      "iconFont": {
+        "src": "icons",
+        "dest": "fonts",
+        "sassDest": "generated",
+        "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+      },
 
-    "production" : {
-      "rev": true
-    },
+      "svgsprites": {
+        "src": "svg",
+        "dest": ".",
+        "extensions": ["svg"]
+      },
 
-    "favicon": {
-      "src": ".",
-      "name": "favicon.ico",
-      "dest": "."
+      "production" : {
+        "rev": true
+      },
+
+      "critical" : {
+        "src": "*.html",
+        "width": 1920,
+        "height": 1080
+      },
+
+      "favicon": {
+        "src": ".",
+        "name": "favicon.ico",
+        "dest": "."
+      }
     }
   }
-}

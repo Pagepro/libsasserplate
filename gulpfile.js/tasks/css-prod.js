@@ -1,6 +1,6 @@
 const config = require('../config')
+const checkEnv = require('../utils').checkEnv
 const gulp = require('gulp')
-const gulpif = require('gulp-if')
 const browserSync = require('browser-sync')
 const sass = require('gulp-sass')
 const handleErrors = require('../lib/handleErrors')
@@ -36,12 +36,10 @@ const cssProdTask = () => gulp
   .pipe(sass(sassConfig))
   .on('error', handleErrors)
   .pipe(autoprefixer(autoprefixerConfig))
-  .pipe(gulpif(true, cssnano({ autoprefixer: false })))
-  .pipe(combineMq({
-      beautify: false
-  }))
+  .pipe(cssnano({ autoprefixer: false }))
+  .pipe(combineMq({ beautify: false }))
   .pipe(gulp.dest(path.join(global.production ? dist : '', paths.dest)))
-  .pipe(gulpif(!global.production, browserSync.stream()))
+  .pipe(checkEnv(browserSync.stream(), false))
 
-gulp.task('css-prod', cssProdTask);
-module.exports = cssProdTask;
+gulp.task('css-prod', cssProdTask)
+module.exports = cssProdTask

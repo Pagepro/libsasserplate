@@ -9,10 +9,10 @@ const {
   }
 } = config
 
-const cleanTask = cb => {
+const cleanTask = callback => {
   const path = global.production ? dist : dest
   del([path]).then(() => {
-    cb()
+    callback()
   })
 }
 
