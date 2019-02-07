@@ -52,12 +52,12 @@
       "html": {
         "src": "templates",
         "dest": "./",
-        "dataFile": "data/global.json",
+        "dataFile": "global.json",
         "htmlmin": {
           "collapseWhitespace": true
         },
         "extensions": ["html", "json", "tpl"],
-        "excludeFolders": ["layouts", "partials", "macros", "data", "components"]
+        "excludeFolders": ["layout", "components", "macros"]
       },
 
       "images": {

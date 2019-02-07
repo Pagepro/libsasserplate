@@ -10,16 +10,11 @@ const render = require('gulp-nunjucks-render')
 const fs = require('fs')
 const replace = require('gulp-replace')
 
-const htmlConfig = {
-  src: 'templates',
-  dest: './',
-  dataFile: 'data/global.json',
-  htmlmin: {
-    collapseWhitespace: true
-  },
-  extensions: ['html', 'json', 'tpl'],
-  excludeFolders: ['layouts', 'partials', 'macros', 'data', 'components']
-}
+const {
+  tasks: {
+    html: htmlConfig
+  }
+} = config
 
 const exclude = path.normalize('!**/{' + htmlConfig.excludeFolders.join(',') + '}/**')
 
@@ -33,22 +28,21 @@ const getData = () => {
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
 
-const htmlTask = () => {
-  return gulp.src(paths.src)
-    .pipe(data(getData))
-    .on('error', handleErrors)
-    .pipe(render({
-      path: [path.join(config.root.src, htmlConfig.src)],
-      envOptions: {
-        watch: false
-      }
-    }))
-    .on('error', handleErrors)
-    .pipe(checkEnv(replace(' <br', '&nbsp;<br')))
-    .pipe(checkEnv(htmlmin(htmlConfig.htmlmin)))
-    .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
-    .pipe(checkEnv(browserSync.stream(), false))
-}
+const htmlTask = () => gulp
+  .src(paths.src)
+  .pipe(data(getData))
+  .on('error', handleErrors)
+  .pipe(render({
+    path: [path.join(config.root.src, htmlConfig.src)],
+    envOptions: {
+      watch: false
+    }
+  }))
+  .on('error', handleErrors)
+  .pipe(checkEnv(replace(' <br', '&nbsp;<br')))
+  .pipe(checkEnv(htmlmin(htmlConfig.htmlmin)))
+  .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
+  .pipe(checkEnv(browserSync.stream(), false))
 
 gulp.task('html', htmlTask)
 module.exports = htmlTask

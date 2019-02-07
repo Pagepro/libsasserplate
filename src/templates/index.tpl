@@ -5,10 +5,10 @@
         <title>{% block title %} {{ title }} {% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        {% include "head/head-links.tpl" %}
+        {% include "head-links.tpl" %}
     </head>
     <body>
-        {% import "partials/layouts/header.tpl" as l_header %}
+        {% import "layout/header.tpl" as l_header %}
         {{ l_header.render() }}
 
         <main class="l-main">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="l-main__content">
-                    {% include "partials/main-nav.tpl" %}
+                    {% include "components/main-nav.tpl" %}
                 </div>
             </div>
         </main>
