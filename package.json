@@ -69,5 +69,8 @@
   ],
   "standard": {
     "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "gulp-git": "^2.9.0"
   }
 }

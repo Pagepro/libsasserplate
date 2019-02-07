@@ -61,7 +61,7 @@ module.exports = env => {
 
     webpackConfig.output= {
       path: path.normalize(jsDest),
-      filename: filenamePattern,
+      filename: 'app.js',
       publicPath: publicPath
     }
 
@@ -70,7 +70,7 @@ module.exports = env => {
       webpackConfig.plugins.push(
         new webpack.optimize.CommonsChunkPlugin({
           name: 'shared',
-          filename: filenamePattern,
+          filename: filenamePattern
         })
         )
       }
