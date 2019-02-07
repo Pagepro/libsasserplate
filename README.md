@@ -6,6 +6,7 @@
 1. [node v8.12.0 or later](https://nodejs.org/en/)
 2. [yarn](https://yarnpkg.com/)
 3. [EditorConfig](https://editorconfig.org/) for the code editor of your choice(optional).
+4. [Standard](https://github.com/standard) plugin for the code editor of your choice(optional).
 
 # Getting started
 Three simple steps to start:
@@ -37,6 +38,13 @@ $ yarn install
 ```
 
 That's it! You should now have everything needed to use the LibSasserPlate.
+
+### Optional(but highly recommended)
+Here at Pagepro, we always do our best to write our code high quality. Everyone makes a mistake from time to time, though. That's why we use libraries that help us avoid them as often as possible. Libsasserplate is configured to support both [EditorConfig](https://editorconfig.org/) and [Standard](https://github.com/standard). 
+Thanks to EditorConfig, your files' settings will be consistent throught the project. 
+Standard is a Javascript linter that keeps your code clean and forces good practices. 
+
+Both of them require additional plugins for your IDE and cannot be installed by the starter. We cannot force you to use them, but we **highly** recommend you do.
 
 # Usage
 
