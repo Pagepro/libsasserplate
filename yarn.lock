@@ -4934,6 +4934,13 @@ gulp-util@~2.2.0:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
+gulp-wait@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-wait/-/gulp-wait-0.0.2.tgz#ecebff4446e1a0d537cb1dc773dbd4581d17fb2d"
+  integrity sha1-7Ov/REbhoNU3yx3Hc9vUWB0X+y0=
+  dependencies:
+    map-stream "0.0.4"
+
 gulp-watch@^4.3.8:
   version "4.3.11"
   resolved "https://registry.yarnpkg.com/gulp-watch/-/gulp-watch-4.3.11.tgz#162fc563de9fc770e91f9a7ce3955513a9a118c0"
@@ -6787,6 +6794,11 @@ map-obj@^1.0.0, map-obj@^1.0.1:
 map-obj@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-2.0.0.tgz#a65cd29087a92598b8791257a523e021222ac1f9"
+
+map-stream@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.0.4.tgz#5ec6de90213ef6c7b2eb9367e9ade8da4efdb68b"
+  integrity sha1-XsbekCE+9sey65Nn6a3o2k79tos=
 
 map-stream@^0.1.0:
   version "0.1.0"

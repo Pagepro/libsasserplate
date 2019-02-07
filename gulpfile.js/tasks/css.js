@@ -10,6 +10,7 @@ const path = require('path')
 const cssnano = require('gulp-cssnano')
 const combineMq = require('gulp-combine-mq')
 const encoder = require('../lib/encoder')
+const wait = require('gulp-wait')
 
 const {
   root: {
@@ -33,9 +34,12 @@ const paths = {
   dest: path.join(rootDest, dest)
 }
 
-var cssTask = () => gulp
+const isPlatformWindows = process.platform === 'win32'
+
+const cssTask = () => gulp
   .src(paths.src)
   .pipe(gulpif(!global.production, sourcemaps.init()))
+  .pipe(gulpif(isPlatformWindows, wait(200))) // prevents SASS compilation errors on Windows
   .pipe(sass(sassConfig))
   .on('error', handleErrors)
   .pipe(autoprefixer(autoprefixerConfig))
