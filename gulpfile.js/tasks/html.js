@@ -24,7 +24,7 @@ const paths = {
 }
 
 const getData = () => {
-  const dataPath = path.resolve(config.root.src, htmlConfig.src, htmlConfig.dataFile)
+  const dataPath = path.resolve(config.root.src, htmlConfig.src, htmlConfig.dataFileDirectory, htmlConfig.dataFile)
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
 

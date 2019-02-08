@@ -1,104 +1,105 @@
 {
     "root": {
-      "src": "./src",
-      "dest": "./static",
-      "dist": "./dist"
+        "src": "./src",
+        "dest": "./static",
+        "dist": "./dist"
     },
 
     "tasks": {
-      "browserSync": {
-        "port": 4500,
-        "open": false,
-        "server": {
-          "baseDir": "./"
+        "browserSync": {
+            "port": 4500,
+            "open": false,
+            "server": {
+                "baseDir": "./"
+            }
+        },
+
+        "static": {
+            "src": "src",
+            "dest": "static"
+        },
+
+        "js": {
+            "src": "js",
+            "dest": "static/js",
+            "entries": {
+                "app": ["./app.js"]
+            },
+            "extensions": ["js", "json"],
+            "babel": {
+                "presets": ["es2015"],
+                "plugins": []
+            },
+            "extractSharedJs": false
+        },
+
+        "css": {
+            "src": "scss",
+            "dest": "css",
+            "autoprefixer": {
+                "grid": true,
+                "browsers": ["> 0%"]
+            },
+            "sass": {
+                "indentedSyntax": true,
+                "includePaths": [
+                    "./node_modules/normalize.css"
+                ]
+            },
+            "extensions": ["sass", "scss", "css"]
+        },
+
+        "html": {
+            "src": "templates",
+            "dest": "./",
+            "dataFileDirectory": "base",
+            "dataFile": "global.json",
+            "htmlmin": {
+                "collapseWhitespace": true
+            },
+            "extensions": ["html", "json", "tpl"],
+            "excludeFolders": ["layout", "components", "macros"]
+        },
+
+        "images": {
+            "src": "img",
+            "dest": "img",
+            "extensions": ["jpg", "png", "svg", "gif"]
+        },
+
+        "fonts": {
+            "src": "fonts",
+            "dest": "fonts",
+            "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+        },
+
+        "iconFont": {
+            "src": "icons",
+            "dest": "fonts",
+            "sassDest": "generated",
+            "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+        },
+
+        "svgsprites": {
+            "src": "svg",
+            "dest": ".",
+            "extensions": ["svg"]
+        },
+
+        "production" : {
+            "rev": true
+        },
+
+        "critical" : {
+            "src": "*.html",
+            "width": 1920,
+            "height": 1080
+        },
+
+        "favicon": {
+            "src": ".",
+            "name": "favicon.ico",
+            "dest": "."
         }
-      },
-
-      "static": {
-        "src": "src",
-        "dest": "static"
-      },
-
-      "js": {
-        "src": "js",
-        "dest": "static/js",
-        "entries": {
-          "app": ["./app.js"]
-        },
-        "extensions": ["js", "json"],
-        "babel": {
-          "presets": ["es2015"],
-          "plugins": []
-        },
-        "extractSharedJs": false
-      },
-
-      "css": {
-        "src": "scss",
-        "dest": "css",
-        "autoprefixer": {
-          "grid": true,
-          "browsers": ["> 0%"]
-        },
-        "sass": {
-          "indentedSyntax": true,
-          "includePaths": [
-            "./node_modules/normalize.css"
-          ]
-        },
-        "extensions": ["sass", "scss", "css"]
-      },
-
-      "html": {
-        "src": "templates",
-        "dest": "./",
-        "dataFile": "global.json",
-        "htmlmin": {
-          "collapseWhitespace": true
-        },
-        "extensions": ["html", "json", "tpl"],
-        "excludeFolders": [""]
-      },
-
-      "images": {
-        "src": "img",
-        "dest": "img",
-        "extensions": ["jpg", "png", "svg", "gif"]
-      },
-
-      "fonts": {
-        "src": "fonts",
-        "dest": "fonts",
-        "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-      },
-
-      "iconFont": {
-        "src": "icons",
-        "dest": "fonts",
-        "sassDest": "generated",
-        "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-      },
-
-      "svgsprites": {
-        "src": "svg",
-        "dest": ".",
-        "extensions": ["svg"]
-      },
-
-      "production" : {
-        "rev": true
-      },
-
-      "critical" : {
-        "src": "*.html",
-        "width": 1920,
-        "height": 1080
-      },
-
-      "favicon": {
-        "src": ".",
-        "name": "favicon.ico",
-        "dest": "."
-      }
     }
-  }
+}
