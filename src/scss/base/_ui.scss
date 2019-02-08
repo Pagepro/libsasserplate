@@ -37,6 +37,15 @@ User interface
     }
 }
 
+.ui-button {
+    height: 1em;
+
+    padding: $white-space*0.5 $white-space;
+    background: color(accent);
+    color: color(white);
+
+    border-radius: default(border-radius);
+}
 
 // .ui-form fieldset
 // fieldset.ui-fieldset

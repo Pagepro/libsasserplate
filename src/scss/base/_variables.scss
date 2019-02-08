@@ -14,6 +14,7 @@
 */
 $colors: (
     main: #000,
+    white: #fff,
     accent: #d4213d,
     blue: #09A6E4
 );
@@ -53,8 +54,12 @@ $fonts: (
     // secondary: 'Helvetica'
 );
 
+$defaults: (
+    border-radius: 4px,
+    line-height: 1.2
+);
+
 /* Standalone variables
 ========================================================================== */
-$base-lineheight: 1.2;
 $white-space: 1em;
 $form-control-height: 2rem;

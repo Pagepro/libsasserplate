@@ -35,6 +35,15 @@
     @return null;
 }
 
+@function default($key) {
+    @if map-has-key($defaults, $key) {
+        @return map-get($defaults, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $defaults.";
+    @return null;
+}
+
 // This function check 2 levels deep.
 @function size($key, $secondKey: '') {
     @if map-has-key($sizes, $key) {
