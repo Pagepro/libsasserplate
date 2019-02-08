@@ -26,31 +26,4 @@ a {
     &:hover {
         text-decoration: none;
     }
-    &:focus {
-        outline: none;
-    }
-}
-
-ul,
-ol {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-    padding-left: $white-space;
-    li {
-        margin: 1rem 0;
-    }
-}
-
-ul {
-    &:not([class]) {
-        list-style-type: disc;
-    }
-}
-
-ol {
-    &:not([class]) {
-        list-style-type: decimal;
-    }
 }

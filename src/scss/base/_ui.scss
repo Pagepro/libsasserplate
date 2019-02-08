@@ -18,6 +18,8 @@ User interface
     @include color-modifiers;
 }
 
+// .ui-form fieldset
+// fieldset.ui-fieldset
 fieldset {
     .ui-form &,
     &.ui-fieldset {
@@ -28,6 +30,8 @@ fieldset {
     }
 }
 
+// .ui-form input
+// input.ui-input
 input {
     .ui-form &,
     &.ui-#{&} {
@@ -37,6 +41,8 @@ input {
     }
 }
 
+// .ui-form select
+// select.ui-select
 select {
     .ui-form &,
     &.ui-#{&} {
@@ -54,14 +60,13 @@ select {
     }
 }
 
+// .ui-form textarea
+// textarea.ui-textarea
 textarea {
     .ui-form &,
     &.ui-#{&} {
-        --padding: #{$white-space}; // a separate CSS variable in case you want to use a different than default whitepace padding value, eg. to match default input height, replace with $white-space * 0.5
-
-        min-height: calc(#{$base-lineheight} * 1em  + var(--padding) * 2); // at least one row and the padding on both sides
         max-height: 10em;
-        padding: var(--padding);
+        padding: $white-space;
 
         resize: vertical;
     }
@@ -104,6 +109,22 @@ select {
 
         &:focus {
             outline: none;
+        }
+    }
+}
+
+// ul.ui-ul
+// ol.ui-ol
+ul,
+ol {
+    &.ui-#{&} {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+        padding-left: $white-space;
+        li {
+            margin: 1rem 0;
         }
     }
 }
