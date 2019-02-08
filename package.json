@@ -55,8 +55,6 @@
     "gulp-watch": "^4.3.8",
     "imagesloaded": "^4.1.4",
     "include-media": "^1.4.9",
-    "jquery": "^3.3.1",
-    "normalize.css": "^8.0.1",
     "pre-commit": "^1.2.2",
     "read-babelrc-up": "^0.3.1",
     "require-dir": "^0.3.0",
@@ -72,5 +70,9 @@
   ],
   "standard": {
     "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.1"
   }
 }
