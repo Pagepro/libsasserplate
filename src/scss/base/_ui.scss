@@ -18,6 +18,26 @@ User interface
     @include color-modifiers;
 }
 
+.ui-icon {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+}
+
+.ui-unordered-list,
+.ui-ordered-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    padding-left: $white-space;
+    li {
+        margin: 1rem 0;
+    }
+}
+
+
 // .ui-form fieldset
 // fieldset.ui-fieldset
 fieldset {
@@ -109,22 +129,6 @@ select {
 
         &:focus {
             outline: none;
-        }
-    }
-}
-
-// ul.ui-ul
-// ol.ui-ol
-ul,
-ol {
-    &.ui-#{&} {
-        margin: 0;
-        padding: 0;
-
-        list-style: none;
-        padding-left: $white-space;
-        li {
-            margin: 1rem 0;
         }
     }
 }
