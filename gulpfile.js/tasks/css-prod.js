@@ -7,7 +7,7 @@ const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const path = require('path')
 const cssnano = require('gulp-cssnano')
-const combineMq = require('gulp-combine-mq')
+const gcmq = require('gulp-group-css-media-queries')
 
 const {
   root: {
@@ -37,7 +37,7 @@ const cssProdTask = () => gulp
   .on('error', handleErrors)
   .pipe(autoprefixer(autoprefixerConfig))
   .pipe(cssnano({ autoprefixer: false }))
-  .pipe(combineMq({ beautify: false }))
+  .pipe(gulpif(global.production, gcmq()))
   .pipe(gulp.dest(path.join(global.production ? dist : '', paths.dest)))
   .pipe(gulpif(!global.production, browserSync.stream()))
 

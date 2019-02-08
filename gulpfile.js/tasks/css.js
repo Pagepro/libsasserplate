@@ -8,9 +8,9 @@ const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const path = require('path')
 const cssnano = require('gulp-cssnano')
-const combineMq = require('gulp-combine-mq')
 const encoder = require('../lib/encoder')
 const wait = require('gulp-wait')
+const gcmq = require('gulp-group-css-media-queries')
 
 const {
   root: {
@@ -45,7 +45,7 @@ const cssTask = () => gulp
   .pipe(autoprefixer(autoprefixerConfig))
   .pipe(gulpif(global.production, cssnano({ autoprefixer: false, reduceIdents: { encoder } })))
   .pipe(gulpif(!global.production, sourcemaps.write()))
-  .pipe(combineMq({ beautify: false }))
+  .pipe(gulpif(global.production, gcmq()))
   .pipe(gulp.dest(path.join(global.production ? dist : '', paths.dest)))
   .pipe(gulpif(!global.production, browserSync.stream()))
 
