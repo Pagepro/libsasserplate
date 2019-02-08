@@ -1,7 +1,7 @@
 {
-  "name": "LibSASSerPlate",
+  "name": "libsasserplate",
   "version": "2.0.0",
-  "description": "LibSASS starter for front-end projects by Pagepro.",
+  "description": "A libsass-based starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
     "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "babel-polyfill": "^6.22.0",
     "breakpoint-sass": "^2.7.0",
     "browser-sync": "^2.12.5",
     "critical": "^1.3.4",
