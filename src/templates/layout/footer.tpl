@@ -2,7 +2,7 @@
 <footer class="l-footer">
     <div class="l-inner">
         <p>
-            &copy; {{ year }} <a class="ui-link" href="{{ webisteUrl }}">{{ author }}</a>
+            &copy; {{ year }} <a target="_blank" class="ui-link" href="{{ webisteUrl }}">{{ author }}</a>
         </p>
     </div>
 </footer>
