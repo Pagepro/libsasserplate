@@ -1,6 +1,22 @@
 /* ==========================================================================
    Inner
    ========================================================================== */
+@mixin inner () {
+    @include media('<desktop') {
+        padding-right: $white-space;
+        padding-left: $white-space;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: size(inner, desktop);
+    margin: 0 auto;
+
+    vertical-align: baseline;
+}
+
 .l-inner {
-    @include helper--inner;
+    @include inner;
 }

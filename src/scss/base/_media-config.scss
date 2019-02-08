@@ -1,0 +1,16 @@
+/* Breakpoints for include-media plugin
+========================================================================== */
+// breakpoints values array - used to generate custom attributes with include-media rwd and for include-media itself
+$breakpoints: (
+    'desktop': size(breakpoint, desktop),
+    'tablet': size(breakpoint, tablet),
+    'mobile': size(breakpoint, mobile)
+);
+
+// media expressions and how they are aliased in include-media
+$media-expressions: (
+    'screen': 'screen',
+    'landscape': '(orientation: landscape)',
+    'portrait': '(orientation: portrait)',
+    'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+);

@@ -1,104 +1,111 @@
 {
-  "root": {
-    "src": "./src",
-    "dest": "./static",
-    "dist": "./dist"
-  },
-
-  "tasks": {
-    "browserSync": {
-      "port": 4500,
-      "open": false,
-      "server": {
-        "baseDir": "./"
-      }
+    "root": {
+        "src": "./src",
+        "dest": "./static",
+        "dist": "./dist"
     },
 
-    "static": {
-      "src": "src",
-      "dest": "static"
-    },
+    "tasks": {
+        "browserSync": {
+            "port": 4500,
+            "open": false,
+            "server": {
+                "baseDir": "./"
+            }
+        },
 
-    "js": {
-      "src": "js",
-      "dest": "static/js",
-      "entries": {
-        "app": ["./app.js"]
-      },
-      "extensions": ["js", "json"],
-      "babel": {
-        "presets": ["es2015", "stage-1"],
-        "plugins": []
-      },
-      "extractSharedJs": false
-    },
+        "static": {
+            "src": "src",
+            "dest": "static"
+        },
 
-    "css": {
-      "src": "scss",
-      "dest": "css",
-      "autoprefixer": {
-        "grid": true,
-        "browsers": ["> 0%"]
-      },
-      "sass": {
-        "indentedSyntax": true,
-        "includePaths": [
-          "./node_modules/normalize.css"
-        ]
-      },
-      "extensions": ["sass", "scss", "css"]
-    },
+        "js": {
+            "src": "js",
+            "dest": "static/js",
+            "entries": {
+                "app": ["./app.js"]
+            },
+            "extensions": ["js", "json"],
+            "babel": {
+                "presets": ["es2015"],
+                "plugins": []
+            },
+            "extractSharedJs": false
+        },
 
-    "html": {
-      "src": "templates",
-      "dest": "./",
-      "dataFile": "data/global.json",
-      "htmlmin": {
-        "collapseWhitespace": true
-      },
-      "extensions": ["html", "json", "tpl"],
-      "excludeFolders": ["layouts", "partials", "macros", "data", "components"]
-    },
+        "css": {
+            "src": "scss",
+            "dest": "css",
+            "autoprefixer": {
+                "grid": true,
+                "browsers": ["> 0%"]
+            },
+            "sass": {
+                "indentedSyntax": true,
+                "includePaths": [
+                    "./node_modules/normalize.css"
+                ]
+            },
+            "extensions": ["sass", "scss", "css"]
+        },
 
-    "images": {
-      "src": "img",
-      "dest": "img",
-      "extensions": ["jpg", "png", "svg", "gif"]
-    },
+        "html": {
+            "src": "templates",
+            "dest": "./",
+            "dataFileDirectory": "base",
+            "dataFile": "global.json",
+            "htmlmin": {
+                "collapseWhitespace": true
+            },
+            "extensions": ["html", "json", "tpl"],
+            "excludeFolders": ["layout", "components", "macros"]
+        },
 
-    "fonts": {
-      "src": "fonts",
-      "dest": "fonts",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
+        "images": {
+            "src": "img",
+            "dest": "img",
+            "extensions": ["jpg", "png", "svg", "gif"]
+        },
 
-    "iconFont": {
-      "src": "icons",
-      "dest": "fonts",
-      "sassDest": "generated",
-      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
+        "fonts": {
+            "src": "fonts",
+            "dest": "fonts",
+            "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+        },
 
-    "svgsprites": {
-      "src": "svg",
-      "dest": ".",
-      "extensions": ["svg"]
-    },
+        "iconFont": {
+            "src": "icons",
+            "dest": "fonts",
+            "sassDest": "generated",
+            "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+        },
 
-    "production" : {
-      "rev": true
-    },
+        "svgsprites": {
+            "src": "svg",
+            "dest": "svg",
+            "extensions": ["svg"]
+        },
 
-    "critical" : {
-      "src": "*.html",
-      "width": 1920,
-      "height": 1080
-    },
+        "svg": {
+            "src": "img",
+            "dest": "img/svg",
+            "extensions": ["svg"]
+        },
 
-    "favicon": {
-      "src": ".",
-      "name": "favicon.ico",
-      "dest": "."
+        "production" : {
+            "rev": true
+        },
+
+        "critical" : {
+            "src": "*.html",
+            "width": 1920,
+            "height": 1080
+        },
+
+        "favicon": {
+            "src": ".",
+            "name": "favicon.ico",
+            "dest": "."
+        }
     }
-  }
 }

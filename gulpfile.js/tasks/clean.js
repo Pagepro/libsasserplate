@@ -1,11 +1,18 @@
-var gulp = require('gulp')
-var del = require('del')
-var config = require('../config')
+const gulp = require('gulp')
+const del = require('del')
+const config = require('../config')
 
-var cleanTask = function (cb) {
-  var path = global.production ? config.root.dist : config.root.dest
-  del([path]).then(function (paths) {
-    cb()
+const {
+  root: {
+    dist,
+    dest
+  }
+} = config
+
+const cleanTask = callback => {
+  const path = global.production ? dist : dest
+  del([path]).then(() => {
+    callback()
   })
 }
 

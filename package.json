@@ -1,7 +1,7 @@
 {
-  "name": "LibSASSerPlate",
-  "version": "1.0.10",
-  "description": "LibSASS starter for front-end projects by Pagepro.",
+  "name": "libsasserplate",
+  "version": "2.0.0",
+  "description": "A libsass-based starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
     "type": "git",
@@ -11,29 +11,28 @@
     "start": "gulp",
     "production": "gulp production",
     "build": "gulp commit",
-    "lint": "standard 'src/js/**/*.js'"
+    "lint": "standard 'src/js/**/*.js'",
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use yarn to install, not NPM')\""
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-loader": "6.2.4",
-    "babel-polyfill": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "6.6.0",
-    "babel-preset-stage-1": "6.5.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
     "breakpoint-sass": "^2.7.0",
     "browser-sync": "^2.12.5",
     "critical": "^1.3.4",
     "del": "^2.2.1",
-    "gridle": "^2.0.46",
+    "eslint": "^5.13.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-changed": "^1.3.0",
-    "gulp-combine-mq": "^0.4.0",
+    "gulp-cli": "^2.0.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-data": "^1.2.1",
-    "gulp-eslint": "^2.0.0",
-    "gulp-htmllint": "0.0.8",
+    "gulp-git": "^2.9.0",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^2.0.0",
     "gulp-if": "^2.0.1",
     "gulp-image": "^1.1.1",
@@ -48,36 +47,32 @@
     "gulp-sass": "^4.0.1",
     "gulp-sequence": "^0.4.5",
     "gulp-sizereport": "^1.1.3",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-stats": "0.0.3",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stats": "^0.0.4",
     "gulp-svg-sprite": "^1.3.6",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-wait": "^0.0.2",
     "gulp-watch": "^4.3.8",
     "imagesloaded": "^4.1.4",
     "include-media": "^1.4.9",
-    "jquery": "1.12.3",
-    "js-cookie": "^2.2.0",
-    "lodash": "^4.13.1",
-    "masonry-layout": "^4.2.0",
-    "normalize.css": "^4.1.1",
-    "parsleyjs": "^2.8.0",
-    "pre-commit": "^1.1.3",
+    "pre-commit": "^1.2.2",
+    "read-babelrc-up": "^0.3.1",
     "require-dir": "^0.3.0",
-    "scrolltofixed": "^1.0.6",
-    "standard": "^8.6.0",
-    "svg-injector": "^1.1.3",
+    "standard": "^12.0.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^3.4.2",
-    "webpack": "1.12.14",
-    "webpack-dev-middleware": "1.5.1",
-    "webpack-hot-middleware": "2.10.0"
+    "webpack": "^4.29.0",
+    "webpack-dev-middleware": "^3.5.1",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "pre-commit": [
     "lint",
     "build"
   ],
   "standard": {
-    "ignore": [
-      "src/js/vendor/*.js"
-    ]
+    "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.1"
   }
 }

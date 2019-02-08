@@ -1,11 +1,10 @@
-var gulp = require('gulp')
-var gulpSequence = require('gulp-sequence')
-var getEnabledTasks = require('../lib/getEnabledTasks')
+const gulp = require('gulp')
+const gulpSequence = require('gulp-sequence')
+const gulpStats = require('gulp-stats')
 
-var commitTask = function (cb) {
-  gulpSequence('webpack-compile', cb)
-}
-require('gulp-stats')(gulp)
+const commitTask = callback => gulpSequence('webpack-compile', callback)
+
+gulpStats(gulp)
 
 gulp.task('commit', commitTask)
 module.exports = commitTask

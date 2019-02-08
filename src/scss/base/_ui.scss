@@ -1,23 +1,143 @@
 /* ==========================================================================
-   User interface
-   ========================================================================== */
+User interface
+========================================================================== */
+.ui-link {
+    @include animate-link;
 
-// .ui-blend-multiply {
-//     mix-blend-mode: multiply;
-// }
-// .ui-blend-mask {
-//     opacity: .8;
-//     background: currentColor;
-//     &--whole-vertical {
-//         height: 100%;
-//     }
-//     &--whole-horizontal {
-//         width: 100%;
-//     }
-// }
-// .ui-blend-parent {
-//     position: relative;
-//     .ui-blend-mask {
-//         position: absolute;
-//     }
-// }
+    color: color(accent);
+    &:hover {
+        @include animate-link-reverse;
+    }
+}
+
+.ui-bg {
+    @include background-modifiers;
+}
+
+.ui-color {
+    @include color-modifiers;
+}
+
+.ui-icon {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+}
+
+.ui-unordered-list,
+.ui-ordered-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    padding-left: $white-space;
+    li {
+        margin: 1rem 0;
+    }
+}
+
+.ui-button {
+    height: 1em;
+
+    padding: $white-space*0.5 $white-space;
+    background: color(accent);
+    color: color(white);
+
+    border-radius: default(border-radius);
+}
+
+// .ui-form fieldset
+// fieldset.ui-fieldset
+fieldset {
+    .ui-form &,
+    &.ui-fieldset {
+        margin: 0;
+        padding: 0;
+
+        border: 0;
+    }
+}
+
+// .ui-form input
+// input.ui-input
+input {
+    .ui-form &,
+    &.ui-#{&} {
+        &[type=text]::-ms-clear {
+            display: none;
+        }
+    }
+}
+
+// .ui-form select
+// select.ui-select
+select {
+    .ui-form &,
+    &.ui-#{&} {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        border-radius: 0;
+        background: transparent;
+
+        appearance: none;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+
+// .ui-form textarea
+// textarea.ui-textarea
+textarea {
+    .ui-form &,
+    &.ui-#{&} {
+        max-height: 10em;
+        padding: $white-space;
+
+        resize: vertical;
+    }
+}
+
+input,
+textarea {
+    .ui-form &,
+    &.ui-#{&} {
+        &::placeholder {
+            color: currentColor;
+        }
+    }
+}
+
+input,
+select {
+    .ui-form &,
+    &.ui-#{&} {
+        padding: 0 #{$white-space * 0.5};
+        height: $form-control-height;
+    }
+}
+
+input,
+textarea,
+select {
+    .ui-form &,
+    &.ui-#{&} {
+        border-radius: 0;
+        box-shadow: none;
+
+        &,
+        &:-webkit-autofill {
+            border: solid 1px color(main);
+        }
+        &:-webkit-autofill {
+            box-shadow: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

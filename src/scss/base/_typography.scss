@@ -8,13 +8,14 @@
 html {
     @include font-smoothing(on);
 
-    font-size: 16px;
+    font-size: font-size(main);
 }
-body {
-    font-family: $font-default;
-    line-height: 1.4;
 
-    color: $color-default;
+body {
+    font-family: font(main);
+    color: color(main);
+
+    line-height: default(line-height);
 }
 
 a {
@@ -24,67 +25,5 @@ a {
     color: currentColor;
     &:hover {
         text-decoration: none;
-    }
-    &:focus {
-        outline: none;
-    }
-    &:not([class]) {
-        @include helper--link-anim;
-
-        color: $color-default-link;
-        &:hover {
-            @include helper--link-anim-dash-on-hover;
-        }
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol {
-    &:not([class]) + &:not([class]) {
-        margin-top: $size-gutter;
-    }
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin: 0;
-}
-
-
-ul,
-ol {
-    @include helper--list;
-
-    padding-left: $size-gutter;
-    &:not([class]) {
-        padding-left: $size-gutter;
-        li + li {
-            margin-top: $size-gutter/2;
-        }
-    }
-}
-
-ul {
-    &:not([class]) {
-        list-style-type: disc;
-    }
-}
-
-ol {
-    &:not([class]) {
-        list-style-type: decimal;
     }
 }

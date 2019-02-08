@@ -1,11 +1,12 @@
-var config = require('../config')
-var gulp = require('gulp')
-var repeatString = require('../lib/repeatString')
-var sizereport = require('gulp-sizereport')
+const config = require('../config')
+const gulp = require('gulp')
+const sizereport = require('gulp-sizereport')
 
-gulp.task('size-report', function () {
-  return gulp.src([(global.production ? config.root.dist : config.root.dest) + '/**/*', '*!rev-manifest.json'])
-    .pipe(sizereport({
-      gzip: true
-    }))
-})
+const source = [(global.production ? config.root.dist : config.root.dest) + '/**/*', '*!rev-manifest.json']
+const sizeReport = () => gulp
+  .src(source)
+  .pipe(sizereport({ gzip: true }))
+
+gulp.task('size-report', sizeReport)
+
+module.exports = sizeReport

@@ -2,97 +2,64 @@
    Variables
    ========================================================================== */
 
-/* Colors
+/* Maps
 ========================================================================== */
-$color-default: #464646;
-$color-black: #000;
-$color-white: #fff;
-
-$color-1: $color-black;
-$color-2: $color-white;
-$color-3: #d4213d;			// red
-
-$colors:
-    $color-1,
-    $color-2,
-    $color-3;
-
-$color-default-link: $color-3;
-
-/* Indexes
-========================================================================== */
-$index-header: 100;
-
-/* Sizes
-========================================================================== */
-$size-inner: 1240px;
-$size-gutter: 20px;
-
-$size-btn: 8px;
-
-$size-scalable-padding_16-9: 56%;
-$size-scalable-padding_4-3: 75%;
-
-
-/* Fonts
-========================================================================== */
-$font-default: 		Arial, sans-serif;
-$font-ico: 			'fontello';
-
-/* Breakpoints
-========================================================================== */
-
-// breakpoints names used for include-media breakpoint and for gridle
-$breakpoint-desktop-small: 'desktop-small';
-$breakpoint-tablet: 'tablet';
-$breakpoint-phone: 'phone';
-
-// breakpoints values used for include media and for grid gridle
-$size-desktop-small: $size-inner + $size-gutter*4;
-$size-tablet: 1024px;
-$size-phone: 767px;
-
-// breakpoints names array - used to generate custom attributes with include-media rwd
-$breakpoints-array:
-    $breakpoint-desktop-small,
-    $breakpoint-tablet,
-    $breakpoint-phone;
-
-// breakpoints values array - used to generate custom attributes with include-media rwd and for include-media itself
-$breakpoints: (
-    $breakpoint-desktop-small: $size-desktop-small,
-    $breakpoint-tablet: $size-tablet,
-    $breakpoint-phone: $size-phone  
+/*
+    The names and values of variables in maps are just suggestions/random values.
+    Feel free to add new values, modify both the values and/or keys of the items depending on the project and your prefferences.
+    For each map, a functions is defined (in base/_functions.scss).
+    By default, function names are single a singular form of the map's variable name.
+    Eg. To use the "main" color, a getter function "color" is defined.
+    To use it, simply call: color(main).
+*/
+$colors: (
+    main: #000,
+    white: #fff,
+    accent: #d4213d,
+    blue: #09A6E4
 );
 
-$media-expressions: (
-  'screen': 'screen',
-  'print': 'print',
-  'handheld': 'handheld',
-  'landscape': '(orientation: landscape)',
-  'portrait': '(orientation: portrait)',
-  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
-  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
-) !default;
+$sizes: (
+    media: 400px,
+    inner: (
+        desktop: 960px,
+        tablet: 760px,
+        mobile: 320px
+    ),
+    breakpoint: (
+        desktop: 1400px,
+        tablet: 1024px,
+        mobile: 767px
+    )
+);
 
-// breakpoint exaples
-// body {
-//     @include media('<=desktop-small') {
-//         background: pink;
-//     }
-//     @include media('<=tablet') {
-//         background: red;
-//     }
-//     @include media('<=phone') {
-//         background: yellow;
-//     }
-//     @include media('>phone', '<=desktop-small') {
-//         border: 5px solid grey;
-//     }
-//     @include media('>tablet', '<=1100px') {
-//         color: red;
-//     }
-//     @include media('<=phone', 'landscape') {
-//         background: orange;
-//     }
-// }
+// Set main font size to body (eg. 12px), then refer to it using rem, eg. secondary: 2rem -> 24px
+$font-sizes: (
+    main: 14px,
+    h1: 3rem,
+    h2: 2rem,
+    h3: 1.5rem,
+    small: 0.8rem,
+    quote: 9px
+);
+
+$offsets: (
+    default: 16px,
+    large: 24px,
+    small: 8px
+);
+
+$fonts: (
+    main: #{'Arial', sans-serif}
+    // secondary: 'Helvetica'
+);
+
+$defaults: (
+    border-radius: 4px,
+    line-height: 1.2
+);
+
+/* Standalone variables
+========================================================================== */
+$white-space: 1em;
+$form-control-height: 2rem;

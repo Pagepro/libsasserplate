@@ -1,102 +1,92 @@
-var config = require('../config');
-if(!config.tasks.js) return;
+const config = require('../config');
+const path = require('path')
+const pathToUrl = require('./pathToUrl')
+const webpack = require('webpack')
+const WebpackManifest = require('./webpackManifest')
+const readBabelrcUp = require('read-babelrc-up')
 
-var path            = require('path');
-var pathToUrl       = require('./pathToUrl');
-var webpack         = require('webpack');
-var webpackManifest = require('./webpackManifest');
+module.exports = env => {
+  const {
+    tasks,
+    root
+  } = config
 
-module.exports = function(env) {
-  var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
-  var jsDest = path.resolve(path.join(env === 'production' ? config.root.dist : '', config.tasks.js.dest))
+  const directories = {
+    src: path.resolve(root.src, tasks.js.src),
+    dest: path.resolve(path.join(env === 'production' ? root.dist : '', tasks.js.dest))
+  }
 
-  var publicPath = pathToUrl(config.tasks.js.dest, '/')
-  var extensions = config.tasks.js.extensions.map(function(extension) {
-    return '.' + extension
-  })
+  const publicPath = pathToUrl(tasks.js.dest, '/')
+  const extensions = tasks.js.extensions.map(extension => '.'.concat(extension))
 
-  var rev = config.tasks.production.rev && env === 'production'
-  var filenamePattern = rev ? '[name]-[hash].js' : '[name].js'
-  var webpackConfig = {
-    context: jsSrc,
+  const rev = tasks.production.rev && env === 'production'
+  const filenamePattern = rev ? '[name]-[hash].js' : '[name].js'
+
+  let webpackConfig = {
+    context: directories.src,
     plugins: [
-        new webpack.ProvidePlugin({
-           $: "jquery",
-           jQuery: "jquery"
-       })
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
+      })
     ],
     resolve: {
-      root: jsSrc,
-      extensions: [''].concat(extensions)
+      extensions
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
-          query: config.tasks.js.babel
+          query: readBabelrcUp().then(result => result.babel)
         }
       ]
     }
   }
 
-  if(env === 'development') {
-    webpackConfig.devtool = 'inline-source-map'
+  if (env === 'development') {
+    webpackConfig = {
+      ...webpackConfig,
+      devtool: 'inline-source-map',
+      mode: 'development'
+    }
 
     // Create new entries object with webpack-hot-middleware added
-    for (var key in config.tasks.js.entries) {
-      var entry = config.tasks.js.entries[key]
-      config.tasks.js.entries[key] = ['webpack-hot-middleware/client?&reload=true'].concat(entry)
-    }
+    Object.keys(tasks.js.entries).forEach(task => {
+      const entry = tasks.js.entries[task]
+      tasks.js.entries[task] = ['webpack-hot-middleware/client?&reload=true'].concat(entry)
+    })
 
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
   }
 
-  if(env !== 'test') {
-    // Karma doesn't need entry points or output settings
-    webpackConfig.entry = config.tasks.js.entries
-
-    webpackConfig.output= {
-      path: path.normalize(jsDest),
-      filename: filenamePattern,
+  if (env !== 'test') {
+    webpackConfig.entry = tasks.js.entries
+    webpackConfig.output = {
+      path: path.normalize(directories.dest),
+      filename: 'app.js',
       publicPath: publicPath
     }
 
-    if(config.tasks.js.extractSharedJs) {
+    if (tasks.js.extractSharedJs) {
       // Factor out common dependencies into a shared.js
       webpackConfig.plugins.push(
         new webpack.optimize.CommonsChunkPlugin({
           name: 'shared',
-          filename: filenamePattern,
-        })
-      )
+          filename: filenamePattern
+        }))
     }
   }
-  if(env === 'production' || env === 'compile') {
-    if(rev) {
-      webpackConfig.plugins.push(new webpackManifest(publicPath, path.join(config.root.dist, config.root.dest)))
+  if (env === 'production' || env === 'compile') {
+    if (rev) {
+      webpackConfig.plugins.push(new WebpackManifest(publicPath, path.join(root.dist, root.dest)))
     }
 
-    webpackConfig.plugins.push(
-      new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': JSON.stringify('production')
-        }
-      }),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-         sourceMap: false,
-         comments: false,
-         minimize: true,
-         mangle: true,
-      }),
-      new webpack.NoErrorsPlugin()
-    )
+    webpackConfig = {
+      ...webpackConfig,
+      mode: 'production'
+    }
   }
-
   return webpackConfig
 }

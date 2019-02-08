@@ -1,14 +1,23 @@
-var config = require('../config')
-if(!config.tasks.js) return
+const config = require('../lib/webpack-multi-config')('compile')
+const gulp = require('gulp')
+const logger = require('../lib/compileLogger')
+const path = require('path')
+const git = require('gulp-git')
+const webpack = require('webpack')
 
-var config  = require('../lib/webpack-multi-config')('compile')
-var gulp    = require('gulp')
-var logger  = require('../lib/compileLogger')
-var webpack = require('webpack')
+const webpackCompile = callback => {
+  webpack(config, (err, stats) => {
+    const {
+      output: {
+        path: bundleOutputPath,
+        filename
+      }
+    } = config
 
-var webpackCompile = function(callback) {
-  webpack(config, function(err, stats) {
     logger(err, stats)
+
+    gulp.src(path.join(bundleOutputPath, filename)).pipe(git.add())
+
     callback()
   })
 }
