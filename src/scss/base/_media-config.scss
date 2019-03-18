@@ -4,11 +4,11 @@
 
 // Examples:
 // In mobile-first approach we should use:
-// @include media(phone) that means (min-width: phone);
+// @include media(mobile) that means (min-width: mobile);
 //
 // To create custom styles (eg. works only on mobile like hamburger) 
 // and avoid override them on higher breakpoints, we can use:;
-// @include media(0, phone) that means (min-width: 0) and (max-width: tablet - 1);
+// @include media(0, mobile) that means (min-width: 0) and (max-width: mobile - 1px);
 
 @mixin media($minWidth, $maxWidth: null) {
     @if type-of($minWidth) != number {
