@@ -93,3 +93,30 @@
         transform: scaleX(1);
     }
 }
+
+
+/* 4. Generated map of styles that include breakpoints
+========================================================================== */
+// Example of using:
+// .l-header {
+//  $header-title-font-sizes: (
+//      '>mobile': 24px,
+//      '>tablet': 32px,
+//      '>desktop': 36px,
+//  );
+//  &__title {
+//   @include each-breakpoint($header-title-font-sizes, font-size);
+//  }
+// }
+
+@mixin each-breakpoint($map, $properties) {
+    @each $bp, $value in $map {
+        $newValue: $value;
+
+        @include media($bp) {
+            @each $property in $properties {
+                #{$property}: $newValue;
+            }
+        }
+    }
+}

@@ -1,5 +1,15 @@
-/* Breakpoints for include-media plugin
-========================================================================== */
+/* ==========================================================================
+   Breakpoints for include-media plugin
+   ========================================================================== */
+
+// Examples:
+// In mobile-first approach we should use:
+// @include media('>mobile') that means (min-width: mobile + 1px);
+//
+// To create custom styles (eg. works only on mobile like hamburger) 
+// and avoid override them on higher breakpoints, we can use:;
+// @include media('<=mobile') that means (max-width: mobile);
+
 // breakpoints values array - used to generate custom attributes with include-media rwd and for include-media itself
 $breakpoints: (
     'desktop': size(breakpoint, desktop),
