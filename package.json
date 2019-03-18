@@ -54,7 +54,6 @@
     "gulp-wait": "^0.0.2",
     "gulp-watch": "^4.3.8",
     "imagesloaded": "^4.1.4",
-    "include-media": "^1.4.9",
     "pre-commit": "^1.2.2",
     "read-babelrc-up": "^0.3.1",
     "require-dir": "^0.3.0",

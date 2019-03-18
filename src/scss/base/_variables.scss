@@ -12,6 +12,14 @@
     Eg. To use the "main" color, a getter function "color" is defined.
     To use it, simply call: color(main).
 */
+
+$breakpoints: (
+    0: 0,
+    mobile: 767px,
+    tablet: 1024px,
+    desktop: 1400px,
+);
+
 $colors: (
     main: #000,
     white: #fff,
@@ -26,11 +34,6 @@ $sizes: (
         tablet: 760px,
         mobile: 320px
     ),
-    breakpoint: (
-        desktop: 1400px,
-        tablet: 1024px,
-        mobile: 767px
-    )
 );
 
 // Set main font size to body (eg. 12px), then refer to it using rem, eg. secondary: 2rem -> 24px

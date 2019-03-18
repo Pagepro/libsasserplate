@@ -1,16 +1,65 @@
-/* Breakpoints for include-media plugin
-========================================================================== */
-// breakpoints values array - used to generate custom attributes with include-media rwd and for include-media itself
-$breakpoints: (
-    'desktop': size(breakpoint, desktop),
-    'tablet': size(breakpoint, tablet),
-    'mobile': size(breakpoint, mobile)
-);
+/* ==========================================================================
+   Media config
+   ========================================================================== */
 
-// media expressions and how they are aliased in include-media
-$media-expressions: (
-    'screen': 'screen',
-    'landscape': '(orientation: landscape)',
-    'portrait': '(orientation: portrait)',
-    'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
-);
+// Examples:
+// In mobile-first approach we should use:
+// @include media(phone) that means (min-width: phone);
+//
+// To create custom styles (eg. works only on mobile like hamburger) 
+// and avoid override them on higher breakpoints, we can use:;
+// @include media(0, phone) that means (min-width: 0) and (max-width: tablet - 1);
+
+@mixin media($minWidth, $maxWidth: null) {
+    @if type-of($minWidth) != number {
+        $minWidth: breakpoint($minWidth);
+    }
+
+    @if ($minWidth != null) {
+        @if ($maxWidth != null) {
+            @if type-of($maxWidth) != number {
+                $maxWidth: breakpoint($maxWidth);
+            }
+
+            @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) {
+                @content;
+            }
+        } @else {
+            @if ($minWidth != 0) {
+                @media (min-width: $minWidth) {
+                    @content;
+                }
+            } @else {
+                @content;
+            }
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from '#{$minWidth}'." + " Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+// To create map of styles that include breakpoints for some component, try this mixin.
+//
+// Example of using:
+// .l-header {
+// 	$header-title-font-sizes: (
+//     	mobile: 24px,
+//     	tablet: 32px,
+//     	desktop: 36px,
+// 	);
+//  &__title {
+//	 @include each-breakpoint($header-title-font-sizes, font-size);
+//  }
+// }
+
+@mixin each-breakpoint($map, $properties) {
+    @each $bp, $value in $map {
+        $newValue: $value;
+
+        @include media($bp) {
+            @each $property in $properties {
+                #{$property}: $newValue;
+            }
+        }
+    }
+}
