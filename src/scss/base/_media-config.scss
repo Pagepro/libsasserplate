@@ -6,9 +6,9 @@
 // In mobile-first approach we should use:
 // @include media(mobile) that means (min-width: mobile);
 //
-// To create custom styles (eg. works only on mobile like hamburger) 
-// and avoid override them on higher breakpoints, we can use:;
-// @include media(0, mobile) that means (min-width: 0) and (max-width: mobile - 1px);
+// To create custom styles (eg. works only above mobile and below tablet) 
+// and avoid override them on another breakpoints, we can use:;
+// @include media(mobile, tablet) that means (min-width: mobile) and (max-width: tablet - 1px);
 
 @mixin media($minWidth, $maxWidth: null) {
     @if type-of($minWidth) != number {
@@ -34,22 +34,45 @@
             }
         }
     } @else {
-        @warn "Unfortunately, no value could be retrieved from '#{$minWidth}'." + " Please make sure it is defined in `$breakpoints` map.";
+        @error "Unfortunately, no value could be retrieved from '#{$minWidth}'." + " Please make sure it is defined in `$breakpoints` map.";
     }
 }
 
-// To create map of styles that includes breakpoints for some component, try this mixin
+// To add portrait or landscape orientation, use this mixin
+//
+// Example of using:
+// 
+// .l-header {
+//      @include media(tablet) {
+//          background: grey;
+//          @include orientation(landscape) {
+//              background: black;
+//          }
+//      }
+// }
+
+@mixin orientation($orientation) {
+    @if ($orientation == 'portrait' or $orientation == 'landscape') {
+        @media (orientation: $orientation) {
+            @content
+        }
+    } @else {
+        @error "Unfortunately, no find orientation '#{$orientation}'." + " Please use 'portrait' or 'landscape' value.";
+    }
+}
+
+// To create map of styles that includes breakpoints for some component, use this mixin
 //
 // Example of using:
 // .l-header {
-// 	$header-title-font-sizes: (
-//     	mobile: 24px,
-//     	tablet: 32px,
-//     	desktop: 36px,
-// 	);
-//  &__title {
-//	 @include each-breakpoint($header-title-font-sizes, font-size);
-//  }
+//      $header-title-font-sizes: (
+//          mobile: 24px,
+//          tablet: 32px,
+//          desktop: 36px,
+//      );
+//      &__title {
+//          @include each-breakpoint($header-title-font-sizes, font-size);
+//      }
 // }
 
 @mixin each-breakpoint($map, $properties) {
