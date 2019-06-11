@@ -7,10 +7,14 @@
 // @include media(mobile) that means (min-width: mobile);
 //
 // To create custom styles (eg. works only above mobile and below tablet) 
-// and avoid override them on another breakpoints, we can use:;
+// and avoid override them on another breakpoints, we can use:
 // @include media(mobile, tablet) that means (min-width: mobile) and (max-width: tablet - 1px);
+//
+// To add orientation: portrait or landscape, we can use:
+// @include media(mobile, tablet, portrait) {
+// that means (min-width: mobile) and (max-width: tablet - 1px) and (orientation: portrait);
 
-@mixin media($minWidth, $maxWidth: null) {
+@mixin media($minWidth, $maxWidth: null, $orientation: null) {
     @if type-of($minWidth) != number {
         $minWidth: breakpoint($minWidth);
     }
@@ -21,8 +25,18 @@
                 $maxWidth: breakpoint($maxWidth);
             }
 
-            @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) {
-                @content;
+            @if ($orientation != null) {
+                @if ($orientation == 'portrait' or $orientation == 'landscape') {
+                   @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) and (orientation: $orientation) {
+                        @content;
+                    }
+                } @else {
+                    @warn "Unfortunately, no find orientation '#{$orientation}'." + " Please use 'portrait' or 'landscape' value.";
+                }
+            } @else {
+                @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) {
+                    @content;
+                }
             }
         } @else {
             @if ($minWidth != 0) {
@@ -34,34 +48,12 @@
             }
         }
     } @else {
-        @error "Unfortunately, no value could be retrieved from '#{$minWidth}'." + " Please make sure it is defined in `$breakpoints` map.";
+        @warn "Unfortunately, no find breakpoint value." + " Please make sure it is defined in `$breakpoints` map.";
     }
 }
 
-// To add portrait or landscape orientation, use this mixin
-//
-// Example of using:
-// 
-// .l-header {
-//      @include media(tablet) {
-//          background: grey;
-//          @include orientation(landscape) {
-//              background: black;
-//          }
-//      }
-// }
-
-@mixin orientation($orientation) {
-    @if ($orientation == 'portrait' or $orientation == 'landscape') {
-        @media (orientation: $orientation) {
-            @content
-        }
-    } @else {
-        @error "Unfortunately, no find orientation '#{$orientation}'." + " Please use 'portrait' or 'landscape' value.";
-    }
-}
-
-// To create map of styles that includes breakpoints for some component, use this mixin
+// To create map of styles that includes breakpoints for some component, use
+// each-breakpoint mixin:;
 //
 // Example of using:
 // .l-header {
