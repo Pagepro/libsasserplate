@@ -6,7 +6,7 @@
 // In mobile-first approach we should use:
 // @include media(mobile) that means (min-width: mobile);
 //
-// To create custom styles (eg. works only above mobile and below tablet) 
+// To create custom styles (eg. works only above mobile and below tablet)
 // and avoid override them on another breakpoints, we can use:
 // @include media(mobile, tablet) that means (min-width: mobile) and (max-width: tablet - 1px);
 //
@@ -15,40 +15,41 @@
 // that means (min-width: mobile) and (max-width: tablet - 1px) and (orientation: portrait);
 
 @mixin media($minWidth, $maxWidth: null, $orientation: null) {
+    // if $minWidth is not a number, use breakpoint
     @if type-of($minWidth) != number {
         $minWidth: breakpoint($minWidth);
     }
 
-    @if ($minWidth != null) {
-        @if ($maxWidth != null) {
-            @if type-of($maxWidth) != number {
-                $maxWidth: breakpoint($maxWidth);
-            }
+    // if $minWidth still is not a number, return warn
+    @if type-of($minWidth) != number {
+        @warn "Unfortunately, no find breakpoint value." + " Please make sure it is defined in `$breakpoints` map.";
+    }
 
-            @if ($orientation != null) {
-                @if ($orientation == 'portrait' or $orientation == 'landscape') {
-                   @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) and (orientation: $orientation) {
-                        @content;
-                    }
-                } @else {
-                    @warn "Unfortunately, no find orientation '#{$orientation}'." + " Please use 'portrait' or 'landscape' value.";
-                }
-            } @else {
-                @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) {
+    @if ($maxWidth != null) {
+        @if type-of($maxWidth) == string {
+            $maxWidth: breakpoint($maxWidth);
+        }
+        @if ($orientation != null) {
+            @if (orientation(portrait) or orientation(landscape)) {
+                @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) and (orientation: $orientation) {
                     @content;
                 }
+            } @else {
+                @warn "Unfortunately, no find orientation '#{$orientation}'." + " Please use 'portrait' or 'landscape' value.";
             }
         } @else {
-            @if ($minWidth != 0) {
-                @media (min-width: $minWidth) {
-                    @content;
-                }
-            } @else {
+            @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) {
                 @content;
             }
         }
     } @else {
-        @warn "Unfortunately, no find breakpoint value." + " Please make sure it is defined in `$breakpoints` map.";
+        @if ($minWidth != 0) {
+            @media (min-width: $minWidth) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
     }
 }
 

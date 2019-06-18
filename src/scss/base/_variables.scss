@@ -19,6 +19,11 @@ $breakpoints: (
     desktop: 1400px,
 );
 
+$orientations: (
+    portrait: portrait,
+    landscape: landscape,
+);
+
 $colors: (
     main: #000,
     white: #fff,

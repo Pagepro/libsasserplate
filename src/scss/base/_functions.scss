@@ -20,6 +20,10 @@
     @return get-map-value($breakpoints, $key);
 }
 
+@function orientation($key) {
+    @return get-map-value($orientations, $key);
+}
+
 @function color($key) {
     @return get-map-value($colors, $key);
 }
