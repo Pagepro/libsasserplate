@@ -30,7 +30,7 @@
             $maxWidth: breakpoint($maxWidth);
         }
         @if ($orientation != null) {
-            @if (orientation(portrait) or orientation(landscape)) {
+            @if (orientation($orientation)) {
                 @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) and (orientation: $orientation) {
                     @content;
                 }
