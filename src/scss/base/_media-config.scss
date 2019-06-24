@@ -1,16 +1,81 @@
-/* Breakpoints for include-media plugin
-========================================================================== */
-// breakpoints values array - used to generate custom attributes with include-media rwd and for include-media itself
-$breakpoints: (
-    'desktop': size(breakpoint, desktop),
-    'tablet': size(breakpoint, tablet),
-    'mobile': size(breakpoint, mobile)
-);
+/* ==========================================================================
+   Media config
+   ========================================================================== */
 
-// media expressions and how they are aliased in include-media
-$media-expressions: (
-    'screen': 'screen',
-    'landscape': '(orientation: landscape)',
-    'portrait': '(orientation: portrait)',
-    'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
-);
+// Examples:
+// In mobile-first approach we should use:
+// @include media(mobile) that means (min-width: mobile);
+//
+// To create custom styles (eg. works only above mobile and below tablet)
+// and avoid override them on another breakpoints, we can use:
+// @include media(mobile, tablet) that means (min-width: mobile) and (max-width: tablet - 1px);
+//
+// To add orientation: portrait or landscape, we can use:
+// @include media(mobile, tablet, portrait) {
+// that means (min-width: mobile) and (max-width: tablet - 1px) and (orientation: portrait);
+
+@mixin media($minWidth, $maxWidth: null, $orientation: null) {
+    // if $minWidth is not a number, use breakpoint
+    @if type-of($minWidth) != number {
+        $minWidth: breakpoint($minWidth);
+    }
+
+    // if $minWidth still is not a number, return warn
+    @if type-of($minWidth) != number {
+        @warn "Unfortunately, no find breakpoint value." + " Please make sure it is defined in `$breakpoints` map.";
+    }
+
+    @if ($maxWidth != null) {
+        @if type-of($maxWidth) == string {
+            $maxWidth: breakpoint($maxWidth);
+        }
+        @if ($orientation != null) {
+            @if (orientation($orientation)) {
+                @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) and (orientation: $orientation) {
+                    @content;
+                }
+            } @else {
+                @warn "Unfortunately, no find orientation '#{$orientation}'." + " Please use 'portrait' or 'landscape' value.";
+            }
+        } @else {
+            @media (min-width: $minWidth) and (max-width: $maxWidth - 1px) {
+                @content;
+            }
+        }
+    } @else {
+        @if ($minWidth != 0) {
+            @media (min-width: $minWidth) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    }
+}
+
+// To create map of styles that includes breakpoints for some component, use
+// each-breakpoint mixin:;
+//
+// Example of using:
+// .l-header {
+//      $header-title-font-sizes: (
+//          mobile: 24px,
+//          tablet: 32px,
+//          desktop: 36px,
+//      );
+//      &__title {
+//          @include each-breakpoint($header-title-font-sizes, font-size);
+//      }
+// }
+
+@mixin each-breakpoint($map, $properties) {
+    @each $bp, $value in $map {
+        $newValue: $value;
+
+        @include media($bp) {
+            @each $property in $properties {
+                #{$property}: $newValue;
+            }
+        }
+    }
+}

@@ -2,11 +2,6 @@
    Inner
    ========================================================================== */
 @mixin inner () {
-    @include media('<desktop') {
-        padding-right: $white-space;
-        padding-left: $white-space;
-    }
-
     display: flex;
     flex-direction: column;
 
@@ -15,6 +10,11 @@
     margin: 0 auto;
 
     vertical-align: baseline;
+
+    @include media(0, tablet) {
+        padding-right: $white-space;
+        padding-left: $white-space;
+    }
 }
 
 .l-inner {

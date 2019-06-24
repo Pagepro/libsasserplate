@@ -1,47 +1,47 @@
 // This is as WET as it can get, but unfortunately you can't nest SASS functions so the alternative is to make complex map definitions.
-@function color($key) {
-    @if map-has-key($colors, $key) {
-        @return map-get($colors, $key);
+
+@function get-map-value($map, $keys...) {
+    @each $key in $keys {
+        $isValidKey: map-has-key($map, $key);
+
+        @if ($isValidKey == false) {
+            @warn "There is no element with key: '#{$key}'.";
+
+            @return null;
+        }
+
+        $map: map-get($map, $key);
     }
 
-    @warn "Unknown `#{$key}` in $colors.";
-    @return null;
+    @return $map;
+}
+
+@function breakpoint($key) {
+    @return get-map-value($breakpoints, $key);
+}
+
+@function orientation($key) {
+    @return get-map-value($orientations, $key);
+}
+
+@function color($key) {
+    @return get-map-value($colors, $key);
 }
 
 @function font-size($key) {
-    @if map-has-key($font-sizes, $key) {
-        @return map-get($font-sizes, $key);
-    }
-
-    @warn "Unknown `#{$key}` in $font-sizes.";
-    @return null;
+    @return get-map-value($font-sizes, $key);
 }
 
 @function offset($key) {
-    @if map-has-key($offsets, $key) {
-        @return map-get($offsets, $key);
-    }
-
-    @warn "Unknown `#{$key}` in $offsets.";
-    @return null;
+    @return get-map-value($offsets, $key);
 }
 
 @function font($key) {
-    @if map-has-key($fonts, $key) {
-        @return map-get($fonts, $key);
-    }
-
-    @warn "Unknown `#{$key}` in $fonts.";
-    @return null;
+    @return get-map-value($fonts, $key);
 }
 
 @function default($key) {
-    @if map-has-key($defaults, $key) {
-        @return map-get($defaults, $key);
-    }
-
-    @warn "Unknown `#{$key}` in $defaults.";
-    @return null;
+    @return get-map-value($defaults, $key);
 }
 
 // This function check 2 levels deep.
