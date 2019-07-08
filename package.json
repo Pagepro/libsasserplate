@@ -71,6 +71,7 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
+    "core-js": "3",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.1"
   }
