@@ -36,10 +36,6 @@
         "css": {
             "src": "scss",
             "dest": "css",
-            "autoprefixer": {
-                "grid": true,
-                "browsers": ["> 0%"]
-            },
             "sass": {
                 "indentedSyntax": true,
                 "includePaths": [
