@@ -12,7 +12,7 @@
     "production": "gulp production",
     "build": "gulp commit",
     "lint": "standard 'src/js/**/*.js'",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use yarn to install, not NPM')\""
+    "preinstall": "node gulpfile.js/lib/lock-yarn.js"
   },
   "license": "MIT",
   "devDependencies": {
