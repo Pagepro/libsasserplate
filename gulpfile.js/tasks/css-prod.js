@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const path = require('path')
 const cssnano = require('gulp-cssnano')
 const gcmq = require('gulp-group-css-media-queries')
+const sassGlob = require('gulp-sass-glob')
 
 const {
   root: {
@@ -33,6 +34,7 @@ const paths = {
 
 const cssProdTask = () => gulp
   .src(paths.src)
+  .pipe(sassGlob())
   .pipe(sass(sassConfig))
   .on('error', handleErrors)
   .pipe(autoprefixer(autoprefixerConfig))
