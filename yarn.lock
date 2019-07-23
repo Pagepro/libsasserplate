@@ -5300,6 +5300,16 @@ gulp-rev@^7.0.0:
     through2 "^2.0.0"
     vinyl-file "^1.1.0"
 
+gulp-sass-glob@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-sass-glob/-/gulp-sass-glob-1.1.0.tgz#ff4055b8cf20695567d279849fc8c025fd7dd40e"
+  integrity sha512-BYDCjb68iMAxLGt2uuw7jaZ51cnWxAbQ4EtFDOOsMXOc0Ul+SFW1iiMOSI/efpO27ycmX9U8Eb4Clerww5Tf5Q==
+  dependencies:
+    glob "^7.1.4"
+    minimatch "^3.0.4"
+    slash "^3.0.0"
+    through2 "^3.0.1"
+
 gulp-sass@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/gulp-sass/-/gulp-sass-4.0.2.tgz#cfb1e3eff2bd9852431c7ce87f43880807d8d505"
@@ -10285,6 +10295,11 @@ slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
+
+slash@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
+  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 slice-ansi@1.0.0:
   version "1.0.0"

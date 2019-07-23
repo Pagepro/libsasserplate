@@ -11,6 +11,7 @@ const cssnano = require('gulp-cssnano')
 const encoder = require('../lib/encoder')
 const wait = require('gulp-wait')
 const gcmq = require('gulp-group-css-media-queries')
+const sassGlob = require('gulp-sass-glob')
 
 const {
   root: {
@@ -40,6 +41,7 @@ const cssTask = () => gulp
   .src(paths.src)
   .pipe(gulpif(!global.production, sourcemaps.init()))
   .pipe(gulpif(isPlatformWindows, wait(200))) // prevents SASS compilation errors on Windows
+  .pipe(sassGlob())
   .pipe(sass(sassConfig))
   .on('error', handleErrors)
   .pipe(autoprefixer(autoprefixerConfig))
