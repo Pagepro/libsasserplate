@@ -1,6 +1,6 @@
 {
   "name": "libsasserplate",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A libsass-based starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
