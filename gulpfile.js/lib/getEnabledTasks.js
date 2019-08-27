@@ -11,7 +11,7 @@ module.exports = function (env) {
       if (task === 'js') {
         task = isProduction ? 'webpack:production' : false
       }
-      if ((task === 'svgsprites' || task === 'favicon') && !isProduction) {
+      if ((task === 'favicon') && !isProduction) {
         task = false
       }
       return task

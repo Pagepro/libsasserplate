@@ -1,6 +1,6 @@
 {
   "name": "libsasserplate",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A libsass-based starter for front-end projects by Pagepro.",
   "author": "Pagepro <pagepro@pagepro.pl>",
   "repository": {
@@ -12,12 +12,12 @@
     "production": "gulp production",
     "build": "gulp commit",
     "lint": "standard 'src/js/**/*.js'",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use yarn to install, not NPM')\""
+    "preinstall": "node gulpfile.js/lib/lock-yarn.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "breakpoint-sass": "^2.7.0",
@@ -71,7 +71,10 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
+    "core-js": "^3.1.4",
+    "gulp-sass-glob": "^1.1.0",
     "jquery": "^3.3.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "regenerator-runtime": "^0.13.3"
   }
 }
