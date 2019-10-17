@@ -12,6 +12,7 @@ const encoder = require('../lib/encoder')
 const wait = require('gulp-wait')
 const gcmq = require('gulp-group-css-media-queries')
 const sassGlob = require('gulp-sass-glob')
+const importCss = require('gulp-import-css')
 
 const {
   root: {
@@ -44,6 +45,7 @@ const cssTask = () => gulp
   .pipe(sassGlob())
   .pipe(sass(sassConfig))
   .on('error', handleErrors)
+  .pipe(importCss())
   .pipe(autoprefixer(autoprefixerConfig))
   .pipe(gulpif(global.production, cssnano({ autoprefixer: false, reduceIdents: { encoder } })))
   .pipe(gulpif(!global.production, sourcemaps.write()))
