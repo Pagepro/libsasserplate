@@ -38,6 +38,7 @@ const htmlTask = () => gulp
   }))
   .on('error', handleErrors)
   .pipe(gulpif(global.production, replace(' <br', '&nbsp;<br')))
+  .pipe(gulpif(global.production, replace('src="src/', 'src="static/')))
   .pipe(gulpif(global.production, htmlmin(htmlConfig.htmlmin)))
   .pipe(gulp.dest(path.join(global.production ? config.root.dist : '', paths.dest)))
   .pipe(gulpif(!global.production, browserSync.stream()))
