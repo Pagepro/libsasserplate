@@ -42,7 +42,11 @@
                     "./node_modules/normalize.css"
                 ]
             },
-            "extensions": ["sass", "scss", "css"]
+            "extensions": ["sass", "scss", "css"],
+            "autoprefixer": {
+                "flexbox": true,
+                "grid": true
+            }
         },
 
         "html": {
